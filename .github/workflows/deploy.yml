@@ -1,0 +1,102 @@
+name: Deploy Configuration Maintenance PC to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Quartz plugins
+        run: npx quartz plugin install
+
+      - name: Fix folder-page links in the local graph
+        run: node scripts/fix-quartz-graph.mjs
+
+      - name: Build Quartz
+        run: npx quartz build
+
+      - name: Publish interactive HTML courses
+        run: |
+          find content/cours -type f -name "*.html" -print0 | while IFS= read -r -d '' file; do
+            relative_path="${file#content/}"
+            mkdir -p "public/$(dirname "$relative_path")"
+            cp "$file" "public/$relative_path"
+          done
+          mkdir -p public/assets
+          cp -R content/assets/. public/assets/
+
+      - name: Publish individual Markdown downloads
+        run: |
+          mkdir -p public/telechargements/cours public/telechargements/tp
+          find content/cours -maxdepth 1 -type f -name "*.md" -exec cp {} public/telechargements/cours/ \;
+          find content/tp -maxdepth 1 -type f -name "*.md" -exec cp {} public/telechargements/tp/ \;
+
+      - name: Create Obsidian archive
+        run: |
+          mkdir -p download/Configuration-Maintenance-PC
+          cp -R content/cours download/Configuration-Maintenance-PC/
+          cp -R content/tp download/Configuration-Maintenance-PC/
+          cp -R content/Ressources download/Configuration-Maintenance-PC/
+          cp -R content/assets download/Configuration-Maintenance-PC/
+          cd download
+          archive="../public/configuration-maintenance-pc-obsidian.zip"
+          zip -qr "$archive" Configuration-Maintenance-PC
+
+          markdown_count="$(unzip -Z1 "$archive" | grep -cE '\.md$' || true)"
+          html_count="$(unzip -Z1 "$archive" | grep -cE '\.html$' || true)"
+          pdf_count="$(unzip -Z1 "$archive" | grep -cE '\.pdf$' || true)"
+          if [ "$markdown_count" -eq 0 ] || [ "$html_count" -eq 0 ] || [ "$pdf_count" -eq 0 ]; then
+            echo "Archive incomplète : Markdown=$markdown_count, HTML=$html_count, PDF=$pdf_count"
+            exit 1
+          fi
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,213 @@
+:root {
+  --pc-line: color-mix(in srgb, var(--secondary) 22%, var(--lightgray));
+  --pc-shadow: 0 1rem 2.8rem rgb(15 45 75 / 14%);
+}
+
+.pc-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--pc-line);
+  border-radius: 1.1rem;
+  background:
+    radial-gradient(
+      circle at 92% 12%,
+      color-mix(in srgb, var(--tertiary) 25%, transparent),
+      transparent 18rem
+    ),
+    linear-gradient(135deg, color-mix(in srgb, var(--secondary) 14%, var(--light)), var(--light));
+  box-shadow: var(--pc-shadow);
+}
+
+.pc-hero::after {
+  position: absolute;
+  right: -2rem;
+  bottom: -4rem;
+  width: 15rem;
+  height: 15rem;
+  border: 1.6rem solid color-mix(in srgb, var(--secondary) 8%, transparent);
+  border-radius: 50%;
+  content: "";
+}
+
+.pc-kicker {
+  color: var(--secondary);
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pc-hero h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0.5rem 0 0.8rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.02;
+}
+
+.pc-hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 44rem;
+  color: var(--darkgray);
+  font-size: 1.06rem;
+}
+
+.pc-actions,
+.home-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.35rem;
+}
+
+.pc-actions a,
+.obsidian-download a.obsidian-download__button {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.55rem;
+  color: #fff;
+  background: var(--secondary);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.pc-actions a:last-child {
+  color: var(--secondary);
+  background: transparent;
+}
+
+.pc-path {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.pc-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.15rem 0.9rem;
+  padding: 1.05rem;
+  border: 1px solid var(--pc-line);
+  border-radius: 0.85rem;
+  color: var(--darkgray);
+  background: color-mix(in srgb, var(--secondary) 4%, var(--light));
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease;
+}
+
+.pc-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.pc-card__number {
+  grid-row: 1 / span 3;
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border-radius: 0.65rem;
+  color: #fff;
+  background: var(--secondary);
+  font-family: var(--codeFont);
+  font-weight: 800;
+}
+
+.pc-card small {
+  color: var(--tertiary);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pc-card strong {
+  color: var(--dark);
+  font-size: 1.04rem;
+}
+
+.pc-card span:last-child {
+  font-size: 0.88rem;
+}
+
+article a[href$=".html"],
+article a[href*="/telechargements/"][href$=".md"] {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.15rem 0;
+  padding: 0.38rem 0.68rem;
+  border-radius: 0.45rem;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+article a[href$=".html"] {
+  background: var(--secondary);
+}
+
+article a[href*="/telechargements/"][href$=".md"] {
+  background: #0d9668;
+}
+
+.obsidian-download {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--pc-line);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--secondary) 9%, var(--light));
+}
+
+.obsidian-download__icon {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border-radius: 0.7rem;
+  color: #fff;
+  background: var(--secondary);
+  font-family: var(--codeFont);
+  font-weight: 800;
+}
+
+.obsidian-download__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.obsidian-download__content strong {
+  color: var(--dark);
+  font-size: 1.05rem;
+}
+
+.obsidian-download__content span,
+.home-links a {
+  color: var(--darkgray);
+}
+
+@media all and (max-width: 800px) {
+  .pc-path {
+    grid-template-columns: 1fr;
+  }
+
+  .obsidian-download {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .obsidian-download a.obsidian-download__button {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
