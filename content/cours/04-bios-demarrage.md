@@ -2,7 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
-> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/04-bios-demarrage.html)
+> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/04-bios-demarrage-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/04-bios-demarrage.md" download>Télécharger ce cours en Markdown</a>
 
 ## Le rôle du BIOS / UEFI

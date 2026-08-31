@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Configuration et maintenance PC - BIOS / UEFI et démarrage" />
+    <meta name="description" content="Configuration et maintenance PC - Choisir un PC portable" />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon-pc.svg" />
-    <title>04 - BIOS / UEFI et démarrage</title>
+    <title>03 - Choisir un PC portable</title>
     <style>
       :root {
         --bg: #0b0f17;
@@ -14,8 +14,8 @@
         --border: #2d3748;
         --text: #e5e7eb;
         --muted: #94a3b8;
-        --accent: #a855f7;
-        --accentSoft: #a855f726;
+        --accent: #f59e0b;
+        --accentSoft: #f59e0b26;
         --ok: #22c55e;
         --warn: #f59e0b;
         --bad: #ef4444;
@@ -685,37 +685,44 @@
       <div class="hero">
         <div class="hero-icon">
           <svg viewBox="0 0 96 96" aria-hidden="true">
-            <path d="M48 12v32" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
-            <path
-              d="M32 24a28 28 0 1 0 32 0"
+            <rect
+              x="20"
+              y="18"
+              width="56"
+              height="42"
+              rx="5"
               fill="none"
               stroke="currentColor"
-              stroke-width="7"
-              stroke-linecap="round"
+              stroke-width="6"
             />
+            <path d="M12 72h72l-8-12H20z" fill="currentColor" opacity=".8" />
           </svg>
         </div>
         <div>
-          <p class="eyebrow">Configuration et maintenance PC · Chapitre 04</p>
-          <h1>BIOS / UEFI et démarrage</h1>
-          <p>POST, ordre de boot, Secure Boot et modes de démarrage</p>
+          <p class="eyebrow">Configuration et maintenance PC · Chapitre 03</p>
+          <h1>Choisir un PC portable</h1>
+          <p>Mobilité, écran, USB-C PD, dock, autonomie et Windows Pro</p>
           <div class="tags">
-            <span class="tag">UEFI</span><span class="tag">POST</span><span class="tag">boot</span>
+            <span class="tag">portable</span><span class="tag">USB-C</span
+            ><span class="tag">dock</span>
           </div>
         </div>
       </div>
     </header>
     <nav>
       <div class="nav-inner">
-        <a class="" href="01-role-du-technicien.html"
+        <a class="" href="01-role-du-technicien-interactif.html"
           ><span>01</span>Le rôle du technicien support</a
-        ><a class="" href="02-composants-pc.html"><span>02</span>Les composants d'un PC</a
-        ><a class="" href="03-pc-portables.html"><span>03</span>Choisir un PC portable</a
-        ><a class="active" href="04-bios-demarrage.html"><span>04</span>BIOS / UEFI et démarrage</a
-        ><a class="" href="05-stockage.html"><span>05</span>Stockage et systèmes</a
-        ><a class="" href="06-peripheriques.html"
+        ><a class="" href="02-composants-pc-interactif.html"
+          ><span>02</span>Les composants d'un PC</a
+        ><a class="active" href="03-pc-portables-interactif.html"
+          ><span>03</span>Choisir un PC portable</a
+        ><a class="" href="04-bios-demarrage-interactif.html"
+          ><span>04</span>BIOS / UEFI et démarrage</a
+        ><a class="" href="05-stockage-interactif.html"><span>05</span>Stockage et systèmes</a
+        ><a class="" href="06-peripheriques-interactif.html"
           ><span>06</span>Périphériques, réseau et impression</a
-        ><a class="" href="07-maintenance-diagnostic.html"
+        ><a class="" href="07-maintenance-diagnostic-interactif.html"
           ><span>07</span>Maintenance et résolution de pannes</a
         >
       </div>
@@ -734,11 +741,11 @@
             class="schema"
             viewBox="0 0 920 260"
             role="img"
-            aria-label="Schéma interactif BIOS / UEFI et démarrage"
+            aria-label="Schéma interactif Choisir un PC portable"
           >
             <defs>
               <marker
-                id="arrow-04"
+                id="arrow-03"
                 viewBox="0 0 10 10"
                 refX="9"
                 refY="5"
@@ -746,62 +753,62 @@
                 markerHeight="7"
                 orient="auto-start-reverse"
               >
-                <path d="M0 0 L10 5 L0 10 z" fill="#a855f7" />
+                <path d="M0 0 L10 5 L0 10 z" fill="#f59e0b" />
               </marker>
             </defs>
             <g class="schema-node" tabindex="0" data-step="1">
               <rect x="24" y="52" width="124" height="72" rx="12" />
-              <text x="86" y="84" text-anchor="middle">Power</text>
+              <text x="86" y="84" text-anchor="middle">Besoin</text>
               <text x="86" y="104" text-anchor="middle" class="schema-small">étape 1</text>
             </g>
             <path
               class="schema-link"
               d="M152 88 C 184 88, 144 148, 172 148"
-              marker-end="url(#arrow-04)"
+              marker-end="url(#arrow-03)"
             />
             <g class="schema-node" tabindex="0" data-step="2">
               <rect x="172" y="112" width="124" height="72" rx="12" />
-              <text x="234" y="144" text-anchor="middle">UEFI</text>
+              <text x="234" y="144" text-anchor="middle">Écran</text>
               <text x="234" y="164" text-anchor="middle" class="schema-small">étape 2</text>
             </g>
             <path
               class="schema-link"
               d="M300 148 C 332 148, 292 88, 320 88"
-              marker-end="url(#arrow-04)"
+              marker-end="url(#arrow-03)"
             />
             <g class="schema-node" tabindex="0" data-step="3">
               <rect x="320" y="52" width="124" height="72" rx="12" />
-              <text x="382" y="84" text-anchor="middle">POST</text>
+              <text x="382" y="84" text-anchor="middle">CPU/RAM</text>
               <text x="382" y="104" text-anchor="middle" class="schema-small">étape 3</text>
             </g>
             <path
               class="schema-link"
               d="M448 88 C 480 88, 440 148, 468 148"
-              marker-end="url(#arrow-04)"
+              marker-end="url(#arrow-03)"
             />
             <g class="schema-node" tabindex="0" data-step="4">
               <rect x="468" y="112" width="124" height="72" rx="12" />
-              <text x="530" y="144" text-anchor="middle">Disque</text>
+              <text x="530" y="144" text-anchor="middle">Connectique</text>
               <text x="530" y="164" text-anchor="middle" class="schema-small">étape 4</text>
             </g>
             <path
               class="schema-link"
               d="M596 148 C 628 148, 588 88, 616 88"
-              marker-end="url(#arrow-04)"
+              marker-end="url(#arrow-03)"
             />
             <g class="schema-node" tabindex="0" data-step="5">
               <rect x="616" y="52" width="124" height="72" rx="12" />
-              <text x="678" y="84" text-anchor="middle">Bootloader</text>
+              <text x="678" y="84" text-anchor="middle">Batterie</text>
               <text x="678" y="104" text-anchor="middle" class="schema-small">étape 5</text>
             </g>
             <path
               class="schema-link"
               d="M744 88 C 776 88, 736 148, 764 148"
-              marker-end="url(#arrow-04)"
+              marker-end="url(#arrow-03)"
             />
             <g class="schema-node" tabindex="0" data-step="6">
               <rect x="764" y="112" width="124" height="72" rx="12" />
-              <text x="826" y="144" text-anchor="middle">OS</text>
+              <text x="826" y="144" text-anchor="middle">Windows Pro</text>
               <text x="826" y="164" text-anchor="middle" class="schema-small">étape 6</text>
             </g>
           </svg>
@@ -811,248 +818,509 @@
           </p>
         </section>
 
-        <h1>BIOS / UEFI et démarrage</h1>
-        <h2 id="le-role-du-bios-uefi">Le rôle du BIOS / UEFI</h2>
+        <h1>Choisir un PC portable</h1>
+        <h2 id="pourquoi-un-pc-portable">Pourquoi un PC portable ?</h2>
         <p>
-          Le <strong>BIOS</strong> ou <strong>UEFI</strong> est le premier programme exécuté au
-          démarrage du PC.
+          Un PC portable rassemble dans un seul châssis tout ce qu'un poste fixe nécessite : CPU,
+          RAM, stockage, écran, batterie, clavier et pavé tactile. L'intérêt principal est la
+          <strong>mobilité</strong> — on peut travailler depuis n'importe quel endroit sans dépendre
+          d'une prise secteur permanente.
         </p>
-        <p>Il permet de :</p>
-        <ul>
-          <li>initialiser le matériel (CPU, RAM, carte graphique, stockage)</li>
-          <li>vérifier que les composants sont fonctionnels</li>
-          <li>lancer le système d'exploitation</li>
-        </ul>
-        <p>Sans BIOS/UEFI fonctionnel, le PC <strong>ne peut pas démarrer</strong>.</p>
-        <h2 id="bios-vs-uefi">BIOS vs UEFI</h2>
+        <p>Cas d'usage typiques :</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th></th>
-                <th>BIOS</th>
-                <th>UEFI</th>
+                <th>Contexte</th>
+                <th>Avantage apporté</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Âge</td>
-                <td>Ancien (années 80)</td>
-                <td>Moderne</td>
+                <td>Déplacement professionnel</td>
+                <td>Travail en mobilité (transport, client, site)</td>
               </tr>
               <tr>
-                <td>Interface</td>
-                <td>Texte, navigation clavier</td>
-                <td>Graphique, souris possible</td>
+                <td>Formation / salle de cours</td>
+                <td>Pas besoin d'infrastructure fixe</td>
               </tr>
               <tr>
-                <td>Limites disque</td>
-                <td>2 To max (MBR)</td>
-                <td>Pas de limite (GPT)</td>
+                <td>Télétravail</td>
+                <td>Un seul poste utilisé à domicile et au bureau</td>
               </tr>
               <tr>
-                <td>Sécurité</td>
-                <td>Basique</td>
-                <td>Secure Boot, cryptographie</td>
-              </tr>
-              <tr>
-                <td>Vitesse démarrage</td>
-                <td>Plus lente</td>
-                <td>Plus rapide</td>
+                <td>Technicien terrain</td>
+                <td>Diagnostic et intervention sur site</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>Aujourd'hui, les PC utilisent presque exclusivement l'<strong>UEFI</strong>.</p>
-        <figure class="media">
-          <img
-            src="https://www.szapphone.com/wp-content/uploads/2024/05/BIOS-mode-1024x636.webp"
-            alt="BIOS classique"
-            loading="lazy"
-          />
-        </figure>
-        <figure class="media">
-          <img
-            src="https://www.easeus.fr/images/en/screenshot/partition-manager/uefi-setup-screen.jpg"
-            alt="UEFI moderne"
-            loading="lazy"
-          />
-        </figure>
-        <h2 id="la-sequence-de-demarrage-boot">La séquence de démarrage (boot)</h2>
-        <p>Au démarrage, le PC suit toujours le même chemin logique :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-">Mise sous tension
-       ↓
-Initialisation du matériel (BIOS/UEFI)
-       ↓
-POST (Power-On Self Test)
-       ↓
-Détection des disques
-       ↓
-Recherche d'un système bootable
-       ↓
-Lancement du système d'exploitation</code></pre>
-        </div>
-        <h2 id="le-post-power-on-self-test">Le POST (Power-On Self Test)</h2>
-        <p>Le <strong>POST</strong> est un test rapide qui vérifie :</p>
+        <p>
+          Inconvénients à connaître : <strong>évolutivité limitée</strong> (RAM et stockage parfois
+          soudés), <strong>dissipation thermique réduite</strong>, et
+          <strong>coût de réparation plus élevé</strong> qu'un poste fixe équivalent.
+        </p>
+        <h2 id="les-criteres-de-choix">Les critères de choix</h2>
+        <h3 id="1-date-de-fabrication-generation-des-composants">
+          1. Date de fabrication / génération des composants
+        </h3>
+        <p>
+          Un portable peut être vendu neuf mais assembler des composants d'une génération précédente
+          pour réduire les coûts.
+        </p>
+        <p>À vérifier :</p>
         <ul>
-          <li>la présence du processeur</li>
-          <li>la mémoire vive</li>
-          <li>la carte graphique</li>
+          <li>
+            La <strong>génération du processeur</strong> (ex. Intel Core Ultra 200H vs Core i5 12e
+            gen — plusieurs années d'écart)
+          </li>
+          <li>
+            La <strong>génération de RAM</strong> : DDR4 vs DDR5 (performances et consommation
+            différentes)
+          </li>
+          <li>
+            Le <strong>Wi-Fi intégré</strong> : Wi-Fi 5 (802.11ac) vs Wi-Fi 6 (802.11ax) vs Wi-Fi
+            6E/7
+          </li>
         </ul>
-        <p>Si le POST échoue :</p>
+        <p>
+          Un modèle en stock depuis longtemps peut embarquer une génération dépassée — toujours
+          vérifier les specs, pas seulement le prix.
+        </p>
+        <h3 id="2-technologie-d-ecran">2. Technologie d'écran</h3>
+        <p>
+          L'écran est le composant le moins facile à remplacer et celui qu'on utilise en permanence.
+        </p>
+        <h4>Dalle</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Technologie</th>
+                <th>Avantages</th>
+                <th>Inconvénients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TN</strong></td>
+                <td>Réactivité élevée, prix bas</td>
+                <td>Angles de vision médiocres, couleurs ternes</td>
+              </tr>
+              <tr>
+                <td><strong>IPS</strong></td>
+                <td>Bons angles, couleurs fidèles</td>
+                <td>Légère fuite lumineuse possible (IPS glow)</td>
+              </tr>
+              <tr>
+                <td><strong>VA</strong></td>
+                <td>Contraste élevé</td>
+                <td>Temps de réponse plus lent</td>
+              </tr>
+              <tr>
+                <td><strong>OLED</strong></td>
+                <td>Noirs parfaits, couleurs vives</td>
+                <td>Risque de burn-in, autonomie réduite</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Pour un usage bureautique ou formation : <strong>IPS</strong> est le bon compromis.</p>
+        <h4>Résolution et définition</h4>
         <ul>
-          <li>bips sonores (codes d'erreur selon le constructeur)</li>
-          <li>écran noir</li>
-          <li>arrêt immédiat du démarrage</li>
+          <li>Full HD (1920×1080) : suffisant dans 90% des cas</li>
+          <li>
+            2K / QHD (2560×1440) : overkill pour la plupart des usages professionnels, consomme plus
+          </li>
+        </ul>
+        <h4>Taux de rafraîchissement</h4>
+        <ul>
+          <li>60 Hz : standard bureautique</li>
+          <li>120–144 Hz et plus : utile en jeu ou pour du travail graphique fluide</li>
+        </ul>
+        <h4>Luminosité</h4>
+        <p>
+          Exprimée en <strong>nits</strong> (candelas/m²). En dessous de 250 nits, difficile à
+          utiliser en pleine lumière. 300–400 nits est confortable, 500+ pour une utilisation en
+          extérieur.
+        </p>
+        <h3 id="3-power-delivery-usb-pd">3. Power Delivery (USB-PD)</h3>
+        <h4>C'est quoi le Power Delivery ?</h4>
+        <p>
+          Le <strong>USB Power Delivery</strong> (USB-PD) est un standard de recharge via connecteur
+          <strong>USB-C</strong>. Il permet de transmettre jusqu'à <strong>100 W</strong> (et
+          jusqu'à 240 W avec USB-PD 3.1) sur un même câble USB-C, en plus des données.
+        </p>
+        <p>
+          Concrètement : un seul câble USB-C peut à la fois recharger le portable, transférer des
+          fichiers, et afficher une image sur un écran externe (si Thunderbolt ou DisplayPort Alt
+          Mode est supporté).
+        </p>
+        <h4>Pourquoi c'est important ?</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Avantage</th>
+                <th>Détail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Chargeur universel</strong></td>
+                <td>Un même chargeur pour téléphone, tablette et portable</td>
+              </tr>
+              <tr>
+                <td><strong>Moins de câbles</strong></td>
+                <td>Un hub USB-C remplace plusieurs adaptateurs</td>
+              </tr>
+              <tr>
+                <td><strong>Alimentation bidirectionnelle</strong></td>
+                <td>Le portable peut recharger un autre appareil</td>
+              </tr>
+              <tr>
+                <td><strong>Charge depuis une batterie externe</strong></td>
+                <td>Pratique en mobilité (powerbank 65 W+)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Ce qu'il faut vérifier</h4>
+        <ul>
+          <li>
+            Le portable <strong>supporte-t-il la charge via USB-C</strong> ? (pas automatique)
+          </li>
+          <li>Quel est le <strong>wattage maximum accepté</strong> ? (45 W, 65 W, 100 W…)</li>
+          <li>
+            Le port USB-C est-il aussi <strong>Thunderbolt 4</strong> ou <strong>USB4</strong> ?
+            (requis pour certains docks)
+          </li>
+          <li>L'adaptateur secteur fourni est-il USB-C ou propriétaire ?</li>
         </ul>
         <blockquote>
-          <a
-            href="https://fr.wikipedia.org/wiki/Power-on_self-test_\(informatique\"
-            target="_blank"
-            rel="noopener"
-            >Power-on self-test — Wikipédia</a
-          >)
+          Un portable qui n'accepte que son chargeur propriétaire est une contrainte en mobilité —
+          un chargeur oublié ou cassé bloque tout.
         </blockquote>
-        <h2 id="l-ordre-de-demarrage-boot-order">L'ordre de démarrage (Boot Order)</h2>
-        <p>Le BIOS/UEFI contient une liste ordonnée de périphériques de démarrage :</p>
-        <ul>
-          <li>disque interne</li>
-          <li>clé USB</li>
-          <li>lecteur réseau (PXE)</li>
-        </ul>
-        <p>Un mauvais ordre peut empêcher l'installation d'un OS ou le démarrage normal.</p>
-        <h2 id="acces-au-bios-uefi">Accès au BIOS / UEFI</h2>
-        <p>Au démarrage, appuyer sur (selon le constructeur) :</p>
+        <h3 id="4-autres-parametres-a-evaluer">4. Autres paramètres à évaluer</h3>
+        <h4>Processeur et usage</h4>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Touche</th>
-                <th>Constructeur courant</th>
+                <th>Type d'usage</th>
+                <th>Processeur recommandé</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Suppr / Del</strong></td>
-                <td>MSI, Gigabyte, ASUS</td>
+                <td>Bureautique, navigation</td>
+                <td>Intel Core i5 / AMD Ryzen 5 série U (TDP ~15 W)</td>
               </tr>
               <tr>
-                <td><strong>F2</strong></td>
-                <td>Dell, Lenovo, ASUS</td>
+                <td>Développement, virtualisation</td>
+                <td>Intel Core i7/i9 H ou AMD Ryzen 7/9 HS (TDP 35–45 W)</td>
               </tr>
               <tr>
-                <td><strong>F10</strong></td>
-                <td>HP</td>
-              </tr>
-              <tr>
-                <td><strong>F12</strong></td>
-                <td>Boot menu rapide</td>
+                <td>Graphisme, jeu</td>
+                <td>GPU dédié (Nvidia RTX, AMD RX) + CPU H</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <h2 id="parametres-essentiels-a-connaitre">Paramètres essentiels à connaître</h2>
+        <p>
+          Les processeurs <strong>série U</strong> consomment moins et offrent plus d'autonomie. Les
+          <strong>série H/HX</strong> sont plus puissants mais consomment davantage.
+        </p>
+        <h4>RAM</h4>
         <ul>
-          <li>Vérifier si le disque est <strong>détecté</strong></li>
-          <li>Consulter l'<strong>ordre de démarrage</strong></li>
-          <li>Identifier le mode : <strong>UEFI</strong> ou <strong>Legacy (CSM)</strong></li>
-          <li>Activer/désactiver le <strong>Secure Boot</strong> si nécessaire</li>
+          <li>8 Go : minimum acceptable</li>
+          <li>16 Go : confortable pour du multitâche</li>
+          <li>32 Go : virtualisation, développement lourd</li>
         </ul>
-        <h2 id="problemes-courants">Problèmes courants</h2>
+        <p>
+          Vérifier si la RAM est <strong>soudée</strong> (non évolutive) ou sur
+          <strong>slots SO-DIMM</strong> (remplaçable).
+        </p>
+        <h4>Stockage</h4>
+        <ul>
+          <li>Privilégier un <strong>SSD NVMe M.2</strong> (bien plus rapide qu'un SSD SATA)</li>
+          <li>
+            Vérifier la présence d'un <strong>slot supplémentaire</strong> pour ajouter un second
+            SSD
+          </li>
+        </ul>
+        <h4>Connectique</h4>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Symptôme</th>
-                <th>Piste</th>
+                <th>Port</th>
+                <th>Utilité</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Écran noir au démarrage</td>
-                <td>POST échoué / composant manquant</td>
+                <td>USB-A (×2 minimum)</td>
+                <td>Clé USB, souris, adaptateurs courants</td>
               </tr>
               <tr>
-                <td>« No boot device found »</td>
-                <td>Disque non détecté / mauvais ordre de boot</td>
+                <td>USB-C / Thunderbolt</td>
+                <td>Écran externe, dock, charge PD</td>
               </tr>
               <tr>
-                <td>Retour systématique dans le BIOS</td>
-                <td>OS non installé ou bootloader manquant</td>
+                <td>HDMI</td>
+                <td>Vidéoprojecteur, écran externe</td>
               </tr>
               <tr>
-                <td>Installation de l'OS impossible</td>
-                <td>Mauvais mode UEFI/Legacy ou Secure Boot actif</td>
+                <td>Jack 3,5 mm</td>
+                <td>Audio (souvent absent sur les ultrafins)</td>
+              </tr>
+              <tr>
+                <td>RJ45</td>
+                <td>Réseau filaire — souvent absent, prévoir un adaptateur</td>
+              </tr>
+              <tr>
+                <td>Lecteur SD</td>
+                <td>Utile pour les photographes / techniciens terrain</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <p>
-            <strong>À retenir</strong> : le démarrage suit toujours une séquence logique. Un
-            symptôme correspond à une étape précise. On vérifie avant de modifier.
-          </p>
-        </aside>
-        <h1>BIOS / UEFI et démarrage</h1>
-        <h2 id="objectif">Objectif</h2>
+        <h4>Autonomie</h4>
         <p>
-          Découvrir par l'expérimentation les différences entre BIOS et UEFI, et comprendre les
-          contraintes modernes de démarrage, notamment pour Windows 11.
+          Annoncée par le fabricant dans des conditions idéales — diviser par 1,5 à 2 pour un usage
+          réel.
         </p>
-        <h2 id="mise-en-situation">Mise en situation</h2>
-        <p>Vous disposez d'un hyperviseur et de deux ISO :</p>
-        <ul>
-          <li>Windows 11</li>
-          <li>Une distribution Linux de votre choix</li>
-        </ul>
         <p>
-          Votre objectif : installer une machine virtuelle de chaque, sachant que les paramètres de
-          démarrage ne sont <strong>pas identiques</strong>.
+          Vérifier la <strong>capacité batterie en Wh</strong> (watt-heure) plutôt qu'en mAh (les
+          tensions varient). Au-delà de 60 Wh, on parle de bonne autonomie.
         </p>
-        <h2 id="travail-demande">Travail demandé</h2>
-        <ol>
-          <li>Réaliser les installations jusqu'à obtenir un système fonctionnel</li>
-          <li>Tester différents réglages, noter les échecs autant que les réussites</li>
-          <li>Identifier le mode de démarrage utilisé pour chaque système</li>
-        </ol>
-        <h2 id="questions-a-traiter">Questions à traiter</h2>
-        <ol>
-          <li>Quels réglages ont été nécessaires pour Windows 11 ?</li>
-          <li>Les mêmes réglages fonctionnent-ils pour Linux ?</li>
-          <li>Quels éléments semblent imposés par l'OS ?</li>
-          <li>Quel mode vous paraît le plus adapté aujourd'hui ?</li>
-          <li>Que se passerait-il si ces réglages étaient appliqués à un PC inadapté ?</li>
-        </ol>
-        <h2 id="rendu-attendu">Rendu attendu</h2>
+        <h4>Poids et format</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Poids typique</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ultraportable (13–14&quot;)</td>
+                <td>&lt; 1,4 kg</td>
+                <td>Mobilité maximale</td>
+              </tr>
+              <tr>
+                <td>Standard (15–16&quot;)</td>
+                <td>1,6–2 kg</td>
+                <td>Polyvalent</td>
+              </tr>
+              <tr>
+                <td>Portable bureau (17&quot;)</td>
+                <td>&gt; 2,5 kg</td>
+                <td>Remplacement de fixe</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Clavier et pavé tactile</h4>
+        <p>
+          Souvent négligé à l'achat : vérifier la <strong>course des touches</strong> (les claviers
+          trop plats fatiguent vite), la présence d'un <strong>pavé numérique</strong> si
+          nécessaire, et la qualité du pavé tactile (taille, précision).
+        </p>
+        <h4>Qualité du châssis</h4>
+        <p>Le châssis détermine la durabilité et le confort au quotidien.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Matériau</th>
+                <th>Caractéristiques</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Plastique</strong></td>
+                <td>Léger, économique, moins résistant aux chocs et à la torsion</td>
+              </tr>
+              <tr>
+                <td><strong>Aluminium</strong></td>
+                <td>Rigide, dissipe mieux la chaleur, look premium, plus lourd</td>
+              </tr>
+              <tr>
+                <td><strong>Magnésium / alliage</strong></td>
+                <td>Léger et résistant, utilisé sur les portables pro (ex. Lenovo ThinkPad)</td>
+              </tr>
+              <tr>
+                <td><strong>Fibre de carbone</strong></td>
+                <td>Très léger et très rigide, coût élevé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Ce qu'il faut tester ou vérifier :</p>
         <ul>
-          <li>Une note Markdown structurée dans votre HedgeDoc</li>
-          <li>Des observations personnelles issues de vos tests</li>
-          <li>Un article dans la base de connaissances GLPI</li>
+          <li>
+            <strong>Flexibilité du couvercle</strong> : un écran qui se déforme au moindre appui ne
+            protège pas bien la dalle
+          </li>
+          <li>
+            <strong>Charnières</strong> : elles doivent être fermes sans forcer — les charnières
+            fragiles lâchent en quelques mois
+          </li>
+          <li>
+            <strong>Certification MIL-SPEC</strong> (MIL-STD-810) : tests de résistance aux chocs,
+            vibrations, température — bon indicateur pour les portables pro ou terrain
+          </li>
+          <li>
+            <strong>Finition</strong> : les surfaces mates accrochent moins les traces de doigts et
+            résistent mieux à la rayure que le brillant
+          </li>
         </ul>
+        <h4>Dock (station d'accueil)</h4>
+        <p>
+          Un <strong>dock</strong> est un boîtier qui se branche en un seul câble USB-C (ou
+          Thunderbolt) sur le portable et offre une multitude de ports supplémentaires : plusieurs
+          USB-A, écrans HDMI/DisplayPort, RJ45, lecteur SD, audio, et parfois même l'alimentation
+          secteur (via PD).
+        </p>
+        <p>
+          C'est la solution standard en entreprise pour passer instantanément du mode mobilité au
+          mode bureau fixe.
+        </p>
+        <div class="code-block">
+          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
+          <pre><code class="language-">Portable  ←──── 1 câble USB-C / Thunderbolt ────→  Dock
+                                                      ├── Écran 1 (HDMI)
+                                                      ├── Écran 2 (DisplayPort)
+                                                      ├── Clavier / Souris (USB-A)
+                                                      ├── RJ45 (réseau filaire)
+                                                      ├── Alimentation (PD 65–100 W)
+                                                      └── Stockage externe (USB-A/C)</code></pre>
+        </div>
+        <blockquote>
+          Pour utiliser un dock avec deux écrans externes, le port USB-C doit être
+          <strong>Thunderbolt 4</strong> ou <strong>USB4</strong>. Un simple USB-C 3.2 est souvent
+          limité à un seul écran.
+        </blockquote>
+        <h4>Licence Windows</h4>
+        <p>
+          Pour un usage professionnel ou en entreprise, la version <strong>Windows Pro</strong> est
+          indispensable.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Windows Famille</th>
+                <th>Windows Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jonction à un domaine Active Directory</td>
+                <td>✗</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Bitlocker (chiffrement disque)</td>
+                <td>✗</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Stratégies de groupe (GPO)</td>
+                <td>✗</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Bureau à distance (hôte RDP)</td>
+                <td>✗</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Hyper-V</td>
+                <td>✗</td>
+                <td>✓</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote>
+          Un portable acheté avec <strong>Windows Famille</strong> ne peut pas rejoindre un domaine
+          Active Directory. Dans un parc d'entreprise, c'est bloquant. Toujours vérifier la mention
+          <strong>Pro</strong> avant l'achat — changer de licence après coup est possible mais
+          payant (~100 €).
+        </blockquote>
+        <h2 id="en-resume">En résumé</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>Ce qu'il faut retenir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Génération composants</td>
+                <td>
+                  Toujours vérifier le CPU, la RAM et le Wi-Fi — ne pas se fier au millésime
+                  commercial
+                </td>
+              </tr>
+              <tr>
+                <td>Écran</td>
+                <td>IPS pour l'usage pro, vérifier nits et résolution selon la taille</td>
+              </tr>
+              <tr>
+                <td>Power Delivery</td>
+                <td>USB-C charge = liberté en mobilité — vérifier le wattage accepté</td>
+              </tr>
+              <tr>
+                <td>RAM / stockage</td>
+                <td>Préférer slots évolutifs, SSD NVMe, 16 Go minimum</td>
+              </tr>
+              <tr>
+                <td>Connectique</td>
+                <td>Anticiper les besoins (RJ45, HDMI, USB-A) avant d'acheter des adaptateurs</td>
+              </tr>
+              <tr>
+                <td>Dock</td>
+                <td>Thunderbolt 4 requis pour un vrai dock multi-écrans</td>
+              </tr>
+              <tr>
+                <td>Châssis</td>
+                <td>Aluminium ou alliage pour un usage pro, vérifier les charnières</td>
+              </tr>
+              <tr>
+                <td>Licence Windows</td>
+                <td>
+                  Toujours <strong>Pro</strong> en environnement d'entreprise (Active Directory,
+                  BitLocker)
+                </td>
+              </tr>
+              <tr>
+                <td>Autonomie</td>
+                <td>Regarder les Wh, pas les heures annoncées constructeur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <section class="concepts">
           <p class="eyebrow">Cartes de révision</p>
           <h2>Notions à manipuler</h2>
           <div class="concept-grid">
             <button class="concept-card" type="button">
-              <span>01</span><strong>Le rôle du BIOS / UEFI</strong
+              <span>01</span><strong>Pourquoi un PC portable ?</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>02</span><strong>BIOS vs UEFI</strong
+              <span>02</span><strong>Les critères de choix</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>03</span><strong>La séquence de démarrage (boot)</strong
-              ><small>Cliquer pour marquer comme revu</small></button
-            ><button class="concept-card" type="button">
-              <span>04</span><strong>Le POST (Power-On Self Test)</strong
-              ><small>Cliquer pour marquer comme revu</small></button
-            ><button class="concept-card" type="button">
-              <span>05</span><strong>L'ordre de démarrage (Boot Order)</strong
-              ><small>Cliquer pour marquer comme revu</small></button
-            ><button class="concept-card" type="button">
-              <span>06</span><strong>Accès au BIOS / UEFI</strong
+              <span>03</span><strong>En résumé</strong
               ><small>Cliquer pour marquer comme revu</small>
             </button>
           </div>
@@ -1061,53 +1329,49 @@ Lancement du système d'exploitation</code></pre>
           <p class="eyebrow">Auto-évaluation</p>
           <h2>Quiz rapide</h2>
           <div class="quiz" data-good="1">
-            <h3>1. Quel programme s'exécute en premier au démarrage ?</h3>
+            <h3>1. Pour un usage professionnel en domaine Active Directory, il faut vérifier...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">Le navigateur</button
-              ><button type="button" data-answer="1">Le BIOS/UEFI</button
-              ><button type="button" data-answer="2">GLPI</button>
+              <button type="button" data-answer="0">Windows Famille</button
+              ><button type="button" data-answer="1">Windows Pro</button
+              ><button type="button" data-answer="2">un écran OLED</button>
+            </div>
+            <p class="feedback" aria-live="polite"></p>
+          </div>
+          <div class="quiz" data-good="1">
+            <h3>2. Un port USB-C garantit-il forcément la charge du PC ?</h3>
+            <div class="answers">
+              <button type="button" data-answer="0">Oui</button
+              ><button type="button" data-answer="1">Non</button
+              ><button type="button" data-answer="2">Uniquement sur Linux</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
           <div class="quiz" data-good="0">
-            <h3>2. Le POST sert à...</h3>
+            <h3>3. La bonne mesure d'autonomie batterie à comparer est plutôt...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">tester rapidement le matériel</button
-              ><button type="button" data-answer="1">installer les pilotes Windows</button
-              ><button type="button" data-answer="2">formater le disque</button>
-            </div>
-            <p class="feedback" aria-live="polite"></p>
-          </div>
-          <div class="quiz" data-good="0">
-            <h3>3. Un message « No boot device found » indique souvent...</h3>
-            <div class="answers">
-              <button type="button" data-answer="0">un souci de disque ou d'ordre de boot</button
-              ><button type="button" data-answer="1">un manque de RAM uniquement</button
-              ><button type="button" data-answer="2">un problème d'écran</button>
+              <button type="button" data-answer="0">les Wh</button
+              ><button type="button" data-answer="1">les mAh seuls</button
+              ><button type="button" data-answer="2">la couleur du chargeur</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
         </section>
         <div class="pager">
-          <a href="03-pc-portables.html"><span>Chapitre précédent</span>Choisir un PC portable</a>
-          <a href="05-stockage.html"><span>Chapitre suivant</span>Stockage et systèmes</a>
+          <a href="02-composants-pc-interactif.html"
+            ><span>Chapitre précédent</span>Les composants d'un PC</a
+          >
+          <a href="04-bios-demarrage-interactif.html"
+            ><span>Chapitre suivant</span>BIOS / UEFI et démarrage</a
+          >
         </div>
       </article>
       <aside class="sidebar">
         <div class="side-card">
           <h2>Dans ce chapitre</h2>
           <div class="toc">
-            <a href="#le-role-du-bios-uefi">Le rôle du BIOS / UEFI</a
-            ><a href="#bios-vs-uefi">BIOS vs UEFI</a
-            ><a href="#la-sequence-de-demarrage-boot">La séquence de démarrage (boot)</a
-            ><a href="#le-post-power-on-self-test">Le POST (Power-On Self Test)</a
-            ><a href="#l-ordre-de-demarrage-boot-order">L'ordre de démarrage (Boot Order)</a
-            ><a href="#acces-au-bios-uefi">Accès au BIOS / UEFI</a
-            ><a href="#parametres-essentiels-a-connaitre">Paramètres essentiels à connaître</a
-            ><a href="#problemes-courants">Problèmes courants</a><a href="#objectif">Objectif</a
-            ><a href="#mise-en-situation">Mise en situation</a
-            ><a href="#travail-demande">Travail demandé</a
-            ><a href="#questions-a-traiter">Questions à traiter</a>
+            <a href="#pourquoi-un-pc-portable">Pourquoi un PC portable ?</a
+            ><a href="#les-criteres-de-choix">Les critères de choix</a
+            ><a href="#en-resume">En résumé</a>
           </div>
         </div>
         <div class="side-card">

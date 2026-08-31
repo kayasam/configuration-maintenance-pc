@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Configuration et maintenance PC - Maintenance et résolution de pannes"
-    />
+    <meta name="description" content="Configuration et maintenance PC - Stockage et systèmes" />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon-pc.svg" />
-    <title>07 - Maintenance et résolution de pannes</title>
+    <title>05 - Stockage et systèmes</title>
     <style>
       :root {
         --bg: #0b0f17;
@@ -17,8 +14,8 @@
         --border: #2d3748;
         --text: #e5e7eb;
         --muted: #94a3b8;
-        --accent: #ef4444;
-        --accentSoft: #ef444426;
+        --accent: #22d3ee;
+        --accentSoft: #22d3ee26;
         --ok: #22c55e;
         --warn: #f59e0b;
         --bad: #ef4444;
@@ -688,38 +685,44 @@
       <div class="hero">
         <div class="hero-icon">
           <svg viewBox="0 0 96 96" aria-hidden="true">
-            <path
-              d="M61 16a18 18 0 0 0 20 23L45 75a12 12 0 0 1-17-17l36-36c-2-2-3-4-3-6z"
+            <rect
+              x="16"
+              y="18"
+              width="64"
+              height="60"
+              rx="8"
               fill="none"
               stroke="currentColor"
               stroke-width="6"
-              stroke-linejoin="round"
             />
-            <path d="M18 20l20 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <circle cx="48" cy="48" r="18" fill="none" stroke="currentColor" stroke-width="6" />
+            <circle cx="48" cy="48" r="4" fill="currentColor" />
+            <path d="M24 72h48" stroke="currentColor" stroke-width="5" />
           </svg>
         </div>
         <div>
-          <p class="eyebrow">Configuration et maintenance PC · Chapitre 07</p>
-          <h1>Maintenance et résolution de pannes</h1>
-          <p>Prévention, correction, méthode et outils Windows</p>
+          <p class="eyebrow">Configuration et maintenance PC · Chapitre 05</p>
+          <h1>Stockage et systèmes</h1>
+          <p>Technologie, format, bus, NAS, SAN et RAID</p>
           <div class="tags">
-            <span class="tag">maintenance</span><span class="tag">Windows</span
-            ><span class="tag">diagnostic</span>
+            <span class="tag">SSD</span><span class="tag">NVMe</span><span class="tag">RAID</span>
           </div>
         </div>
       </div>
     </header>
     <nav>
       <div class="nav-inner">
-        <a class="" href="01-role-du-technicien.html"
+        <a class="" href="01-role-du-technicien-interactif.html"
           ><span>01</span>Le rôle du technicien support</a
-        ><a class="" href="02-composants-pc.html"><span>02</span>Les composants d'un PC</a
-        ><a class="" href="03-pc-portables.html"><span>03</span>Choisir un PC portable</a
-        ><a class="" href="04-bios-demarrage.html"><span>04</span>BIOS / UEFI et démarrage</a
-        ><a class="" href="05-stockage.html"><span>05</span>Stockage et systèmes</a
-        ><a class="" href="06-peripheriques.html"
+        ><a class="" href="02-composants-pc-interactif.html"
+          ><span>02</span>Les composants d'un PC</a
+        ><a class="" href="03-pc-portables-interactif.html"><span>03</span>Choisir un PC portable</a
+        ><a class="" href="04-bios-demarrage-interactif.html"
+          ><span>04</span>BIOS / UEFI et démarrage</a
+        ><a class="active" href="05-stockage-interactif.html"><span>05</span>Stockage et systèmes</a
+        ><a class="" href="06-peripheriques-interactif.html"
           ><span>06</span>Périphériques, réseau et impression</a
-        ><a class="active" href="07-maintenance-diagnostic.html"
+        ><a class="" href="07-maintenance-diagnostic-interactif.html"
           ><span>07</span>Maintenance et résolution de pannes</a
         >
       </div>
@@ -738,11 +741,11 @@
             class="schema"
             viewBox="0 0 920 260"
             role="img"
-            aria-label="Schéma interactif Maintenance et résolution de pannes"
+            aria-label="Schéma interactif Stockage et systèmes"
           >
             <defs>
               <marker
-                id="arrow-07"
+                id="arrow-05"
                 viewBox="0 0 10 10"
                 refX="9"
                 refY="5"
@@ -750,62 +753,62 @@
                 markerHeight="7"
                 orient="auto-start-reverse"
               >
-                <path d="M0 0 L10 5 L0 10 z" fill="#ef4444" />
+                <path d="M0 0 L10 5 L0 10 z" fill="#22d3ee" />
               </marker>
             </defs>
             <g class="schema-node" tabindex="0" data-step="1">
               <rect x="24" y="52" width="124" height="72" rx="12" />
-              <text x="86" y="84" text-anchor="middle">Comprendre</text>
+              <text x="86" y="84" text-anchor="middle">Technologie</text>
               <text x="86" y="104" text-anchor="middle" class="schema-small">étape 1</text>
             </g>
             <path
               class="schema-link"
               d="M152 88 C 184 88, 144 148, 172 148"
-              marker-end="url(#arrow-07)"
+              marker-end="url(#arrow-05)"
             />
             <g class="schema-node" tabindex="0" data-step="2">
               <rect x="172" y="112" width="124" height="72" rx="12" />
-              <text x="234" y="144" text-anchor="middle">Observer</text>
+              <text x="234" y="144" text-anchor="middle">Format</text>
               <text x="234" y="164" text-anchor="middle" class="schema-small">étape 2</text>
             </g>
             <path
               class="schema-link"
               d="M300 148 C 332 148, 292 88, 320 88"
-              marker-end="url(#arrow-07)"
+              marker-end="url(#arrow-05)"
             />
             <g class="schema-node" tabindex="0" data-step="3">
               <rect x="320" y="52" width="124" height="72" rx="12" />
-              <text x="382" y="84" text-anchor="middle">Limiter</text>
+              <text x="382" y="84" text-anchor="middle">Bus</text>
               <text x="382" y="104" text-anchor="middle" class="schema-small">étape 3</text>
             </g>
             <path
               class="schema-link"
               d="M448 88 C 480 88, 440 148, 468 148"
-              marker-end="url(#arrow-07)"
+              marker-end="url(#arrow-05)"
             />
             <g class="schema-node" tabindex="0" data-step="4">
               <rect x="468" y="112" width="124" height="72" rx="12" />
-              <text x="530" y="144" text-anchor="middle">Tester</text>
+              <text x="530" y="144" text-anchor="middle">Partition</text>
               <text x="530" y="164" text-anchor="middle" class="schema-small">étape 4</text>
             </g>
             <path
               class="schema-link"
               d="M596 148 C 628 148, 588 88, 616 88"
-              marker-end="url(#arrow-07)"
+              marker-end="url(#arrow-05)"
             />
             <g class="schema-node" tabindex="0" data-step="5">
               <rect x="616" y="52" width="124" height="72" rx="12" />
-              <text x="678" y="84" text-anchor="middle">Corriger</text>
+              <text x="678" y="84" text-anchor="middle">Formatage</text>
               <text x="678" y="104" text-anchor="middle" class="schema-small">étape 5</text>
             </g>
             <path
               class="schema-link"
               d="M744 88 C 776 88, 736 148, 764 148"
-              marker-end="url(#arrow-07)"
+              marker-end="url(#arrow-05)"
             />
             <g class="schema-node" tabindex="0" data-step="6">
               <rect x="764" y="112" width="124" height="72" rx="12" />
-              <text x="826" y="144" text-anchor="middle">Documenter</text>
+              <text x="826" y="144" text-anchor="middle">Usage</text>
               <text x="826" y="164" text-anchor="middle" class="schema-small">étape 6</text>
             </g>
           </svg>
@@ -815,581 +818,368 @@
           </p>
         </section>
 
-        <h1>Maintenance et résolution de pannes</h1>
-        <h2 id="maintenance-preventive-et-corrective">Maintenance préventive et corrective</h2>
-        <p>
-          La maintenance informatique ne consiste pas uniquement à intervenir quand un poste est
-          déjà en panne.
-        </p>
-        <p>On distingue deux grandes approches :</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Objectif</th>
-                <th>Exemple</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Maintenance préventive</strong></td>
-                <td>Éviter les pannes avant qu'elles arrivent</td>
-                <td>Nettoyage, mises à jour, surveillance disque</td>
-              </tr>
-              <tr>
-                <td><strong>Maintenance corrective</strong></td>
-                <td>Corriger une panne déjà présente</td>
-                <td>Remplacer une barrette RAM, réinstaller un pilote</td>
-              </tr>
-            </tbody>
-          </table>
+        <h1>Stockage et systèmes</h1>
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/oisyw58kQ4Q?si=DrGepShuOcE9dBg4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <p>
-            Un bon technicien support ne cherche pas seulement à &quot;réparer&quot;. Il cherche
-            aussi à éviter que le même problème revienne.
-          </p>
-        </aside>
-        <h2 id="maintenance-preventive">Maintenance préventive</h2>
+        <h2 id="differencier-technologie-format-et-bus">Différencier technologie, format et bus</h2>
         <p>
-          La maintenance préventive permet de garder les postes stables, performants et sécurisés.
+          Un disque de stockage se décrit <strong>toujours</strong> avec trois éléments distincts et
+          indépendants :
         </p>
-        <p>Actions courantes :</p>
-        <ul>
-          <li>vérifier les mises à jour système</li>
-          <li>contrôler l'espace disque disponible</li>
-          <li>surveiller l'état du stockage</li>
-          <li>nettoyer les fichiers temporaires</li>
-          <li>limiter les programmes au démarrage</li>
-          <li>vérifier l'antivirus / sécurité Windows</li>
-          <li>dépoussiérer les postes fixes</li>
-          <li>contrôler les ventilateurs et températures</li>
-          <li>vérifier les sauvegardes</li>
-        </ul>
-        <aside class="callout warning">
-          <div class="callout-title">Attention</div>
-          <p>
-            Une sauvegarde non testée n'est pas une vraie sauvegarde. Il faut vérifier qu'une
-            restauration est possible.
-          </p>
-        </aside>
-        <h2 id="maintenance-corrective">Maintenance corrective</h2>
-        <p>La maintenance corrective intervient lorsqu'un incident est déjà présent.</p>
-        <p>Exemples :</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Symptôme</th>
-                <th>Action corrective possible</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>PC lent</td>
-                <td>Analyse des ressources, nettoyage, remplacement HDD par SSD</td>
-              </tr>
-              <tr>
-                <td>Écran noir</td>
-                <td>Vérification écran, câble, RAM, GPU, boot</td>
-              </tr>
-              <tr>
-                <td>Plus de réseau</td>
-                <td>Test câble, IP, DNS, pilote réseau</td>
-              </tr>
-              <tr>
-                <td>Périphérique non reconnu</td>
-                <td>Test port/câble, pilote, autre poste</td>
-              </tr>
-              <tr>
-                <td>Redémarrage aléatoire</td>
-                <td>Température, alimentation, RAM, journal système</td>
-              </tr>
-              <tr>
-                <td>Stockage saturé</td>
-                <td>Nettoyage, archivage, extension disque</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>La correction doit toujours être suivie d'une <strong>vérification</strong>.</p>
-        <h2 id="methodologie-complete-de-diagnostic">Méthodologie complète de diagnostic</h2>
-        <p>Face à une panne, il faut éviter de sauter directement sur une solution.</p>
-        <p>Méthode conseillée :</p>
-        <ol>
-          <li><strong>Comprendre la demande</strong></li>
-        </ol>
-        <ul>
-          <li>Que dit l'utilisateur ?</li>
-          <li>Depuis quand ?</li>
-          <li>Quel est l'impact ?</li>
-        </ul>
-        <ol>
-          <li><strong>Observer les symptômes</strong></li>
-        </ol>
-        <ul>
-          <li>Message d'erreur ?</li>
-          <li>Bruit ?</li>
-          <li>Lenteur ?</li>
-          <li>Panne totale ou partielle ?</li>
-        </ul>
-        <ol>
-          <li><strong>Délimiter le périmètre</strong></li>
-        </ol>
-        <ul>
-          <li>Un seul utilisateur ?</li>
-          <li>Un seul poste ?</li>
-          <li>Tout un service ?</li>
-          <li>Un seul logiciel ?</li>
-        </ul>
-        <ol>
-          <li><strong>Formuler des hypothèses</strong></li>
-        </ol>
-        <ul>
-          <li>Matériel ?</li>
-          <li>Logiciel ?</li>
-          <li>Réseau ?</li>
-          <li>Utilisateur ?</li>
-          <li>Mise à jour récente ?</li>
-        </ul>
-        <ol>
-          <li><strong>Tester du plus simple au plus probable</strong></li>
-        </ol>
-        <ul>
-          <li>câble</li>
-          <li>redémarrage</li>
-          <li>autre port</li>
-          <li>autre compte</li>
-          <li>autre poste</li>
-          <li>journaux système</li>
-        </ul>
-        <ol>
-          <li><strong>Appliquer la solution</strong></li>
-        </ol>
-        <ul>
-          <li>corriger</li>
-          <li>documenter ce qui a été fait</li>
-          <li>éviter les manipulations inutiles</li>
-        </ul>
-        <ol>
-          <li><strong>Vérifier</strong></li>
-        </ol>
-        <ul>
-          <li>test fonctionnel</li>
-          <li>confirmation utilisateur</li>
-          <li>surveillance si nécessaire</li>
-        </ul>
-        <ol>
-          <li><strong>Documenter</strong></li>
-        </ol>
-        <ul>
-          <li>ticket GLPI</li>
-          <li>article de base de connaissances si le cas est réutilisable</li>
-        </ul>
-        <aside class="callout success">
-          <div class="callout-title">Bon réflexe</div>
-          <p>Le diagnostic est une réduction progressive de l'incertitude.</p>
-        </aside>
-        <h2 id="outils-de-diagnostic-windows">Outils de diagnostic Windows</h2>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Outil</th>
-                <th>Utilité</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Gestionnaire des tâches</strong></td>
-                <td>CPU, RAM, disque, réseau, applications au démarrage</td>
-              </tr>
-              <tr>
-                <td><strong>Moniteur de ressources</strong></td>
-                <td>Analyse plus détaillée des ressources</td>
-              </tr>
-              <tr>
-                <td><strong>Observateur d'événements</strong></td>
-                <td>Erreurs système, redémarrages, pilotes</td>
-              </tr>
-              <tr>
-                <td><strong>Gestionnaire de périphériques</strong></td>
-                <td>Pilotes, périphériques inconnus, erreurs matérielles</td>
-              </tr>
-              <tr>
-                <td><strong>Gestion des disques</strong></td>
-                <td>Disques, partitions, lettres de lecteur</td>
-              </tr>
-              <tr>
-                <td><strong>Paramètres réseau</strong></td>
-                <td>IP, DNS, carte réseau, proxy</td>
-              </tr>
-              <tr>
-                <td><strong>Sécurité Windows</strong></td>
-                <td>Antivirus, protection, menaces</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Commandes utiles :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-powershell">ipconfig /all
-ping 8.8.8.8
-nslookup google.com
-chkdsk
-sfc /scannow
-systeminfo</code></pre>
-        </div>
-        <aside class="callout warning">
-          <div class="callout-title">Attention</div>
-          <p>
-            Certaines commandes peuvent prendre du temps ou nécessiter des droits administrateur. On
-            les utilise avec un objectif clair.
-          </p>
-        </aside>
-        <h2 id="pc-lent-diagnostic-type">PC lent : diagnostic type</h2>
-        <p>Un PC lent est un symptôme très fréquent, mais la cause peut être multiple.</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Observation</th>
-                <th>Piste</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CPU proche de 100 %</td>
-                <td>Application lourde ou bloquée</td>
-              </tr>
-              <tr>
-                <td>RAM saturée</td>
-                <td>Manque de mémoire, trop d'applications</td>
-              </tr>
-              <tr>
-                <td>Disque à 100 %</td>
-                <td>HDD lent, indexation, antivirus, manque de RAM</td>
-              </tr>
-              <tr>
-                <td>Espace disque faible</td>
-                <td>Nettoyage ou archivage nécessaire</td>
-              </tr>
-              <tr>
-                <td>Lenteur au démarrage</td>
-                <td>Trop de programmes au démarrage</td>
-              </tr>
-              <tr>
-                <td>Ventilateurs très bruyants</td>
-                <td>Chauffe, poussière, charge élevée</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Méthode simple :</p>
-        <ol>
-          <li>Demander depuis quand le poste est lent.</li>
-          <li>Ouvrir le Gestionnaire des tâches.</li>
-          <li>Observer CPU / RAM / disque.</li>
-          <li>Vérifier l'espace disque.</li>
-          <li>Vérifier les applications au démarrage.</li>
-          <li>Identifier une action corrective.</li>
-          <li>Mesurer si la situation s'améliore.</li>
-        </ol>
-        <h2 id="ecran-noir-diagnostic-type">Écran noir : diagnostic type</h2>
-        <p>Un écran noir ne signifie pas automatiquement que le PC est mort.</p>
-        <p>Questions à poser :</p>
-        <ul>
-          <li>Le PC s'allume-t-il ?</li>
-          <li>Les ventilateurs tournent-ils ?</li>
-          <li>Y a-t-il un logo constructeur ?</li>
-          <li>L'écran affiche-t-il &quot;No signal&quot; ?</li>
-          <li>Le câble vidéo est-il branché au bon endroit ?</li>
-          <li>Le poste utilise-t-il une carte graphique dédiée ?</li>
-          <li>Un autre écran fonctionne-t-il ?</li>
-        </ul>
-        <p>Pistes fréquentes :</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Symptôme</th>
-                <th>Piste</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Aucun voyant</td>
-                <td>alimentation, prise, câble</td>
-              </tr>
-              <tr>
-                <td>PC allumé, écran &quot;No signal&quot;</td>
-                <td>câble, source écran, GPU</td>
-              </tr>
-              <tr>
-                <td>Logo visible puis écran noir</td>
-                <td>système, pilote graphique, résolution</td>
-              </tr>
-              <tr>
-                <td>Bips au démarrage</td>
-                <td>POST, RAM, GPU</td>
-              </tr>
-              <tr>
-                <td>Redémarrages en boucle</td>
-                <td>RAM, stockage, mise à jour, surchauffe</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <h2 id="stockage-sature">Stockage saturé</h2>
-        <p>Un stockage saturé peut provoquer :</p>
-        <ul>
-          <li>ralentissements</li>
-          <li>mises à jour impossibles</li>
-          <li>erreurs applicatives</li>
-          <li>impossibilité d'enregistrer</li>
-          <li>profil utilisateur instable</li>
-        </ul>
-        <p>Actions possibles :</p>
-        <ul>
-          <li>identifier les dossiers volumineux</li>
-          <li>vider les fichiers temporaires</li>
-          <li>supprimer ou archiver les anciens fichiers</li>
-          <li>vérifier les téléchargements</li>
-          <li>déplacer les données vers un espace réseau</li>
-          <li>augmenter la capacité si nécessaire</li>
-        </ul>
-        <aside class="callout warning">
-          <div class="callout-title">Attention</div>
-          <p>On ne supprime jamais des fichiers utilisateur sans validation.</p>
-        </aside>
-        <h2 id="a-retenir">À retenir</h2>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <ul>
-            <li>La maintenance préventive évite une partie des incidents.</li>
-            <li>La maintenance corrective doit suivre une méthode.</li>
-            <li>Un symptôme peut avoir plusieurs causes.</li>
-            <li>Les tests doivent aller du plus simple au plus probable.</li>
-            <li>Toute intervention doit être documentée.</li>
-          </ul>
-        </aside>
-        <h1>Maintenance et résolution de pannes</h1>
-        <h2 id="objectif">Objectif</h2>
-        <p>
-          Résoudre plusieurs incidents réalistes en appliquant une méthode complète de diagnostic.
-        </p>
-        <p>À la fin du TP, vous devez être capables de :</p>
-        <ul>
-          <li>interroger un utilisateur</li>
-          <li>identifier les symptômes utiles</li>
-          <li>formuler des hypothèses</li>
-          <li>proposer des tests cohérents</li>
-          <li>expliquer une solution</li>
-          <li>documenter dans GLPI et HedgeDoc</li>
-        </ul>
-        <h2 id="contexte">Contexte</h2>
-        <p>Vous êtes techniciens support.</p>
-        <p>Plusieurs tickets arrivent le même matin. Samuel joue les utilisateurs concernés.</p>
-        <p>
-          Votre rôle n'est pas de deviner immédiatement la panne, mais de
-          <strong>poser les bonnes questions</strong> pour obtenir progressivement les informations
-          nécessaires.
-        </p>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <p>Le formateur ne donne les indices que si les bonnes questions sont posées.</p>
-        </aside>
-        <h2 id="organisation">Organisation</h2>
-        <ul>
-          <li>Travail seul ou en binôme</li>
-          <li>Chaque groupe prend un ticket</li>
-          <li>Un échange avec l'utilisateur est obligatoire</li>
-          <li>Le diagnostic doit être justifié</li>
-          <li>La solution doit être documentée</li>
-        </ul>
-        <h2 id="tickets-disponibles">Tickets disponibles</h2>
-        <h3 id="ticket-1-pc-tres-lent">Ticket 1 – PC très lent</h3>
-        <p><strong>Titre</strong> : Poste comptabilité très lent depuis ce matin</p>
-        <p><strong>Message utilisateur</strong> :</p>
-        <blockquote>
-          Bonjour, mon PC met très longtemps à démarrer et tout est lent. J'ai une clôture comptable
-          à terminer.
-        </blockquote>
-        <p><strong>Indices à donner progressivement</strong> :</p>
-        <ol>
-          <li>Le problème est surtout visible après l'ouverture de session.</li>
-          <li>Le Gestionnaire des tâches montre le disque à 100 % pendant plusieurs minutes.</li>
-          <li>Le poste utilise encore un HDD et plusieurs applications se lancent au démarrage.</li>
-        </ol>
-        <p><strong>Diagnostic attendu</strong> :</p>
-        <p>Lenteur liée au stockage et aux programmes au démarrage.</p>
-        <p><strong>Solution possible</strong> :</p>
-        <p>
-          Réduire les applications au démarrage, nettoyer le disque, vérifier l'état du HDD,
-          recommander une migration SSD.
-        </p>
-        <h3 id="ticket-2-ecran-noir">Ticket 2 – Écran noir</h3>
-        <p><strong>Titre</strong> : Aucun affichage sur le poste de réunion</p>
-        <p><strong>Message utilisateur</strong> :</p>
-        <blockquote>
-          Le PC de la salle de réunion s'allume, mais l'écran reste noir. La réunion commence
-          bientôt.
-        </blockquote>
-        <p><strong>Indices à donner progressivement</strong> :</p>
-        <ol>
-          <li>Le PC semble allumé, les ventilateurs tournent.</li>
-          <li>L'écran affiche &quot;No signal&quot;.</li>
-          <li>
-            Le câble HDMI est branché sur la carte mère alors que le PC possède une carte graphique
-            dédiée.
-          </li>
-        </ol>
-        <p><strong>Diagnostic attendu</strong> :</p>
-        <p>Mauvaise sortie vidéo utilisée.</p>
-        <p><strong>Solution possible</strong> :</p>
-        <p>
-          Brancher l'écran sur la carte graphique dédiée, vérifier la source de l'écran, tester
-          l'affichage.
-        </p>
-        <h3 id="ticket-3-plus-de-reseau">Ticket 3 – Plus de réseau</h3>
-        <p><strong>Titre</strong> : Poste connecté mais aucun site ne s'ouvre</p>
-        <p><strong>Message utilisateur</strong> :</p>
-        <blockquote>
-          Je suis connecté au réseau, mais aucun site ne fonctionne. Les collègues n'ont pas le
-          problème.
-        </blockquote>
-        <p><strong>Indices à donner progressivement</strong> :</p>
-        <ol>
-          <li>L'adresse IP semble correcte.</li>
-          <li><code>ping 8.8.8.8</code> fonctionne.</li>
-          <li><code>ping google.com</code> échoue.</li>
-        </ol>
-        <p><strong>Diagnostic attendu</strong> :</p>
-        <p>Problème DNS.</p>
-        <p><strong>Solution possible</strong> :</p>
-        <p>
-          Vérifier les DNS configurés, remettre en DHCP ou configurer un DNS valide selon la
-          politique de l'entreprise.
-        </p>
-        <h3 id="ticket-4-disque-plein">Ticket 4 – Disque plein</h3>
-        <p><strong>Titre</strong> : Impossible d'enregistrer un fichier</p>
-        <p><strong>Message utilisateur</strong> :</p>
-        <blockquote>
-          Windows me dit qu'il n'y a plus assez d'espace disque. Je n'ai pourtant rien fait de
-          spécial.
-        </blockquote>
-        <p><strong>Indices à donner progressivement</strong> :</p>
-        <ol>
-          <li>Le disque système est presque plein.</li>
-          <li>Le dossier Téléchargements contient plusieurs ISO et archives.</li>
-          <li>Des fichiers temporaires occupent aussi beaucoup d'espace.</li>
-        </ol>
-        <p><strong>Diagnostic attendu</strong> :</p>
-        <p>Stockage saturé par fichiers utilisateur et temporaires.</p>
-        <p><strong>Solution possible</strong> :</p>
-        <p>
-          Identifier les fichiers volumineux, demander validation avant suppression, nettoyer les
-          fichiers temporaires, proposer archivage.
-        </p>
-        <h3 id="ticket-5-peripherique-usb-non-reconnu">Ticket 5 – Périphérique USB non reconnu</h3>
-        <p><strong>Titre</strong> : Disque externe non détecté</p>
-        <p><strong>Message utilisateur</strong> :</p>
-        <blockquote>
-          J'ai branché le disque externe de sauvegarde, mais il n'apparaît pas.
-        </blockquote>
-        <p><strong>Indices à donner progressivement</strong> :</p>
-        <ol>
-          <li>Le disque ne s'affiche pas dans l'explorateur.</li>
-          <li>Il apparaît dans la Gestion des disques.</li>
-          <li>Le volume n'a pas de lettre de lecteur.</li>
-        </ol>
-        <p><strong>Diagnostic attendu</strong> :</p>
-        <p>Volume présent mais non monté avec une lettre.</p>
-        <p><strong>Solution possible</strong> :</p>
-        <p>Attribuer une lettre de lecteur, vérifier l'accès, ne pas formater sans validation.</p>
-        <h2 id="travail-demande">Travail demandé</h2>
-        <p>Pour votre ticket, produire dans GLPI :</p>
-        <ol>
-          <li>un suivi de premier contact</li>
-          <li>un suivi de diagnostic</li>
-          <li>un suivi de solution</li>
-          <li>une clôture propre</li>
-        </ol>
-        <p>Dans HedgeDoc, produire une note Markdown :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-md"># [Titre du ticket]
-
-## Problème
-
-## Symptômes
-
-## Questions posées
-
-## Hypothèses
-
-## Tests proposés ou réalisés
-
-## Diagnostic retenu
-
-## Solution
-
-## Vérification
-
-## Prévention</code></pre>
-        </div>
-        <h2 id="restitution-orale">Restitution orale</h2>
-        <p>Chaque groupe présente en 3 minutes :</p>
-        <ul>
-          <li>le symptôme initial</li>
-          <li>les questions importantes posées</li>
-          <li>les hypothèses envisagées</li>
-          <li>le diagnostic retenu</li>
-          <li>la solution proposée</li>
-          <li>une action préventive</li>
-        </ul>
-        <h2 id="bareme-indicatif">Barème indicatif</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Critère</th>
-                <th>Points</th>
+                <th>Définition</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Questions utilisateur pertinentes</td>
-                <td>4</td>
+                <td><strong>Technologie</strong></td>
+                <td>Comment les données sont stockées</td>
               </tr>
               <tr>
-                <td>Hypothèses cohérentes</td>
-                <td>4</td>
+                <td><strong>Format</strong></td>
+                <td>Taille et forme physique du disque</td>
               </tr>
               <tr>
-                <td>Tests dans un ordre logique</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>Solution adaptée</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>Documentation claire</td>
-                <td>4</td>
+                <td><strong>Bus / interface</strong></td>
+                <td>Comment le disque communique avec le système</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>Total : <strong>20 points</strong></p>
+        <h2 id="technologie">Technologie</h2>
+        <h3 id="hdd-disque-dur-mecanique">HDD (disque dur mécanique)</h3>
+        <ul>
+          <li>Plateaux magnétiques en rotation + tête de lecture mécanique</li>
+          <li>Grande capacité, faible coût au Go</li>
+          <li>Lent, sensible aux chocs, bruyant</li>
+        </ul>
+        <figure class="media">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/01/Hard_drive-fr.svg"
+            alt="upload.wikimedia.org/wikipedia/commons/0/01/Hard_drive-fr.svg"
+            loading="lazy"
+          />
+        </figure>
+        <blockquote>
+          <a href="https://fr.wikipedia.org/wiki/Disque_dur" target="_blank" rel="noopener"
+            >Disque dur — Wikipédia</a
+          >
+        </blockquote>
+        <h3 id="ssd-memoire-flash">SSD (mémoire flash)</h3>
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/mixHavLpwMw?si=NeUVd_tWcf3f92Wq"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <ul>
+          <li>Aucune pièce mécanique</li>
+          <li>Rapide, silencieux, résistant aux chocs</li>
+          <li>Durée de vie limitée en écriture</li>
+        </ul>
+        <figure class="media">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg/960px-Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail"
+            alt=""
+            loading="lazy"
+          />
+        </figure>
+        <blockquote>
+          <a href="https://fr.wikipedia.org/wiki/SSD" target="_blank" rel="noopener"
+            >SSD — Wikipédia</a
+          >
+        </blockquote>
+        <h2 id="format-physique">Format physique</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Appareils</th>
+                <th>Technologie compatible</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>3,5 pouces</strong></td>
+                <td>PC fixes, serveurs</td>
+                <td>HDD</td>
+              </tr>
+              <tr>
+                <td><strong>2,5 pouces</strong></td>
+                <td>PC portables, fixes</td>
+                <td>HDD ou SSD SATA</td>
+              </tr>
+              <tr>
+                <td><strong>M.2</strong></td>
+                <td>Directement sur carte mère</td>
+                <td>SSD SATA ou NVMe</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout warning">
+          <div class="callout-title">Attention</div>
+          <p>
+            <strong>M.2 ne signifie pas forcément NVMe.</strong> Un SSD M.2 peut être SATA ou NVMe —
+            toujours vérifier le bus.
+          </p>
+        </aside>
+        <h2 id="bus-interface">Bus / interface</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Bus</th>
+                <th>Débit typique</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SATA</strong></td>
+                <td>~550 Mo/s max</td>
+                <td>HDD, SSD SATA</td>
+              </tr>
+              <tr>
+                <td><strong>PCIe / NVMe</strong></td>
+                <td>3,5 à 14 Go/s selon gen</td>
+                <td>SSD NVMe M.2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Le bus a un <strong>impact direct sur les performances</strong>.</p>
+        <h2 id="cellules-memoire-tlc-qlc">Cellules mémoire (TLC / QLC)</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Bits/cellule</th>
+                <th>Endurance</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TLC</strong></td>
+                <td>3</td>
+                <td>Bonne</td>
+                <td>Standard, SSD grand public</td>
+              </tr>
+              <tr>
+                <td><strong>QLC</strong></td>
+                <td>4</td>
+                <td>Plus faible</td>
+                <td>Grande capacité, moins cher</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 id="symptomes-lies-au-stockage">Symptômes liés au stockage</h2>
+        <ul>
+          <li>PC très lent au démarrage → HDD système</li>
+          <li>Applications longues à s'ouvrir → stockage saturé ou lent</li>
+          <li>Bruits anormaux → HDD défaillant</li>
+          <li>Erreurs système / fichiers corrompus → stockage dégradé</li>
+        </ul>
+        <h2 id="le-stockage-en-milieu-professionnel">Le stockage en milieu professionnel</h2>
+        <p>
+          En milieu professionnel, le stockage doit assurer : centralisation, partage, fiabilité,
+          performances.
+        </p>
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/37Qhsz6qojs?si=wUoyYqDa7gkpNjhR"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <h3 id="nas-network-attached-storage">NAS (Network Attached Storage)</h3>
+        <p>Serveur de stockage connecté au réseau local.</p>
+        <ul>
+          <li>Partage de fichiers entre utilisateurs</li>
+          <li>Administration simplifiée</li>
+          <li>Très utilisé en PME</li>
+        </ul>
+        <h3 id="san-storage-area-network">SAN (Storage Area Network)</h3>
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/m-_RPOcU19c?si=kC0KZ9kaRZRCeP_Z"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>Réseau dédié au stockage, en mode bloc.</p>
+        <ul>
+          <li>Performances élevées</li>
+          <li>Utilisé avec des serveurs et hyperviseurs</li>
+          <li>Infrastructure plus complexe et coûteuse</li>
+        </ul>
+        <blockquote>
+          <a
+            href="https://www.it-connect.fr/les-das-san-nas-et-le-stockage-cloud-pour-les-debutants/"
+            target="_blank"
+            rel="noopener"
+            >DAS, SAN et NAS — IT-Connect</a
+          >
+        </blockquote>
+        <h3 id="raid">RAID</h3>
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/WqGeTOt6A0Q?si=ik18LnoDE_PIGrfS"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>
+          Combine plusieurs disques en un ensemble logique pour améliorer performances et/ou
+          tolérance aux pannes.
+        </p>
+        <blockquote>
+          <a
+            href="https://fr.wikipedia.org/wiki/RAID_\(informatique\"
+            target="_blank"
+            rel="noopener"
+            >RAID — Wikipédia</a
+          >)
+        </blockquote>
+        <aside class="callout info">
+          <div class="callout-title">Info</div>
+          <p>
+            <strong>À retenir</strong> : technologie / format / bus sont trois critères
+            indépendants. M.2 ≠ NVMe. NAS = partage de fichiers. SAN = stockage haute performance.
+            Le RAID améliore performances et/ou tolérance aux pannes.
+          </p>
+        </aside>
+        <h1>Stockage et systèmes</h1>
+        <h2 id="objectif">Objectif</h2>
+        <p>Comprendre concrètement comment un disque devient utilisable par un système.</p>
+        <p>
+          À la fin du TP, vous devez savoir : identifier un disque, le partitionner, le formater, le
+          rendre accessible, et expliquer ce que vous avez fait.
+        </p>
+        <h2 id="contexte">Contexte</h2>
+        <p>
+          Vous travaillez sur une <strong>machine virtuelle Windows 11</strong>. Un
+          <strong>disque virtuel supplémentaire</strong> a été ajouté dans VirtualBox. Ce disque est
+          neuf, vide, et non utilisable au départ.
+        </p>
+        <h2 id="etapes">Étapes</h2>
+        <p><strong>Étape 1 – Identifier le disque</strong></p>
+        <ul>
+          <li>Ouvrir la gestion des disques Windows</li>
+          <li>Repérer le nouveau disque</li>
+          <li>Vérifier qu'il n'est pas initialisé</li>
+        </ul>
+        <p><strong>Étape 2 – Initialiser et partitionner</strong></p>
+        <ul>
+          <li>Initialiser le disque</li>
+          <li>Choisir le type de table de partition</li>
+          <li>Créer une partition unique</li>
+        </ul>
+        <p><strong>Étape 3 – Formater</strong></p>
+        <ul>
+          <li>Choisir un système de fichiers adapté</li>
+          <li>Donner un nom au volume</li>
+        </ul>
+        <p><strong>Étape 4 – Rendre accessible</strong></p>
+        <ul>
+          <li>Vérifier qu'une lettre de lecteur est attribuée</li>
+          <li>Accéder au volume depuis l'explorateur</li>
+        </ul>
+        <p><strong>Étape 5 – Analyse</strong></p>
+        <ul>
+          <li>Pourquoi le disque n'était pas utilisable au départ ?</li>
+          <li>À quoi servent le partitionnement et le formatage ?</li>
+          <li>Que se passerait-il si le disque n'était pas formaté ?</li>
+        </ul>
+        <h2 id="rendu-attendu">Rendu attendu</h2>
+        <p>
+          Une note Markdown dans votre HedgeDoc avec : titre, étapes réalisées, captures si
+          nécessaire, paragraphe d'analyse.
+        </p>
         <aside class="callout success">
           <div class="callout-title">Bon réflexe</div>
           <p>
-            Le meilleur groupe n'est pas celui qui devine le plus vite. C'est celui qui explique le
-            mieux son raisonnement.
+            <strong>Pour aller plus loin</strong> : installer Debian 13 dans une nouvelle VM,
+            ajouter un second disque virtuel, et reproduire la même démarche sous Linux.
           </p>
         </aside>
         <section class="concepts">
@@ -1397,22 +1187,22 @@ systeminfo</code></pre>
           <h2>Notions à manipuler</h2>
           <div class="concept-grid">
             <button class="concept-card" type="button">
-              <span>01</span><strong>Maintenance préventive et corrective</strong
+              <span>01</span><strong>Différencier technologie, format et bus</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>02</span><strong>Maintenance préventive</strong
+              <span>02</span><strong>Technologie</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>03</span><strong>Maintenance corrective</strong
+              <span>03</span><strong>Format physique</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>04</span><strong>Méthodologie complète de diagnostic</strong
+              <span>04</span><strong>Bus / interface</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>05</span><strong>Outils de diagnostic Windows</strong
+              <span>05</span><strong>Cellules mémoire (TLC / QLC)</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>06</span><strong>PC lent : diagnostic type</strong
+              <span>06</span><strong>Symptômes liés au stockage</strong
               ><small>Cliquer pour marquer comme revu</small>
             </button>
           </div>
@@ -1421,54 +1211,55 @@ systeminfo</code></pre>
           <p class="eyebrow">Auto-évaluation</p>
           <h2>Quiz rapide</h2>
           <div class="quiz" data-good="0">
-            <h3>1. La maintenance préventive vise à...</h3>
+            <h3>1. M.2 désigne d'abord...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">éviter les pannes</button
-              ><button type="button" data-answer="1">effacer les tickets</button
-              ><button type="button" data-answer="2">remplacer chaque poste</button>
+              <button type="button" data-answer="0">un format physique</button
+              ><button type="button" data-answer="1">toujours du NVMe</button
+              ><button type="button" data-answer="2">un type de RAID</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
           <div class="quiz" data-good="0">
-            <h3>2. Face à une panne, il faut d'abord...</h3>
+            <h3>2. Le bus le plus rapide pour un SSD moderne est généralement...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">comprendre et observer</button
-              ><button type="button" data-answer="1">appliquer une solution au hasard</button
-              ><button type="button" data-answer="2">formater</button>
+              <button type="button" data-answer="0">PCIe/NVMe</button
+              ><button type="button" data-answer="1">VGA</button
+              ><button type="button" data-answer="2">USB 1.1</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
           <div class="quiz" data-good="0">
-            <h3>3. Une intervention doit se terminer par...</h3>
+            <h3>3. Le NAS fournit surtout...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">une vérification et une documentation</button
-              ><button type="button" data-answer="1">un silence radio</button
-              ><button type="button" data-answer="2">un changement de câble systématique</button>
+              <button type="button" data-answer="0">du partage de fichiers réseau</button
+              ><button type="button" data-answer="1">un écran externe</button
+              ><button type="button" data-answer="2">un BIOS de secours</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
         </section>
         <div class="pager">
-          <a href="06-peripheriques.html"
-            ><span>Chapitre précédent</span>Périphériques, réseau et impression</a
+          <a href="04-bios-demarrage-interactif.html"
+            ><span>Chapitre précédent</span>BIOS / UEFI et démarrage</a
           >
-          <span></span>
+          <a href="06-peripheriques-interactif.html"
+            ><span>Chapitre suivant</span>Périphériques, réseau et impression</a
+          >
         </div>
       </article>
       <aside class="sidebar">
         <div class="side-card">
           <h2>Dans ce chapitre</h2>
           <div class="toc">
-            <a href="#maintenance-preventive-et-corrective">Maintenance préventive et corrective</a
-            ><a href="#maintenance-preventive">Maintenance préventive</a
-            ><a href="#maintenance-corrective">Maintenance corrective</a
-            ><a href="#methodologie-complete-de-diagnostic">Méthodologie complète de diagnostic</a
-            ><a href="#outils-de-diagnostic-windows">Outils de diagnostic Windows</a
-            ><a href="#pc-lent-diagnostic-type">PC lent : diagnostic type</a
-            ><a href="#ecran-noir-diagnostic-type">Écran noir : diagnostic type</a
-            ><a href="#stockage-sature">Stockage saturé</a><a href="#a-retenir">À retenir</a
+            <a href="#differencier-technologie-format-et-bus"
+              >Différencier technologie, format et bus</a
+            ><a href="#technologie">Technologie</a><a href="#format-physique">Format physique</a
+            ><a href="#bus-interface">Bus / interface</a
+            ><a href="#cellules-memoire-tlc-qlc">Cellules mémoire (TLC / QLC)</a
+            ><a href="#symptomes-lies-au-stockage">Symptômes liés au stockage</a
+            ><a href="#le-stockage-en-milieu-professionnel">Le stockage en milieu professionnel</a
             ><a href="#objectif">Objectif</a><a href="#contexte">Contexte</a
-            ><a href="#organisation">Organisation</a>
+            ><a href="#etapes">Étapes</a><a href="#rendu-attendu">Rendu attendu</a>
           </div>
         </div>
         <div class="side-card">

@@ -2,7 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
-> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/01-role-du-technicien.html)
+> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/01-role-du-technicien-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/01-role-du-technicien.md" download>Télécharger ce cours en Markdown</a>
 
 ## Le rôle du technicien support

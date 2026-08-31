@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Configuration et maintenance PC - Le rôle du technicien support"
-    />
+    <meta name="description" content="Configuration et maintenance PC - BIOS / UEFI et démarrage" />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon-pc.svg" />
-    <title>01 - Le rôle du technicien support</title>
+    <title>04 - BIOS / UEFI et démarrage</title>
     <style>
       :root {
         --bg: #0b0f17;
@@ -17,8 +14,8 @@
         --border: #2d3748;
         --text: #e5e7eb;
         --muted: #94a3b8;
-        --accent: #60a5fa;
-        --accentSoft: #60a5fa26;
+        --accent: #a855f7;
+        --accentSoft: #a855f726;
         --ok: #22c55e;
         --warn: #f59e0b;
         --bad: #ef4444;
@@ -688,16 +685,9 @@
       <div class="hero">
         <div class="hero-icon">
           <svg viewBox="0 0 96 96" aria-hidden="true">
+            <path d="M48 12v32" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
             <path
-              d="M22 50a26 26 0 0 1 52 0v18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="7"
-            />
-            <rect x="12" y="48" width="18" height="24" rx="7" fill="currentColor" />
-            <rect x="66" y="48" width="18" height="24" rx="7" fill="currentColor" />
-            <path
-              d="M66 72c-4 8-10 12-20 12h-8"
+              d="M32 24a28 28 0 1 0 32 0"
               fill="none"
               stroke="currentColor"
               stroke-width="7"
@@ -706,27 +696,28 @@
           </svg>
         </div>
         <div>
-          <p class="eyebrow">Configuration et maintenance PC · Chapitre 01</p>
-          <h1>Le rôle du technicien support</h1>
-          <p>Méthode, communication, documentation et ticketing</p>
+          <p class="eyebrow">Configuration et maintenance PC · Chapitre 04</p>
+          <h1>BIOS / UEFI et démarrage</h1>
+          <p>POST, ordre de boot, Secure Boot et modes de démarrage</p>
           <div class="tags">
-            <span class="tag">diagnostic</span><span class="tag">GLPI</span
-            ><span class="tag">documentation</span>
+            <span class="tag">UEFI</span><span class="tag">POST</span><span class="tag">boot</span>
           </div>
         </div>
       </div>
     </header>
     <nav>
       <div class="nav-inner">
-        <a class="active" href="01-role-du-technicien.html"
+        <a class="" href="01-role-du-technicien-interactif.html"
           ><span>01</span>Le rôle du technicien support</a
-        ><a class="" href="02-composants-pc.html"><span>02</span>Les composants d'un PC</a
-        ><a class="" href="03-pc-portables.html"><span>03</span>Choisir un PC portable</a
-        ><a class="" href="04-bios-demarrage.html"><span>04</span>BIOS / UEFI et démarrage</a
-        ><a class="" href="05-stockage.html"><span>05</span>Stockage et systèmes</a
-        ><a class="" href="06-peripheriques.html"
+        ><a class="" href="02-composants-pc-interactif.html"
+          ><span>02</span>Les composants d'un PC</a
+        ><a class="" href="03-pc-portables-interactif.html"><span>03</span>Choisir un PC portable</a
+        ><a class="active" href="04-bios-demarrage-interactif.html"
+          ><span>04</span>BIOS / UEFI et démarrage</a
+        ><a class="" href="05-stockage-interactif.html"><span>05</span>Stockage et systèmes</a
+        ><a class="" href="06-peripheriques-interactif.html"
           ><span>06</span>Périphériques, réseau et impression</a
-        ><a class="" href="07-maintenance-diagnostic.html"
+        ><a class="" href="07-maintenance-diagnostic-interactif.html"
           ><span>07</span>Maintenance et résolution de pannes</a
         >
       </div>
@@ -745,11 +736,11 @@
             class="schema"
             viewBox="0 0 920 260"
             role="img"
-            aria-label="Schéma interactif Le rôle du technicien support"
+            aria-label="Schéma interactif BIOS / UEFI et démarrage"
           >
             <defs>
               <marker
-                id="arrow-01"
+                id="arrow-04"
                 viewBox="0 0 10 10"
                 refX="9"
                 refY="5"
@@ -757,62 +748,62 @@
                 markerHeight="7"
                 orient="auto-start-reverse"
               >
-                <path d="M0 0 L10 5 L0 10 z" fill="#60a5fa" />
+                <path d="M0 0 L10 5 L0 10 z" fill="#a855f7" />
               </marker>
             </defs>
             <g class="schema-node" tabindex="0" data-step="1">
               <rect x="24" y="52" width="124" height="72" rx="12" />
-              <text x="86" y="84" text-anchor="middle">Demande</text>
+              <text x="86" y="84" text-anchor="middle">Power</text>
               <text x="86" y="104" text-anchor="middle" class="schema-small">étape 1</text>
             </g>
             <path
               class="schema-link"
               d="M152 88 C 184 88, 144 148, 172 148"
-              marker-end="url(#arrow-01)"
+              marker-end="url(#arrow-04)"
             />
             <g class="schema-node" tabindex="0" data-step="2">
               <rect x="172" y="112" width="124" height="72" rx="12" />
-              <text x="234" y="144" text-anchor="middle">Symptômes</text>
+              <text x="234" y="144" text-anchor="middle">UEFI</text>
               <text x="234" y="164" text-anchor="middle" class="schema-small">étape 2</text>
             </g>
             <path
               class="schema-link"
               d="M300 148 C 332 148, 292 88, 320 88"
-              marker-end="url(#arrow-01)"
+              marker-end="url(#arrow-04)"
             />
             <g class="schema-node" tabindex="0" data-step="3">
               <rect x="320" y="52" width="124" height="72" rx="12" />
-              <text x="382" y="84" text-anchor="middle">Hypothèses</text>
+              <text x="382" y="84" text-anchor="middle">POST</text>
               <text x="382" y="104" text-anchor="middle" class="schema-small">étape 3</text>
             </g>
             <path
               class="schema-link"
               d="M448 88 C 480 88, 440 148, 468 148"
-              marker-end="url(#arrow-01)"
+              marker-end="url(#arrow-04)"
             />
             <g class="schema-node" tabindex="0" data-step="4">
               <rect x="468" y="112" width="124" height="72" rx="12" />
-              <text x="530" y="144" text-anchor="middle">Tests</text>
+              <text x="530" y="144" text-anchor="middle">Disque</text>
               <text x="530" y="164" text-anchor="middle" class="schema-small">étape 4</text>
             </g>
             <path
               class="schema-link"
               d="M596 148 C 628 148, 588 88, 616 88"
-              marker-end="url(#arrow-01)"
+              marker-end="url(#arrow-04)"
             />
             <g class="schema-node" tabindex="0" data-step="5">
               <rect x="616" y="52" width="124" height="72" rx="12" />
-              <text x="678" y="84" text-anchor="middle">Solution</text>
+              <text x="678" y="84" text-anchor="middle">Bootloader</text>
               <text x="678" y="104" text-anchor="middle" class="schema-small">étape 5</text>
             </g>
             <path
               class="schema-link"
               d="M744 88 C 776 88, 736 148, 764 148"
-              marker-end="url(#arrow-01)"
+              marker-end="url(#arrow-04)"
             />
             <g class="schema-node" tabindex="0" data-step="6">
               <rect x="764" y="112" width="124" height="72" rx="12" />
-              <text x="826" y="144" text-anchor="middle">Documentation</text>
+              <text x="826" y="144" text-anchor="middle">OS</text>
               <text x="826" y="164" text-anchor="middle" class="schema-small">étape 6</text>
             </g>
           </svg>
@@ -822,297 +813,248 @@
           </p>
         </section>
 
-        <h1>Le rôle du technicien support</h1>
-        <h2 id="le-role-du-technicien-support">Le rôle du technicien support</h2>
+        <h1>BIOS / UEFI et démarrage</h1>
+        <h2 id="le-role-du-bios-uefi">Le rôle du BIOS / UEFI</h2>
         <p>
-          Le technicien support est le <strong>premier contact</strong> entre l'utilisateur et le
-          service informatique. Son rôle est de <strong>prendre en charge une demande</strong>, de
-          <strong>comprendre un problème</strong> et de
-          <strong>proposer une solution adaptée</strong>.
+          Le <strong>BIOS</strong> ou <strong>UEFI</strong> est le premier programme exécuté au
+          démarrage du PC.
         </p>
-        <p>
-          Il ne s'agit pas seulement de réparer, mais de <strong>raisonner</strong>,
-          <strong>communiquer</strong> et <strong>documenter</strong>.
-        </p>
-        <h2 id="taches-courantes">Tâches courantes</h2>
-        <p>Un technicien support peut être amené à :</p>
+        <p>Il permet de :</p>
         <ul>
-          <li>Aider les utilisateurs à distance ou sur site</li>
-          <li>Diagnostiquer des pannes simples</li>
-          <li>Installer ou configurer des logiciels</li>
-          <li>Gérer des périphériques (imprimantes, son, écran, etc.)</li>
-          <li>Suivre les demandes via un outil de ticketing</li>
+          <li>initialiser le matériel (CPU, RAM, carte graphique, stockage)</li>
+          <li>vérifier que les composants sont fonctionnels</li>
+          <li>lancer le système d'exploitation</li>
         </ul>
-        <h2 id="probleme-materiel-ou-logiciel">Problème matériel ou logiciel</h2>
-        <p>On distingue généralement :</p>
-        <ul>
-          <li>
-            <strong>Problème logiciel</strong> — message d'erreur, problème après mise à jour,
-            dépend de l'utilisateur
-          </li>
-          <li>
-            <strong>Problème matériel</strong> — composant non détecté, bruit anormal, panne brutale
-          </li>
-        </ul>
-        <p>
-          Le diagnostic commence toujours par les vérifications <strong>les plus simples</strong>.
-        </p>
-        <h2 id="methodologie-de-diagnostic">Méthodologie de diagnostic</h2>
-        <p>Une démarche classique :</p>
-        <ol>
-          <li>Comprendre la demande utilisateur</li>
-          <li>Observer les symptômes</li>
-          <li>Formuler des hypothèses</li>
-          <li>Tester</li>
-          <li>Proposer une solution</li>
-          <li>Documenter</li>
-        </ol>
-        <aside class="callout warning">
-          <div class="callout-title">Attention</div>
-          <p>
-            Cette méthode sera utilisée tout au long de la formation. Elle doit devenir un
-            <strong>réflexe mental</strong>.
-          </p>
-        </aside>
-        <h2 id="constructeurs-et-assembleurs">Constructeurs et assembleurs</h2>
-        <ul>
-          <li>
-            <strong>Constructeurs</strong> (Dell, HP, Lenovo…) : matériel standardisé, garantie et
-            support intégrés
-          </li>
-          <li>
-            <strong>Assembleurs / PC montés</strong> : composants choisis selon les besoins, plus de
-            flexibilité
-          </li>
-        </ul>
-        <p>Le choix dépend du <strong>contexte</strong> (entreprise, budget, usage).</p>
-        <h2 id="sources-de-documentation">Sources de documentation</h2>
-        <p>Un technicien ne retient pas tout, il sait <strong>où chercher</strong> :</p>
-        <ul>
-          <li>
-            <a href="https://learn.microsoft.com/fr-fr/windows/" target="_blank" rel="noopener"
-              >Documentation Microsoft (Windows)</a
-            >
-          </li>
-          <li>
-            <a href="https://www.it-connect.fr/" target="_blank" rel="noopener"
-              >IT-Connect — base de connaissances générale</a
-            >
-          </li>
-          <li>
-            <a href="https://www.cpu-monkey.com/fr/" target="_blank" rel="noopener"
-              >CPU-Monkey — comparaisons processeurs</a
-            >
-          </li>
-          <li>
-            <a href="https://pcpartpicker.com/" target="_blank" rel="noopener"
-              >PCPartPicker — configurateur PC</a
-            >
-          </li>
-          <li>
-            <a href="https://glpi-project.org/fr/" target="_blank" rel="noopener"
-              >GLPI Project — ticketing ITSM</a
-            >
-          </li>
-        </ul>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <p>Chercher de l'information fait partie du métier. Copier sans comprendre, non.</p>
-        </aside>
-        <h2 id="a-retenir">À retenir</h2>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <ul>
-            <li>Le technicien support analyse avant d'agir</li>
-            <li>Le diagnostic est plus important que la solution immédiate</li>
-            <li>La méthode est essentielle et réutilisable</li>
-            <li>La documentation est un outil de travail</li>
-            <li>Le support informatique est un métier logique et structuré</li>
-          </ul>
-        </aside>
-        <h1>Le rôle du technicien support</h1>
-        <h2 id="acces-glpi">Accès GLPI</h2>
-        <p><strong>URL</strong> : https://glpi.kaya.ovh</p>
-        <p><strong>Comptes</strong> : prénom sans majuscule</p>
-        <p><strong>Mot de passe</strong> :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-">s%~6Mf1E5oV9=V,&quot;Lg5k:g</code></pre>
-        </div>
-        <p>Chaque compte dispose d'un <strong>profil Technicien</strong>.</p>
-        <h2 id="objectif">Objectif</h2>
-        <p>Traiter un ticket support en appliquant une démarche logique :</p>
-        <ol>
-          <li>Comprendre le problème</li>
-          <li>Identifier les symptômes</li>
-          <li>Poser des questions utiles</li>
-          <li>Émettre des hypothèses</li>
-          <li>Formuler un diagnostic</li>
-          <li>Proposer une solution claire</li>
-          <li>Documenter dans GLPI</li>
-          <li>Produire une note réutilisable</li>
-        </ol>
-        <aside class="callout info">
-          <div class="callout-title">Info</div>
-          <p>Samuel joue le rôle de l'utilisateur. Il a créé le ticket. Vous êtes le technicien.</p>
-        </aside>
-        <h2 id="1-prise-en-charge-du-ticket">1. Prise en charge du ticket</h2>
-        <ul>
-          <li>Ouvrir votre ticket dans GLPI</li>
-          <li>Le lire attentivement</li>
-          <li>Identifier :</li>
-          <li>ce qui est décrit clairement</li>
-          <li>ce qui manque pour pouvoir avancer</li>
-          <li>une première hypothèse</li>
-        </ul>
-        <h2 id="2-premier-contact-avec-l-utilisateur">2. Premier contact avec l'utilisateur</h2>
-        <p>Ajoutez un <strong>suivi dans GLPI</strong> pour répondre à l'utilisateur.</p>
-        <p>Votre message doit :</p>
-        <ul>
-          <li>
-            <strong>reformuler le problème</strong> dans vos mots — pour valider que vous avez bien
-            compris
-          </li>
-          <li><strong>poser les questions</strong> qui vous manquent pour diagnostiquer</li>
-          <li>
-            <strong>indiquer votre première piste</strong> sans la présenter comme une certitude
-          </li>
-        </ul>
-        <p>
-          Soyez naturel et professionnel. Pas de template imposé — c'est à vous de formuler selon le
-          contexte du ticket.
-        </p>
-        <aside class="callout success">
-          <div class="callout-title">Bon réflexe</div>
-          <p>
-            <strong>Bon signe</strong> : votre message est court, ciblé, et l'utilisateur peut y
-            répondre facilement. <strong>Mauvais signe</strong> : vous listez 10 questions ou vous
-            proposez une solution sans avoir assez d'infos.
-          </p>
-        </aside>
-        <h2 id="3-diagnostic">3. Diagnostic</h2>
-        <p>Après échange avec l'utilisateur, ajoutez un second suivi structuré :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-md">## Diagnostic
-
-### Symptômes observés
-- ...
-- ...
-
-### Hypothèses
-- ...
-- ...
-
-### Vérifications à effectuer
-1. ...
-2. ...
-
-### Conclusion
-...</code></pre>
-        </div>
-        <h2 id="4-solution-proposee">4. Solution proposée</h2>
-        <p>Ajoutez un troisième suivi :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-md">## Solution proposée
-
-### Étapes
-1. ...
-2. ...
-3. ...
-
-### Vérification
-- Comment s'assurer que le problème est résolu ?
-- ...</code></pre>
-        </div>
-        <h2 id="5-cloture-du-ticket">5. Clôture du ticket</h2>
-        <ul>
-          <li>Identifier la cause probable</li>
-          <li>Marquer le ticket comme résolu dans GLPI</li>
-          <li>
-            Vérifier que l'utilisateur a confirmé (ou que le problème est objectivement résolu)
-          </li>
-        </ul>
-        <h2 id="6-documentation-dans-votre-hedgedoc">6. Documentation dans votre HedgeDoc</h2>
-        <p>Dans votre HedgeDoc personnel, créez une note avec la structure suivante :</p>
-        <div class="code-block">
-          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
-          <pre><code class="language-md"># [Titre du problème]
-
-## Problème
-Description du problème tel que signalé par l'utilisateur.
-
-## Symptômes
-- ...
-- ...
-
-## Hypothèses
-- ...
-- ...
-
-## Diagnostic
-Explication de votre raisonnement.
-
-## Solution
-Étapes de résolution.
-
-## Vérification
-Comment confirmer que le problème est corrigé.</code></pre>
-        </div>
-        <h2 id="7-base-de-connaissances-glpi">7. Base de connaissances GLPI</h2>
-        <ul>
-          <li>Créer un <strong>article de base de connaissances</strong></li>
-          <li>Titre clair et explicite</li>
-          <li>Copier la procédure Markdown</li>
-          <li>Lier l'article au ticket si possible</li>
-        </ul>
-        <h2 id="rendu-attendu">Rendu attendu</h2>
+        <p>Sans BIOS/UEFI fonctionnel, le PC <strong>ne peut pas démarrer</strong>.</p>
+        <h2 id="bios-vs-uefi">BIOS vs UEFI</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Élément</th>
-                <th>Attendu</th>
+                <th></th>
+                <th>BIOS</th>
+                <th>UEFI</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Suivis GLPI</td>
-                <td>3 (contact / diagnostic / solution)</td>
+                <td>Âge</td>
+                <td>Ancien (années 80)</td>
+                <td>Moderne</td>
               </tr>
               <tr>
-                <td>Note HedgeDoc</td>
-                <td>1 note structurée</td>
+                <td>Interface</td>
+                <td>Texte, navigation clavier</td>
+                <td>Graphique, souris possible</td>
               </tr>
               <tr>
-                <td>Base de connaissances</td>
-                <td>1 article lié au ticket</td>
+                <td>Limites disque</td>
+                <td>2 To max (MBR)</td>
+                <td>Pas de limite (GPT)</td>
+              </tr>
+              <tr>
+                <td>Sécurité</td>
+                <td>Basique</td>
+                <td>Secure Boot, cryptographie</td>
+              </tr>
+              <tr>
+                <td>Vitesse démarrage</td>
+                <td>Plus lente</td>
+                <td>Plus rapide</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p>Aujourd'hui, les PC utilisent presque exclusivement l'<strong>UEFI</strong>.</p>
+        <figure class="media">
+          <img
+            src="https://www.szapphone.com/wp-content/uploads/2024/05/BIOS-mode-1024x636.webp"
+            alt="BIOS classique"
+            loading="lazy"
+          />
+        </figure>
+        <figure class="media">
+          <img
+            src="https://www.easeus.fr/images/en/screenshot/partition-manager/uefi-setup-screen.jpg"
+            alt="UEFI moderne"
+            loading="lazy"
+          />
+        </figure>
+        <h2 id="la-sequence-de-demarrage-boot">La séquence de démarrage (boot)</h2>
+        <p>Au démarrage, le PC suit toujours le même chemin logique :</p>
+        <div class="code-block">
+          <button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button>
+          <pre><code class="language-">Mise sous tension
+       ↓
+Initialisation du matériel (BIOS/UEFI)
+       ↓
+POST (Power-On Self Test)
+       ↓
+Détection des disques
+       ↓
+Recherche d'un système bootable
+       ↓
+Lancement du système d'exploitation</code></pre>
+        </div>
+        <h2 id="le-post-power-on-self-test">Le POST (Power-On Self Test)</h2>
+        <p>Le <strong>POST</strong> est un test rapide qui vérifie :</p>
+        <ul>
+          <li>la présence du processeur</li>
+          <li>la mémoire vive</li>
+          <li>la carte graphique</li>
+        </ul>
+        <p>Si le POST échoue :</p>
+        <ul>
+          <li>bips sonores (codes d'erreur selon le constructeur)</li>
+          <li>écran noir</li>
+          <li>arrêt immédiat du démarrage</li>
+        </ul>
+        <blockquote>
+          <a
+            href="https://fr.wikipedia.org/wiki/Power-on_self-test_\(informatique\"
+            target="_blank"
+            rel="noopener"
+            >Power-on self-test — Wikipédia</a
+          >)
+        </blockquote>
+        <h2 id="l-ordre-de-demarrage-boot-order">L'ordre de démarrage (Boot Order)</h2>
+        <p>Le BIOS/UEFI contient une liste ordonnée de périphériques de démarrage :</p>
+        <ul>
+          <li>disque interne</li>
+          <li>clé USB</li>
+          <li>lecteur réseau (PXE)</li>
+        </ul>
+        <p>Un mauvais ordre peut empêcher l'installation d'un OS ou le démarrage normal.</p>
+        <h2 id="acces-au-bios-uefi">Accès au BIOS / UEFI</h2>
+        <p>Au démarrage, appuyer sur (selon le constructeur) :</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Touche</th>
+                <th>Constructeur courant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Suppr / Del</strong></td>
+                <td>MSI, Gigabyte, ASUS</td>
+              </tr>
+              <tr>
+                <td><strong>F2</strong></td>
+                <td>Dell, Lenovo, ASUS</td>
+              </tr>
+              <tr>
+                <td><strong>F10</strong></td>
+                <td>HP</td>
+              </tr>
+              <tr>
+                <td><strong>F12</strong></td>
+                <td>Boot menu rapide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 id="parametres-essentiels-a-connaitre">Paramètres essentiels à connaître</h2>
+        <ul>
+          <li>Vérifier si le disque est <strong>détecté</strong></li>
+          <li>Consulter l'<strong>ordre de démarrage</strong></li>
+          <li>Identifier le mode : <strong>UEFI</strong> ou <strong>Legacy (CSM)</strong></li>
+          <li>Activer/désactiver le <strong>Secure Boot</strong> si nécessaire</li>
+        </ul>
+        <h2 id="problemes-courants">Problèmes courants</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Symptôme</th>
+                <th>Piste</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Écran noir au démarrage</td>
+                <td>POST échoué / composant manquant</td>
+              </tr>
+              <tr>
+                <td>« No boot device found »</td>
+                <td>Disque non détecté / mauvais ordre de boot</td>
+              </tr>
+              <tr>
+                <td>Retour systématique dans le BIOS</td>
+                <td>OS non installé ou bootloader manquant</td>
+              </tr>
+              <tr>
+                <td>Installation de l'OS impossible</td>
+                <td>Mauvais mode UEFI/Legacy ou Secure Boot actif</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout info">
+          <div class="callout-title">Info</div>
+          <p>
+            <strong>À retenir</strong> : le démarrage suit toujours une séquence logique. Un
+            symptôme correspond à une étape précise. On vérifie avant de modifier.
+          </p>
+        </aside>
+        <h1>BIOS / UEFI et démarrage</h1>
+        <h2 id="objectif">Objectif</h2>
+        <p>
+          Découvrir par l'expérimentation les différences entre BIOS et UEFI, et comprendre les
+          contraintes modernes de démarrage, notamment pour Windows 11.
+        </p>
+        <h2 id="mise-en-situation">Mise en situation</h2>
+        <p>Vous disposez d'un hyperviseur et de deux ISO :</p>
+        <ul>
+          <li>Windows 11</li>
+          <li>Une distribution Linux de votre choix</li>
+        </ul>
+        <p>
+          Votre objectif : installer une machine virtuelle de chaque, sachant que les paramètres de
+          démarrage ne sont <strong>pas identiques</strong>.
+        </p>
+        <h2 id="travail-demande">Travail demandé</h2>
+        <ol>
+          <li>Réaliser les installations jusqu'à obtenir un système fonctionnel</li>
+          <li>Tester différents réglages, noter les échecs autant que les réussites</li>
+          <li>Identifier le mode de démarrage utilisé pour chaque système</li>
+        </ol>
+        <h2 id="questions-a-traiter">Questions à traiter</h2>
+        <ol>
+          <li>Quels réglages ont été nécessaires pour Windows 11 ?</li>
+          <li>Les mêmes réglages fonctionnent-ils pour Linux ?</li>
+          <li>Quels éléments semblent imposés par l'OS ?</li>
+          <li>Quel mode vous paraît le plus adapté aujourd'hui ?</li>
+          <li>Que se passerait-il si ces réglages étaient appliqués à un PC inadapté ?</li>
+        </ol>
+        <h2 id="rendu-attendu">Rendu attendu</h2>
+        <ul>
+          <li>Une note Markdown structurée dans votre HedgeDoc</li>
+          <li>Des observations personnelles issues de vos tests</li>
+          <li>Un article dans la base de connaissances GLPI</li>
+        </ul>
         <section class="concepts">
           <p class="eyebrow">Cartes de révision</p>
           <h2>Notions à manipuler</h2>
           <div class="concept-grid">
             <button class="concept-card" type="button">
-              <span>01</span><strong>Le rôle du technicien support</strong
+              <span>01</span><strong>Le rôle du BIOS / UEFI</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>02</span><strong>Tâches courantes</strong
+              <span>02</span><strong>BIOS vs UEFI</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>03</span><strong>Problème matériel ou logiciel</strong
+              <span>03</span><strong>La séquence de démarrage (boot)</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>04</span><strong>Méthodologie de diagnostic</strong
+              <span>04</span><strong>Le POST (Power-On Self Test)</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>05</span><strong>Constructeurs et assembleurs</strong
+              <span>05</span><strong>L'ordre de démarrage (Boot Order)</strong
               ><small>Cliquer pour marquer comme revu</small></button
             ><button class="concept-card" type="button">
-              <span>06</span><strong>Sources de documentation</strong
+              <span>06</span><strong>Accès au BIOS / UEFI</strong
               ><small>Cliquer pour marquer comme revu</small>
             </button>
           </div>
@@ -1121,54 +1063,57 @@ Comment confirmer que le problème est corrigé.</code></pre>
           <p class="eyebrow">Auto-évaluation</p>
           <h2>Quiz rapide</h2>
           <div class="quiz" data-good="1">
-            <h3>1. Quel est le bon premier réflexe face à une demande utilisateur ?</h3>
+            <h3>1. Quel programme s'exécute en premier au démarrage ?</h3>
             <div class="answers">
-              <button type="button" data-answer="0">Réinstaller Windows</button
-              ><button type="button" data-answer="1">Comprendre et reformuler le problème</button
-              ><button type="button" data-answer="2">Changer le matériel</button>
+              <button type="button" data-answer="0">Le navigateur</button
+              ><button type="button" data-answer="1">Le BIOS/UEFI</button
+              ><button type="button" data-answer="2">GLPI</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
           <div class="quiz" data-good="0">
-            <h3>2. Que doit produire un technicien après résolution ?</h3>
+            <h3>2. Le POST sert à...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">Une documentation claire</button
-              ><button type="button" data-answer="1">Un message très court sans détails</button
-              ><button type="button" data-answer="2">Aucune trace si tout marche</button>
+              <button type="button" data-answer="0">tester rapidement le matériel</button
+              ><button type="button" data-answer="1">installer les pilotes Windows</button
+              ><button type="button" data-answer="2">formater le disque</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
           <div class="quiz" data-good="0">
-            <h3>3. Un bon diagnostic commence par...</h3>
+            <h3>3. Un message « No boot device found » indique souvent...</h3>
             <div class="answers">
-              <button type="button" data-answer="0">les vérifications simples</button
-              ><button type="button" data-answer="1">les hypothèses les plus coûteuses</button
-              ><button type="button" data-answer="2">le remplacement complet</button>
+              <button type="button" data-answer="0">un souci de disque ou d'ordre de boot</button
+              ><button type="button" data-answer="1">un manque de RAM uniquement</button
+              ><button type="button" data-answer="2">un problème d'écran</button>
             </div>
             <p class="feedback" aria-live="polite"></p>
           </div>
         </section>
         <div class="pager">
-          <span></span>
-          <a href="02-composants-pc.html"><span>Chapitre suivant</span>Les composants d'un PC</a>
+          <a href="03-pc-portables-interactif.html"
+            ><span>Chapitre précédent</span>Choisir un PC portable</a
+          >
+          <a href="05-stockage-interactif.html"
+            ><span>Chapitre suivant</span>Stockage et systèmes</a
+          >
         </div>
       </article>
       <aside class="sidebar">
         <div class="side-card">
           <h2>Dans ce chapitre</h2>
           <div class="toc">
-            <a href="#le-role-du-technicien-support">Le rôle du technicien support</a
-            ><a href="#taches-courantes">Tâches courantes</a
-            ><a href="#probleme-materiel-ou-logiciel">Problème matériel ou logiciel</a
-            ><a href="#methodologie-de-diagnostic">Méthodologie de diagnostic</a
-            ><a href="#constructeurs-et-assembleurs">Constructeurs et assembleurs</a
-            ><a href="#sources-de-documentation">Sources de documentation</a
-            ><a href="#a-retenir">À retenir</a><a href="#acces-glpi">Accès GLPI</a
-            ><a href="#objectif">Objectif</a
-            ><a href="#1-prise-en-charge-du-ticket">1. Prise en charge du ticket</a
-            ><a href="#2-premier-contact-avec-l-utilisateur"
-              >2. Premier contact avec l'utilisateur</a
-            ><a href="#3-diagnostic">3. Diagnostic</a>
+            <a href="#le-role-du-bios-uefi">Le rôle du BIOS / UEFI</a
+            ><a href="#bios-vs-uefi">BIOS vs UEFI</a
+            ><a href="#la-sequence-de-demarrage-boot">La séquence de démarrage (boot)</a
+            ><a href="#le-post-power-on-self-test">Le POST (Power-On Self Test)</a
+            ><a href="#l-ordre-de-demarrage-boot-order">L'ordre de démarrage (Boot Order)</a
+            ><a href="#acces-au-bios-uefi">Accès au BIOS / UEFI</a
+            ><a href="#parametres-essentiels-a-connaitre">Paramètres essentiels à connaître</a
+            ><a href="#problemes-courants">Problèmes courants</a><a href="#objectif">Objectif</a
+            ><a href="#mise-en-situation">Mise en situation</a
+            ><a href="#travail-demande">Travail demandé</a
+            ><a href="#questions-a-traiter">Questions à traiter</a>
           </div>
         </div>
         <div class="side-card">

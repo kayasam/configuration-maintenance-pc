@@ -89,8 +89,22 @@ Copy-MirroredDirectory (Join-Path $sourceRoot "tp") $stageTp @("*.excalidraw", "
 
 Write-Host "2/6 - Copie des versions HTML et des ressources..."
 Get-ChildItem -LiteralPath $sourceHtmlRoot -File -Filter "*.html" | ForEach-Object {
-  $destinationName = if ($_.Name -eq "index.html") { "parcours-interactif.html" } else { $_.Name }
+  $destinationName = if ($_.Name -eq "index.html") {
+    "parcours-interactif.html"
+  } else {
+    $_.BaseName + "-interactif.html"
+  }
   Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $stageCourses $destinationName) -Force
+}
+
+$htmlChapterFiles = @(Get-ChildItem -LiteralPath $sourceHtmlRoot -File -Filter "*.html" | Where-Object { $_.Name -ne "index.html" })
+Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.html" | ForEach-Object {
+  $htmlPath = $_.FullName
+  $html = [IO.File]::ReadAllText($htmlPath)
+  foreach ($chapterFile in $htmlChapterFiles) {
+    $html = $html.Replace($chapterFile.Name, "$($chapterFile.BaseName)-interactif.html")
+  }
+  [IO.File]::WriteAllText($htmlPath, $html, $utf8WithoutBom)
 }
 Copy-MirroredDirectory $sourceHtmlAssets $stageAssets
 Copy-Item -LiteralPath (Join-Path $sourceRoot "Ressources\programme\programme.md") -Destination $stageResources -Force
@@ -126,7 +140,7 @@ Write-Host "$hiddenDocuments document(s) conservé(s) uniquement dans le coffre.
 Write-Host "4/6 - Ajout des liens HTML et des téléchargements..."
 Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.md" | Where-Object { $_.Name -ne "index.md" } | ForEach-Object {
   $original = [IO.File]::ReadAllText($_.FullName)
-  $htmlName = $_.BaseName + ".html"
+  $htmlName = $_.BaseName + "-interactif.html"
   $htmlUrl = "https://kayasam.github.io/configuration-maintenance-pc/cours/$htmlName"
   $downloadUrl = "https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/$($_.Name)"
   if (Test-Path -LiteralPath (Join-Path $stageCourses $htmlName)) {

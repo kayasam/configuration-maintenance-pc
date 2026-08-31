@@ -2,7 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
-> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/05-stockage.html)
+> - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/05-stockage-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/05-stockage.md" download>Télécharger ce cours en Markdown</a>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oisyw58kQ4Q?si=DrGepShuOcE9dBg4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
