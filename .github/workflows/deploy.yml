@@ -45,7 +45,7 @@ jobs:
         run: node scripts/fix-quartz-graph.mjs
 
       - name: Build Quartz
-        run: npx quartz build
+        run: node quartz/bootstrap-cli.mjs build
 
       - name: Publish interactive HTML courses
         run: |
