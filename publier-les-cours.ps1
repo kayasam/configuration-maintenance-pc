@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $sourceRoot = "C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc"
+$sourceImages = Join-Path $sourceRoot "Ressources\images"
 $sourceHtmlAssets = "C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\cours-html\assets"
 $projectRoot = "D:\Projet-git\configuration-maintenance-pc"
 $staticRoot = Join-Path $projectRoot "site-content"
@@ -16,6 +17,8 @@ $archiveDestination = Join-Path $projectRoot "student-vault\Configuration-Mainte
 $destinationContent = Join-Path $projectRoot "content"
 $stageCourses = Join-Path $stageRoot "cours"
 $stageAssets = Join-Path $stageRoot "assets"
+$stageImages = Join-Path $stageRoot "Ressources\images"
+$archiveImages = Join-Path $archiveStageVault "Ressources\images"
 $utf8WithoutBom = [Text.UTF8Encoding]::new($false)
 
 $chapterDefinitions = @(
@@ -101,6 +104,7 @@ Write-Host "Publication de Configuration et maintenance PC" -ForegroundColor Cya
 Write-Host "==============================================" -ForegroundColor Cyan
 
 Assert-Directory (Join-Path $sourceRoot "cours") "Le dossier des cours"
+Assert-Directory $sourceImages "Le dossier central des images"
 Assert-Directory $sourceHtmlAssets "Le dossier des ressources HTML"
 Assert-Directory $staticRoot "Les pages fixes du site"
 Assert-Directory (Join-Path $projectRoot ".git") "Le dépôt Git"
@@ -138,6 +142,8 @@ foreach ($relativePath in $requiredQuizFiles) {
 Remove-SafeDirectory $stageRoot
 Remove-SafeDirectory $archiveStageRoot
 New-Item -ItemType Directory -Path $stageCourses, $stageAssets, (Join-Path $archiveStageVault "cours") -Force | Out-Null
+Copy-MirroredDirectory $sourceImages $stageImages
+Copy-MirroredDirectory $sourceImages $archiveImages
 
 Write-Host "1/6 - Classement des cours et des TP par chapitre..."
 foreach ($chapter in $chapterDefinitions) {
@@ -151,20 +157,6 @@ foreach ($chapter in $chapterDefinitions) {
   Copy-Item -LiteralPath (Join-Path $sourceChapter $chapter.Course) -Destination (Join-Path $archiveChapter $chapter.Course) -Force
   Copy-Item -LiteralPath (Join-Path $sourceChapter "$($chapter.Slug)-interactif.html") -Destination (Join-Path $archiveChapter "$($chapter.Slug)-interactif.html") -Force
   Add-PublicMetadata -Path $courseDestination -Title $chapter.Title -Aliases @("/cours/$($chapter.Slug)")
-
-  $sourceImages = Join-Path $sourceChapter "img"
-  if (Test-Path -LiteralPath $sourceImages -PathType Container) {
-    Copy-MirroredDirectory $sourceImages (Join-Path $chapterRoot "img")
-    Copy-MirroredDirectory $sourceImages (Join-Path $archiveChapter "img")
-
-    $publicCourse = [IO.File]::ReadAllText($courseDestination)
-    Get-ChildItem -LiteralPath $sourceImages -File | ForEach-Object {
-      $obsidianEmbed = '!\[\[' + [regex]::Escape($_.Name) + '(?:\|[^\]]+)?\]\]'
-      $webEmbed = "![](https://kayasam.github.io/configuration-maintenance-pc/" + $chapter.Slug + "/img/" + [Uri]::EscapeDataString($_.Name) + ")"
-      $publicCourse = [regex]::Replace($publicCourse, $obsidianEmbed, $webEmbed)
-    }
-    [IO.File]::WriteAllText($courseDestination, $publicCourse, $utf8WithoutBom)
-  }
 
   if ($chapter.Tp) {
     $tpRoot = Join-Path $chapterRoot "tp"
@@ -220,6 +212,23 @@ foreach ($mapping in $staticMappings) {
   $destination = Join-Path $stageRoot $mapping.Destination
   Assert-File $source "Page fixe"
   Copy-Item -LiteralPath $source -Destination $destination -Force
+}
+
+$imagePattern = '!\[\[([^]|]+\.(?:svg|jpe?g|png|webp|gif))(?:\|[^]]+)?\]\]'
+Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter "*.md" | ForEach-Object {
+  $markdownPath = $_.FullName
+  $markdown = [IO.File]::ReadAllText($markdownPath)
+  $markdown = [regex]::Replace(
+    $markdown,
+    $imagePattern,
+    {
+      param($match)
+      $imageName = $match.Groups[1].Value
+      "![$imageName](Ressources/images/$imageName)"
+    },
+    [Text.RegularExpressions.RegexOptions]::IgnoreCase
+  )
+  [IO.File]::WriteAllText($markdownPath, $markdown, $utf8WithoutBom)
 }
 
 Write-Host "3/6 - Masquage des documents privés..."

@@ -3,9 +3,12 @@
 Les sources officielles restent dans :
 
 - `C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc\cours`
+- `C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc\Ressources\images`
 
 Chaque dossier de chapitre contient le cours Markdown, sa version HTML interactive et, lorsqu'il
 existe, un sous-dossier `tp`. Le fichier `parcours-interactif.html` reste à la racine de `cours`.
+Toutes les illustrations sont centralisées dans `Ressources\images`, comme dans la formation
+Fondamentaux Réseaux.
 
 ## Publication rapide
 
@@ -19,7 +22,7 @@ Le script :
 
 - range les 7 cours Markdown dans un dossier par chapitre ;
 - range les 6 TP publics sous leur chapitre associé ;
-- copie automatiquement le dossier `img` de chaque chapitre, y compris les SVG ;
+- synchronise le dossier central `Ressources\images`, y compris les SVG ;
 - synchronise les versions HTML et les quiz ;
 - copie les ressources communes des cours HTML ;
 - reconstruit un coffre étudiant propre dans `student-vault` pour le ZIP ;
@@ -32,7 +35,7 @@ Le script :
 
 Le programme conservé dans le coffre Obsidian n'est pas publié sur le site des élèves.
 Le ZIP ne contient ni dossier `assets`, ni programme, ni session : seulement les cours Markdown
-et HTML classés par chapitre, les TP et les dossiers pédagogiques `img` utilisés par les cours.
+et HTML classés par chapitre, les TP et le dossier pédagogique `Ressources\images`.
 
 Site prévu : <https://kayasam.github.io/configuration-maintenance-pc/>
 

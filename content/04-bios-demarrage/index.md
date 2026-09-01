@@ -54,7 +54,7 @@ Ses limites viennent de son âge :
 - Interface texte, navigation exclusivement au clavier
 - Aucun mécanisme de sécurité au démarrage
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/bios-award-setup.png)
+![bios-award-setup.png](Ressources/images/bios-award-setup.png)
 
 _Setup d'un BIOS Award : texte, fond bleu, navigation aux flèches. Aucune souris, aucune image._
 
@@ -74,7 +74,7 @@ _Unified Extensible Firmware Interface_. Ce n'est plus un simple amorceur mais u
 | Amorçage             | Code brut dans le MBR | Fichiers `.efi` sur une partition |
 | Démarrage            | Plus lent             | Plus rapide                       |
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/uefi-setup-screen.jpg)
+![uefi-setup-screen.jpg](Ressources/images/uefi-setup-screen.jpg)
 
 _Setup UEFI (ASUS EZ Mode) : interface graphique, souris, températures et tensions en direct. En bas, la **Boot Priority** se réorganise par glisser-déposer — noter le badge « UEFI » sur les supports et le bouton **Boot Menu (F8)**._
 
@@ -92,7 +92,7 @@ C'est le point qui provoque le plus d'échecs d'installation, et il repose sur u
 > UEFI ↔ GPT · Legacy/CSM ↔ MBR
 > Un disque GPT ne démarrera pas en Legacy. Un disque MBR ne démarrera pas en UEFI pur.
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/uefi-gpt-vs-legacy-mbr.svg)
+![uefi-gpt-vs-legacy-mbr.svg](Ressources/images/uefi-gpt-vs-legacy-mbr.svg)
 
 ### Le mode Legacy / CSM
 
@@ -110,7 +110,7 @@ En mode UEFI, l'amorçage ne se fait plus dans un secteur caché mais dans de **
 
 Elle contient un fichier d'amorçage par système installé. Le firmware mémorise ensuite la liste de ces systèmes dans sa **NVRAM** (petite mémoire persistante de la carte mère) — c'est pour cette raison que le menu de démarrage d'un PC moderne affiche des noms (_Windows Boot Manager_, _ubuntu_) et non plus une simple liste de disques.
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/partition-efi.svg)
+![partition-efi.svg](Ressources/images/partition-efi.svg)
 
 > [!tip] Conséquence pratique
 > Supprimer ou formater la partition EFI rend **tous** les systèmes du disque non démarrables, même si leurs fichiers sont intacts. C'est une erreur classique lors d'un nettoyage de partitions.
@@ -124,7 +124,7 @@ Elle contient un fichier d'amorçage par système installé. Le firmware mémori
 
 Au démarrage, le PC suit **toujours** le même chemin logique. Chaque étape dépend de la précédente : c'est ce qui permet de transformer un symptôme en hypothèse.
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/sequence-boot.svg)
+![sequence-boot.svg](Ressources/images/sequence-boot.svg)
 
 > [!summary] À retenir
 > Chaque symptôme correspond à une étape précise de cette chaîne. Localiser l'étape, c'est déjà avoir isolé la panne.
@@ -271,7 +271,7 @@ Les trois méthodes mènent au même endroit. Ensuite :
 Dépannage → Options avancées → Changer les paramètres du microprogramme UEFI
 ```
 
-![](https://kayasam.github.io/configuration-maintenance-pc/04-bios-demarrage/img/windows-options-recuperation.png)
+![windows-options-recuperation.png](Ressources/images/windows-options-recuperation.png)
 
 _L'écran « Options avancées ». La tuile **Changer les paramètres du microprogramme UEFI** redémarre directement dans le setup._
 
