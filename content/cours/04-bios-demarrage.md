@@ -118,6 +118,5 @@ Au démarrage, appuyer sur (selon le constructeur) :
 | Retour systématique dans le BIOS | OS non installé ou bootloader manquant        |
 | Installation de l'OS impossible  | Mauvais mode UEFI/Legacy ou Secure Boot actif |
 
-:::info
-**À retenir** : le démarrage suit toujours une séquence logique. Un symptôme correspond à une étape précise. On vérifie avant de modifier.
-:::
+> [!summary] À retenir
+> Le démarrage suit toujours une séquence logique. Un symptôme correspond à une étape précise. On vérifie avant de modifier.

@@ -29,9 +29,8 @@ Plusieurs tickets arrivent le même matin. Samuel joue les utilisateurs concern�
 
 Votre rôle n'est pas de deviner immédiatement la panne, mais de **poser les bonnes questions** pour obtenir progressivement les informations nécessaires.
 
-:::info
-Le formateur ne donne les indices que si les bonnes questions sont posées.
-:::
+> [!info]
+> Le formateur ne donne les indices que si les bonnes questions sont posées.
 
 ---
 
@@ -227,6 +226,5 @@ Chaque groupe présente en 3 minutes :
 
 Total : **20 points**
 
-:::success
-Le meilleur groupe n'est pas celui qui devine le plus vite. C'est celui qui explique le mieux son raisonnement.
-:::
+> [!tip]
+> Le meilleur groupe n'est pas celui qui devine le plus vite. C'est celui qui explique le mieux son raisonnement.

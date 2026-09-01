@@ -82,7 +82,7 @@ Sans CPU fonctionnel, le PC ne démarre pas.
 
 Suffixes courants : **K** (overclocking), **F** (pas de GPU), **T** (basse conso), **U/H/HX** (mobile)
 
-> [Processeurs Intel® Core™](https://www.intel.fr/content/www/fr/fr/products/details/processors/core.html)
+> [Processeurs Intel Core](https://www.intel.fr/content/www/fr/fr/products/details/processors/core.html)
 
 ### AMD – gammes principales
 
@@ -111,9 +111,8 @@ Suffixes courants : **X** (haute fréquence), **3D** (cache L3 massif, gaming), 
 - Redémarrages en charge → problème thermique ou d'alimentation
 - Écran noir au démarrage → CPU incompatible ou sans GPU intégré
 
-:::info
-**À retenir** : le socket conditionne toute la plateforme. Le choix du CPU dépend toujours de l'usage, jamais uniquement du prix.
-:::
+> [!summary] À retenir
+> Le socket conditionne toute la plateforme. Le choix du CPU dépend toujours de l'usage, jamais uniquement du prix.
 
 ---
 
@@ -141,9 +140,8 @@ La RAM moderne effectue **deux transferts par cycle d'horloge** (front montant +
 | **Single channel** | 64 bits     | Performances de base   |
 | **Dual channel**   | 2 × 64 bits | Bande passante doublée |
 
-:::success
-Toujours installer la RAM en **paires identiques** pour activer le dual channel.
-:::
+> [!tip]
+> Toujours installer la RAM en **paires identiques** pour activer le dual channel.
 
 ### Repères capacité
 
@@ -168,9 +166,8 @@ Fréquence élevée ≠ latence faible — le compromis fréquence/CL compte.
 - Écran bleu aléatoire → barrette défectueuse
 - PC ne démarre pas → RAM incompatible ou mal installée
 
-:::info
-**À retenir** : la RAM est l'espace de travail du CPU. Dual channel améliore fortement les performances. Une RAM inadaptée provoque lenteurs et instabilités.
-:::
+> [!summary] À retenir
+> La RAM est l'espace de travail du CPU. Dual channel améliore fortement les performances. Une RAM inadaptée provoque lenteurs et instabilités.
 
 ---
 
@@ -211,9 +208,8 @@ Une alimentation de mauvaise qualité peut provoquer instabilités, redémarrage
 - Ventilateurs qui s'arrêtent brutalement
 - Instabilité lors de fortes charges
 
-:::info
-**À retenir** : l'alimentation est un composant critique souvent sous-estimé. La puissance doit être adaptée + une marge est nécessaire. La certification 80 PLUS est un bon indicateur de qualité.
-:::
+> [!summary] À retenir
+> L'alimentation est un composant critique souvent sous-estimé. La puissance doit être adaptée + une marge est nécessaire. La certification 80 PLUS est un bon indicateur de qualité.
 
 ---
 
@@ -250,9 +246,8 @@ La **rétrocompatibilité** est assurée (une carte PCIe 3.0 fonctionne dans un 
 - Les lignes PCIe proviennent du **CPU** (rapides) ou du **chipset** (partagées)
 - La taille physique du slot ≠ nombre réel de lignes actives
 
-:::info
-**À retenir** : plus de lignes = plus de bande passante. Le format du slot ne garantit pas toujours le câblage réel.
-:::
+> [!summary] À retenir
+> Plus de lignes = plus de bande passante. Le format du slot ne garantit pas toujours le câblage réel.
 
 ---
 
@@ -301,6 +296,5 @@ Une **carte graphique** produit l'affichage et accélère les calculs graphiques
 
 > [Intel Arc — Wikipédia](https://fr.wikipedia.org/wiki/Intel_Arc)
 
-:::info
-**À retenir** : la structure des noms permet d'identifier rapidement génération et performance. GPU intégré = usage simple. GPU dédié = performances élevées.
-:::
+> [!summary] À retenir
+> La structure des noms permet d'identifier rapidement génération et performance. GPU intégré = usage simple. GPU dédié = performances élevées.

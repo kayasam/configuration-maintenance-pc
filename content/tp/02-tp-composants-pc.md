@@ -50,6 +50,5 @@ Un document **Markdown** dans votre HedgeDoc, contenant :
 - le budget total
 - la justification de chaque composant
 
-:::warning
-Le raisonnement compte plus que la configuration finale. Justifiez chaque choix en lien avec le besoin.
-:::
+> [!warning]
+> Le raisonnement compte plus que la configuration finale. Justifiez chaque choix en lien avec le besoin.

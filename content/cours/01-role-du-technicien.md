@@ -48,9 +48,8 @@ Une démarche classique :
 5. Proposer une solution
 6. Documenter
 
-:::warning
-Cette méthode sera utilisée tout au long de la formation. Elle doit devenir un **réflexe mental**.
-:::
+> [!warning]
+> Cette méthode sera utilisée tout au long de la formation. Elle doit devenir un **réflexe mental**.
 
 ---
 
@@ -73,19 +72,17 @@ Un technicien ne retient pas tout, il sait **où chercher** :
 - [PCPartPicker — configurateur PC](https://pcpartpicker.com/)
 - [GLPI Project — ticketing ITSM](https://glpi-project.org/fr/)
 
-:::info
-Chercher de l'information fait partie du métier. Copier sans comprendre, non.
-:::
+> [!info]
+> Chercher de l'information fait partie du métier. Copier sans comprendre, non.
 
 ---
 
 ## À retenir
 
-:::info
-
-- Le technicien support analyse avant d'agir
-- Le diagnostic est plus important que la solution immédiate
-- La méthode est essentielle et réutilisable
-- La documentation est un outil de travail
-- Le support informatique est un métier logique et structuré
-  :::
+> [!summary] À retenir
+>
+> - Le technicien support analyse avant d'agir
+> - Le diagnostic est plus important que la solution immédiate
+> - La méthode est essentielle et réutilisable
+> - La documentation est un outil de travail
+> - Le support informatique est un métier logique et structuré

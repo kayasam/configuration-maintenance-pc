@@ -39,9 +39,8 @@ Pour chaque ligne, identifiez le connecteur décrit.
 | 7   | Identique visuellement au USB-C, logo éclair, jusqu'à 40 Gbps              |         |
 | 8   | Rectangulaire, 19 broches, standard vidéo grand public actuel              |         |
 
-:::success
-**Correction** : USB-A · USB-B · USB-C · VGA · DisplayPort · RJ45 · Thunderbolt · HDMI
-:::
+> [!tip] Correction
+> USB-A · USB-B · USB-C · VGA · DisplayPort · RJ45 · Thunderbolt · HDMI
 
 ---
 
@@ -82,9 +81,8 @@ Répondez V ou F, et corrigez les affirmations fausses.
 Vous prenez en charge un poste Windows 11 configuré en DHCP.
 Le réseau local ne dispose pas de serveur DHCP fiable — vous devez configurer une adresse IP statique et vérifier la connectivité.
 
-:::info
-Vous travaillez sur votre VM Windows 11 VirtualBox (interface en mode NAT ou Host-Only selon votre configuration).
-:::
+> [!info]
+> Vous travaillez sur votre VM Windows 11 VirtualBox (interface en mode NAT ou Host-Only selon votre configuration).
 
 ---
 

@@ -138,9 +138,8 @@ L'**USB** est le standard principal pour connecter des périphériques : aliment
 | **Micro-USB** | Anciens smartphones                                         |
 | **USB-C**     | Universel, réversible — USB 2 à USB4 et Thunderbolt         |
 
-:::warning
-**USB-C** n'implique pas automatiquement un haut débit. Le connecteur ne détermine pas la norme — toujours vérifier les specs.
-:::
+> [!warning]
+> **USB-C** n'implique pas automatiquement un haut débit. Le connecteur ne détermine pas la norme — toujours vérifier les specs.
 
 ### Alimentation via USB
 
@@ -158,9 +157,8 @@ L'**USB** est le standard principal pour connecter des périphériques : aliment
 - Vérifier les pilotes si périphérique non reconnu
 - Pour Thunderbolt, chercher le logo éclair
 
-:::info
-**À retenir** : Thunderbolt 4 est le standard le plus complet (vidéo, data, alimentation, PCIe). USB-C ≠ Thunderbolt.
-:::
+> [!summary] À retenir
+> Thunderbolt 4 est le standard le plus complet (vidéo, data, alimentation, PCIe). USB-C ≠ Thunderbolt.
 
 ---
 
@@ -197,6 +195,5 @@ Une **carte réseau** connecte le poste au réseau local (LAN) ou à Internet.
 | Débit lent Ethernet          | Port en 100 Mbps         | Vérifier câble Cat 6        |
 | Connecté mais pas d'Internet | DNS / proxy / passerelle | Test ping IP / DNS          |
 
-:::info
-**À retenir** : Wi-Fi 5/6 est le standard grand public actuel. Ethernet 1G/2,5G pour le filaire. Les débits réels dépendent des câbles, pilotes et équipements.
-:::
+> [!summary] À retenir
+> Wi-Fi 5/6 est le standard grand public actuel. Ethernet 1G/2,5G pour le filaire. Les débits réels dépendent des câbles, pilotes et équipements.

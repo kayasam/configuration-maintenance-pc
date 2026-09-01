@@ -52,9 +52,8 @@ Un disque de stockage se décrit **toujours** avec trois éléments distincts et
 | **2,5 pouces** | PC portables, fixes        | HDD ou SSD SATA        |
 | **M.2**        | Directement sur carte mère | SSD SATA ou NVMe       |
 
-:::warning
-**M.2 ne signifie pas forcément NVMe.** Un SSD M.2 peut être SATA ou NVMe — toujours vérifier le bus.
-:::
+> [!warning]
+> **M.2 ne signifie pas forcément NVMe.** Un SSD M.2 peut être SATA ou NVMe — toujours vérifier le bus.
 
 ---
 
@@ -121,6 +120,5 @@ Combine plusieurs disques en un ensemble logique pour améliorer performances et
 
 > [RAID — Wikipédia](<https://fr.wikipedia.org/wiki/RAID_(informatique)>)
 
-:::info
-**À retenir** : technologie / format / bus sont trois critères indépendants. M.2 ≠ NVMe. NAS = partage de fichiers. SAN = stockage haute performance. Le RAID améliore performances et/ou tolérance aux pannes.
-:::
+> [!summary] À retenir
+> Technologie / format / bus sont trois critères indépendants. M.2 ≠ NVMe. NAS = partage de fichiers. SAN = stockage haute performance. Le RAID améliore performances et/ou tolérance aux pannes.

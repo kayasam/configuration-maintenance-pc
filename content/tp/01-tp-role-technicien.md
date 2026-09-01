@@ -35,9 +35,8 @@ Traiter un ticket support en appliquant une démarche logique :
 7. Documenter dans GLPI
 8. Produire une note réutilisable
 
-:::info
-Samuel joue le rôle de l'utilisateur. Il a créé le ticket. Vous êtes le technicien.
-:::
+> [!info]
+> Samuel joue le rôle de l'utilisateur. Il a créé le ticket. Vous êtes le technicien.
 
 ---
 
@@ -64,10 +63,10 @@ Votre message doit :
 
 Soyez naturel et professionnel. Pas de template imposé — c'est à vous de formuler selon le contexte du ticket.
 
-:::success
-**Bon signe** : votre message est court, ciblé, et l'utilisateur peut y répondre facilement.
-**Mauvais signe** : vous listez 10 questions ou vous proposez une solution sans avoir assez d'infos.
-:::
+> [!tip] Auto-évaluation
+> **Bon signe** : votre message est court, ciblé, et l'utilisateur peut y répondre facilement.
+>
+> **Mauvais signe** : vous listez 10 questions ou vous proposez une solution sans avoir assez d'infos.
 
 ---
 

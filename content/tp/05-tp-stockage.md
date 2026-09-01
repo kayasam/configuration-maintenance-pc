@@ -52,6 +52,5 @@ Ce disque est neuf, vide, et non utilisable au départ.
 
 Une note Markdown dans votre HedgeDoc avec : titre, étapes réalisées, captures si nécessaire, paragraphe d'analyse.
 
-:::success
-**Pour aller plus loin** : installer Debian 13 dans une nouvelle VM, ajouter un second disque virtuel, et reproduire la même démarche sous Linux.
-:::
+> [!tip] Pour aller plus loin
+> installer Debian 13 dans une nouvelle VM, ajouter un second disque virtuel, et reproduire la même démarche sous Linux.

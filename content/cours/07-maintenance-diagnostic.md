@@ -16,9 +16,8 @@ On distingue deux grandes approches :
 | **Maintenance préventive** | Éviter les pannes avant qu'elles arrivent | Nettoyage, mises à jour, surveillance disque      |
 | **Maintenance corrective** | Corriger une panne déjà présente          | Remplacer une barrette RAM, réinstaller un pilote |
 
-:::info
-Un bon technicien support ne cherche pas seulement à "réparer". Il cherche aussi à éviter que le même problème revienne.
-:::
+> [!info]
+> Un bon technicien support ne cherche pas seulement à "réparer". Il cherche aussi à éviter que le même problème revienne.
 
 ---
 
@@ -38,9 +37,8 @@ Actions courantes :
 - contrôler les ventilateurs et températures
 - vérifier les sauvegardes
 
-:::warning
-Une sauvegarde non testée n'est pas une vraie sauvegarde. Il faut vérifier qu'une restauration est possible.
-:::
+> [!warning]
+> Une sauvegarde non testée n'est pas une vraie sauvegarde. Il faut vérifier qu'une restauration est possible.
 
 ---
 
@@ -115,9 +113,8 @@ Méthode conseillée :
    - ticket GLPI
    - article de base de connaissances si le cas est réutilisable
 
-:::success
-Le diagnostic est une réduction progressive de l'incertitude.
-:::
+> [!tip]
+> Le diagnostic est une réduction progressive de l'incertitude.
 
 ---
 
@@ -144,9 +141,8 @@ sfc /scannow
 systeminfo
 ```
 
-:::warning
-Certaines commandes peuvent prendre du temps ou nécessiter des droits administrateur. On les utilise avec un objectif clair.
-:::
+> [!warning]
+> Certaines commandes peuvent prendre du temps ou nécessiter des droits administrateur. On les utilise avec un objectif clair.
 
 ---
 
@@ -220,19 +216,17 @@ Actions possibles :
 - déplacer les données vers un espace réseau
 - augmenter la capacité si nécessaire
 
-:::warning
-On ne supprime jamais des fichiers utilisateur sans validation.
-:::
+> [!warning]
+> On ne supprime jamais des fichiers utilisateur sans validation.
 
 ---
 
 ## À retenir
 
-:::info
-
-- La maintenance préventive évite une partie des incidents.
-- La maintenance corrective doit suivre une méthode.
-- Un symptôme peut avoir plusieurs causes.
-- Les tests doivent aller du plus simple au plus probable.
-- Toute intervention doit être documentée.
-  :::
+> [!summary] À retenir
+>
+> - La maintenance préventive évite une partie des incidents.
+> - La maintenance corrective doit suivre une méthode.
+> - Un symptôme peut avoir plusieurs causes.
+> - Les tests doivent aller du plus simple au plus probable.
+> - Toute intervention doit être documentée.
