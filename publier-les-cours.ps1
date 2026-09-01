@@ -6,11 +6,13 @@ param(
 $ErrorActionPreference = "Stop"
 
 $sourceRoot = "C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc"
-$sourceHtmlRoot = "C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\cours-html\configuration-maintenance-pc"
 $sourceHtmlAssets = "C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\cours-html\assets"
 $projectRoot = "D:\Projet-git\configuration-maintenance-pc"
 $staticRoot = Join-Path $projectRoot "site-content"
 $stageRoot = Join-Path $projectRoot ".publication-stage"
+$archiveStageRoot = Join-Path $projectRoot ".student-vault-stage"
+$archiveStageVault = Join-Path $archiveStageRoot "Configuration-Maintenance-PC"
+$archiveDestination = Join-Path $projectRoot "student-vault\Configuration-Maintenance-PC"
 $destinationContent = Join-Path $projectRoot "content"
 $stageCourses = Join-Path $stageRoot "cours"
 $stageAssets = Join-Path $stageRoot "assets"
@@ -99,18 +101,20 @@ Write-Host "Publication de Configuration et maintenance PC" -ForegroundColor Cya
 Write-Host "==============================================" -ForegroundColor Cyan
 
 Assert-Directory (Join-Path $sourceRoot "cours") "Le dossier des cours"
-Assert-Directory (Join-Path $sourceRoot "tp") "Le dossier des TP"
-Assert-Directory $sourceHtmlRoot "Le dossier des cours HTML"
 Assert-Directory $sourceHtmlAssets "Le dossier des ressources HTML"
 Assert-Directory $staticRoot "Les pages fixes du site"
 Assert-Directory (Join-Path $projectRoot ".git") "Le dépôt Git"
 
 foreach ($chapter in $chapterDefinitions) {
-  Assert-File (Join-Path $sourceRoot "cours\$($chapter.Course)") "Cours du chapitre $($chapter.Slug)"
+  $sourceChapter = Join-Path $sourceRoot "cours\$($chapter.Slug)"
+  Assert-Directory $sourceChapter "Dossier du chapitre $($chapter.Slug)"
+  Assert-File (Join-Path $sourceChapter $chapter.Course) "Cours du chapitre $($chapter.Slug)"
+  Assert-File (Join-Path $sourceChapter "$($chapter.Slug)-interactif.html") "HTML du chapitre $($chapter.Slug)"
   if ($chapter.Tp) {
-    Assert-File (Join-Path $sourceRoot "tp\$($chapter.Tp)") "TP du chapitre $($chapter.Slug)"
+    Assert-File (Join-Path $sourceChapter "tp\$($chapter.Tp)") "TP du chapitre $($chapter.Slug)"
   }
 }
+Assert-File (Join-Path $sourceRoot "cours\parcours-interactif.html") "Parcours HTML"
 
 $quizChapters = @(
   "01-role-du-technicien",
@@ -132,21 +136,29 @@ foreach ($relativePath in $requiredQuizFiles) {
 }
 
 Remove-SafeDirectory $stageRoot
-New-Item -ItemType Directory -Path $stageCourses, $stageAssets -Force | Out-Null
+Remove-SafeDirectory $archiveStageRoot
+New-Item -ItemType Directory -Path $stageCourses, $stageAssets, (Join-Path $archiveStageVault "cours") -Force | Out-Null
 
 Write-Host "1/6 - Classement des cours et des TP par chapitre..."
 foreach ($chapter in $chapterDefinitions) {
   $chapterRoot = Join-Path $stageRoot $chapter.Slug
+  $sourceChapter = Join-Path $sourceRoot "cours\$($chapter.Slug)"
+  $archiveChapter = Join-Path $archiveStageVault "cours\$($chapter.Slug)"
   New-Item -ItemType Directory -Path $chapterRoot -Force | Out-Null
   $courseDestination = Join-Path $chapterRoot "index.md"
-  Copy-Item -LiteralPath (Join-Path $sourceRoot "cours\$($chapter.Course)") -Destination $courseDestination -Force
+  New-Item -ItemType Directory -Path $archiveChapter -Force | Out-Null
+  Copy-Item -LiteralPath (Join-Path $sourceChapter $chapter.Course) -Destination $courseDestination -Force
+  Copy-Item -LiteralPath (Join-Path $sourceChapter $chapter.Course) -Destination (Join-Path $archiveChapter $chapter.Course) -Force
+  Copy-Item -LiteralPath (Join-Path $sourceChapter "$($chapter.Slug)-interactif.html") -Destination (Join-Path $archiveChapter "$($chapter.Slug)-interactif.html") -Force
   Add-PublicMetadata -Path $courseDestination -Title $chapter.Title -Aliases @("/cours/$($chapter.Slug)")
 
   if ($chapter.Tp) {
     $tpRoot = Join-Path $chapterRoot "tp"
-    New-Item -ItemType Directory -Path $tpRoot -Force | Out-Null
+    $archiveTpRoot = Join-Path $archiveChapter "tp"
+    New-Item -ItemType Directory -Path $tpRoot, $archiveTpRoot -Force | Out-Null
     $tpDestination = Join-Path $tpRoot $chapter.Tp
-    Copy-Item -LiteralPath (Join-Path $sourceRoot "tp\$($chapter.Tp)") -Destination $tpDestination -Force
+    Copy-Item -LiteralPath (Join-Path $sourceChapter "tp\$($chapter.Tp)") -Destination $tpDestination -Force
+    Copy-Item -LiteralPath (Join-Path $sourceChapter "tp\$($chapter.Tp)") -Destination (Join-Path $archiveTpRoot $chapter.Tp) -Force
     Add-PublicMetadata -Path $tpDestination -Title $chapter.TpTitle -Aliases @("/tp/$([IO.Path]::GetFileNameWithoutExtension($chapter.Tp))")
 
     $tpIndex = @"
@@ -163,24 +175,25 @@ title: "Exercices pratiques"
 }
 
 Write-Host "2/6 - Copie des versions HTML et des ressources..."
-Get-ChildItem -LiteralPath $sourceHtmlRoot -File -Filter "*.html" | ForEach-Object {
-  $destinationName = if ($_.Name -eq "index.html") {
-    "parcours-interactif.html"
-  } else {
-    $_.BaseName + "-interactif.html"
+foreach ($chapter in $chapterDefinitions) {
+  $sourceHtml = Join-Path $sourceRoot "cours\$($chapter.Slug)\$($chapter.Slug)-interactif.html"
+  $publicHtml = Join-Path $stageCourses "$($chapter.Slug)-interactif.html"
+  Copy-Item -LiteralPath $sourceHtml -Destination $publicHtml -Force
+  $html = [IO.File]::ReadAllText($publicHtml)
+  foreach ($targetChapter in $chapterDefinitions) {
+    $html = $html.Replace("../$($targetChapter.Slug)/$($targetChapter.Slug)-interactif.html", "$($targetChapter.Slug)-interactif.html")
   }
-  Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $stageCourses $destinationName) -Force
+  [IO.File]::WriteAllText($publicHtml, $html, $utf8WithoutBom)
 }
-
-$htmlChapterFiles = @(Get-ChildItem -LiteralPath $sourceHtmlRoot -File -Filter "*.html" | Where-Object { $_.Name -ne "index.html" })
-Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.html" | ForEach-Object {
-  $htmlPath = $_.FullName
-  $html = [IO.File]::ReadAllText($htmlPath)
-  foreach ($chapterFile in $htmlChapterFiles) {
-    $html = $html.Replace($chapterFile.Name, "$($chapterFile.BaseName)-interactif.html")
-  }
-  [IO.File]::WriteAllText($htmlPath, $html, $utf8WithoutBom)
+$sourceParcours = Join-Path $sourceRoot "cours\parcours-interactif.html"
+Copy-Item -LiteralPath $sourceParcours -Destination (Join-Path $stageCourses "parcours-interactif.html") -Force
+Copy-Item -LiteralPath $sourceParcours -Destination (Join-Path $archiveStageVault "cours\parcours-interactif.html") -Force
+$publicParcours = Join-Path $stageCourses "parcours-interactif.html"
+$parcoursHtml = [IO.File]::ReadAllText($publicParcours)
+foreach ($targetChapter in $chapterDefinitions) {
+  $parcoursHtml = $parcoursHtml.Replace("$($targetChapter.Slug)/$($targetChapter.Slug)-interactif.html", "$($targetChapter.Slug)-interactif.html")
 }
+[IO.File]::WriteAllText($publicParcours, $parcoursHtml, $utf8WithoutBom)
 Copy-MirroredDirectory $sourceHtmlAssets $stageAssets
 Copy-MirroredDirectory (Join-Path $staticRoot "assets\quiz") (Join-Path $stageAssets "quiz")
 Copy-MirroredDirectory (Join-Path $staticRoot "cours\quiz") (Join-Path $stageCourses "quiz")
@@ -240,7 +253,9 @@ Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter "*.md" | Where-Obje
 
 Write-Host "5/6 - Synchronisation du contenu public..."
 Copy-MirroredDirectory $stageRoot $destinationContent
+Copy-MirroredDirectory $archiveStageVault $archiveDestination
 Remove-SafeDirectory $stageRoot
+Remove-SafeDirectory $archiveStageRoot
 
 Push-Location $projectRoot
 try {
@@ -289,4 +304,5 @@ try {
 finally {
   Pop-Location
   Remove-SafeDirectory $stageRoot
+  Remove-SafeDirectory $archiveStageRoot
 }

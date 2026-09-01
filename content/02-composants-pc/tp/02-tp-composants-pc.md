@@ -49,7 +49,7 @@ Points de vigilance :
 
 ## Rendu attendu
 
-Un document **Markdown** dans votre HedgeDoc, contenant :
+Un document **Markdown** dans votre Obsidian, contenant :
 
 - le besoin choisi
 - la liste des composants avec prix

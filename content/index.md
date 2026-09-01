@@ -11,7 +11,7 @@ description: Support de formation pour comprendre, configurer, maintenir et diag
   <p>Sept chapitres progressifs pour prendre en charge un poste, choisir ses composants, maîtriser le démarrage et le stockage, puis résoudre les pannes courantes.</p>
   <div class="pc-actions">
     <a href="./01-role-du-technicien/">Commencer le parcours →</a>
-    <a href="./cours/parcours-interactif.html">Ouvrir le parcours HTML</a>
+    <a href="https://kayasam.github.io/configuration-maintenance-pc/cours/parcours-interactif.html">Ouvrir le parcours HTML</a>
   </div>
 </section>
 

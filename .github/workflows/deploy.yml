@@ -68,18 +68,17 @@ jobs:
 
       - name: Create Obsidian archive
         run: |
-          mkdir -p download/Configuration-Maintenance-PC
-          find content -mindepth 1 -maxdepth 1 -type d -name "[0-9][0-9]-*" -exec cp -R {} download/Configuration-Maintenance-PC/ \;
-          cp -R content/cours download/Configuration-Maintenance-PC/
-          cp -R content/assets download/Configuration-Maintenance-PC/
+          cp -R student-vault download
           cd download
           archive="../public/configuration-maintenance-pc-obsidian.zip"
           zip -qr "$archive" Configuration-Maintenance-PC
 
-          markdown_count="$(unzip -Z1 "$archive" | grep -cE '\.md$' || true)"
+          course_count="$(unzip -Z1 "$archive" | grep -cE 'cours/[0-9]{2}-[^/]+/[0-9]{2}-[^/]+\.md$' || true)"
+          tp_count="$(unzip -Z1 "$archive" | grep -cE '/tp/[^/]+\.md$' || true)"
           html_count="$(unzip -Z1 "$archive" | grep -cE '\.html$' || true)"
-          if [ "$markdown_count" -eq 0 ] || [ "$html_count" -eq 0 ]; then
-            echo "Archive incomplète : Markdown=$markdown_count, HTML=$html_count"
+          forbidden_count="$(unzip -Z1 "$archive" | grep -ciE '(^|/)(assets?|programme)(/|$)' || true)"
+          if [ "$course_count" -ne 7 ] || [ "$tp_count" -ne 6 ] || [ "$html_count" -ne 8 ] || [ "$forbidden_count" -ne 0 ]; then
+            echo "Archive invalide : cours=$course_count, TP=$tp_count, HTML=$html_count, éléments interdits=$forbidden_count"
             exit 1
           fi
 
