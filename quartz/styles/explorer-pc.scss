@@ -1,0 +1,320 @@
+@use "./variables.scss" as *;
+
+.explorer-content {
+  --pc-explorer-01: #2f7fc4;
+  --pc-explorer-02: #d84a52;
+  --pc-explorer-03: #db7b17;
+  --pc-explorer-04: #369267;
+  --pc-explorer-05: #1693a8;
+  --pc-explorer-06: #7559db;
+  --pc-explorer-07: #bd3f7d;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container {
+  --chapter-accent: var(--secondary);
+  --chapter-icon: none;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  min-height: 2.85rem;
+  align-items: center;
+  margin: 0.25rem 0;
+  padding: 0.42rem 0.38rem 0.42rem 0.46rem;
+  border: 1px solid color-mix(in srgb, var(--chapter-accent) 18%, var(--lightgray));
+  border-left: 3px solid var(--chapter-accent);
+  border-radius: 0.76rem;
+  background: color-mix(in srgb, var(--chapter-accent) 6%, var(--light));
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container:hover {
+  border-color: color-mix(in srgb, var(--chapter-accent) 42%, var(--lightgray));
+  background: color-mix(in srgb, var(--chapter-accent) 11%, var(--light));
+  box-shadow: 0 0.35rem 0.85rem rgb(13 38 67 / 8%);
+  transform: translateX(2px);
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container::before {
+  display: grid;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: 0 0 1.9rem;
+  place-items: center;
+  border-radius: 0.55rem;
+  background-color: var(--chapter-accent);
+  background-image: var(--chapter-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.14rem;
+  box-shadow: 0 0.3rem 0.65rem color-mix(in srgb, var(--chapter-accent) 25%, transparent);
+  content: "";
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container > div {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container .folder-button {
+  display: flex;
+  width: 100%;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container .folder-title {
+  color: var(--dark);
+  font-size: 0.83rem;
+  font-weight: 750;
+  line-height: 1.18;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container .folder-button::after {
+  flex: 0 0 auto;
+  padding: 0.12rem 0.32rem;
+  border: 1px solid color-mix(in srgb, var(--chapter-accent) 28%, transparent);
+  border-radius: 99px;
+  color: var(--chapter-accent);
+  background: color-mix(in srgb, var(--chapter-accent) 9%, transparent);
+  content: var(--chapter-label, "");
+  font-family: var(--codeFont);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+
+.explorer-content ul.explorer-ul > li > .folder-container > .folder-icon {
+  order: 3;
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: 0 0 0.7rem;
+  margin-left: 0.02rem;
+  color: color-mix(in srgb, var(--chapter-accent) 70%, var(--darkgray));
+  opacity: 0.75;
+}
+
+.explorer-content [data-folderpath^="01-role-du-technicien/"] {
+  --chapter-accent: var(--pc-explorer-01);
+  --chapter-label: "SUPPORT";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 13a8 8 0 0 1 16 0'/%3E%3Cpath d='M4 13v4a2 2 0 0 0 2 2h1v-7H6a2 2 0 0 0-2 1Zm16 0v4a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 1ZM17 19c-1 2-3 2-5 2'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="02-composants-pc/"] {
+  --chapter-accent: var(--pc-explorer-02);
+  --chapter-label: "MATÉRIEL";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Crect x='6' y='6' width='12' height='12' rx='2'/%3E%3Cpath d='M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4z'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="03-pc-portables/"] {
+  --chapter-accent: var(--pc-explorer-03);
+  --chapter-label: "MOBILITÉ";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='4' width='16' height='12' rx='2'/%3E%3Cpath d='M2 20h20M9 16l-1 4m7-4 1 4'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="04-bios-demarrage/"] {
+  --chapter-accent: var(--pc-explorer-04);
+  --chapter-label: "DÉMARRAGE";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v10'/%3E%3Cpath d='M6.3 5.7a8 8 0 1 0 11.4 0'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="05-stockage/"] {
+  --chapter-accent: var(--pc-explorer-05);
+  --chapter-label: "DONNÉES";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="06-peripheriques/"] {
+  --chapter-accent: var(--pc-explorer-06);
+  --chapter-label: "CONNEXIONS";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5' cy='12' r='2'/%3E%3Ccircle cx='19' cy='6' r='2'/%3E%3Ccircle cx='19' cy='18' r='2'/%3E%3Cpath d='m7 11 10-4m-10 6 10 4'/%3E%3C/svg%3E");
+}
+
+.explorer-content [data-folderpath^="07-maintenance-diagnostic/"] {
+  --chapter-accent: var(--pc-explorer-07);
+  --chapter-label: "DIAGNOSTIC";
+  --chapter-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m14.7 6.3 3-3a4 4 0 0 1-5 5L5 16l-2 5 5-2 7.7-7.7a4 4 0 0 1 5-5l-3 3'/%3E%3C/svg%3E");
+}
+
+/* Les TP deviennent une sous-section claire de leur chapitre. */
+.explorer-content [data-folderpath$="/tp/index"] {
+  --tp-accent: var(--chapter-accent, var(--secondary));
+  position: relative;
+  display: flex;
+  gap: 0.45rem;
+  min-height: 2.45rem;
+  align-items: center;
+  margin: 0.34rem 0 0.22rem;
+  padding: 0.36rem 0.36rem 0.36rem 0.44rem;
+  border: 1px dashed color-mix(in srgb, var(--tp-accent) 42%, var(--lightgray));
+  border-radius: 0.67rem;
+  background: color-mix(in srgb, var(--tp-accent) 7%, var(--light));
+}
+
+.explorer-content [data-folderpath$="/tp/index"]::before {
+  display: block;
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 1.55rem;
+  border-radius: 0.44rem;
+  background-color: color-mix(in srgb, var(--tp-accent) 16%, var(--light));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23147a43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='3' width='14' height='18' rx='2'/%3E%3Cpath d='M9 3.5h6V6H9zM9 11l1.5 1.5L13 10m-4 7h6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+  content: "";
+}
+
+.explorer-content [data-folderpath$="/tp/index"] .folder-title {
+  color: var(--dark);
+  font-size: 0;
+  font-weight: 750;
+}
+
+.explorer-content [data-folderpath$="/tp/index"] .folder-title::after {
+  content: "Exercices pratiques";
+  font-size: 0.77rem;
+}
+
+.explorer-content [data-folderpath$="/tp/index"] .folder-button::after {
+  margin-left: auto;
+  padding: 0.1rem 0.3rem;
+  border-radius: 99px;
+  color: var(--tp-accent);
+  background: color-mix(in srgb, var(--tp-accent) 12%, transparent);
+  content: "TP";
+  font-family: var(--codeFont);
+  font-size: 0.52rem;
+  font-weight: 800;
+}
+
+@each $slug,
+  $accent
+    in (
+      "01-role-du-technicien": var(--pc-explorer-01),
+      "02-composants-pc": var(--pc-explorer-02),
+      "04-bios-demarrage": var(--pc-explorer-04),
+      "05-stockage": var(--pc-explorer-05),
+      "06-peripheriques": var(--pc-explorer-06),
+      "07-maintenance-diagnostic": var(--pc-explorer-07)
+    )
+{
+  .explorer-content [data-folderpath^="#{$slug}/tp/"] {
+    --tp-accent: #{$accent};
+  }
+
+  .explorer-content a.nav-file-title[href*="/#{$slug}/tp/"] {
+    --exercise-accent: #{$accent};
+  }
+
+  body[data-slug^="#{$slug}/"][data-slug$="/tp/index"] {
+    --practice-accent: #{$accent};
+  }
+}
+
+.explorer-content a.nav-file-title[href*="/tp/"] {
+  --exercise-accent: var(--secondary);
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0.17rem 0;
+  padding: 0.32rem;
+  border-radius: 0.54rem;
+  color: var(--darkgray);
+  background: color-mix(in srgb, var(--exercise-accent) 4%, var(--light));
+  font-size: 0.73rem;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.explorer-content a.nav-file-title[href*="/tp/"]::before {
+  display: grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  border-radius: 0.4rem;
+  color: var(--exercise-accent);
+  background: color-mix(in srgb, var(--exercise-accent) 12%, var(--light));
+  content: "✎";
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.explorer-content a.nav-file-title[href*="/tp/"]:hover {
+  color: var(--dark);
+  background: color-mix(in srgb, var(--exercise-accent) 9%, var(--light));
+  transform: translateX(2px);
+}
+
+body[data-slug$="/tp/index"] article .markdown-preview-view > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  margin: 1.2rem 0;
+  padding: 0;
+}
+
+body[data-slug$="/tp/index"] article .markdown-preview-view > ul > li {
+  display: flex;
+  min-height: 4rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--practice-accent) 22%, var(--lightgray));
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--practice-accent) 5%, var(--light));
+  list-style: none;
+}
+
+body[data-slug$="/tp/index"] article .markdown-preview-view > ul > li > a {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  color: var(--dark);
+  background: none;
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+body[data-slug$="/tp/index"] article .markdown-preview-view > ul > li > a::before {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 0.58rem;
+  color: var(--practice-accent);
+  background: color-mix(in srgb, var(--practice-accent) 13%, var(--light));
+  content: "✎";
+}
+
+body[data-slug$="/tp/index"] .page-listing {
+  display: none;
+}
+
+@each $slug in "01-role-du-technicien", "02-composants-pc", "03-pc-portables", "04-bios-demarrage",
+  "05-stockage", "06-peripheriques", "07-maintenance-diagnostic"
+{
+  body[data-slug^="#{$slug}/"] .explorer-content [data-folderpath^="#{$slug}/"] {
+    border-color: color-mix(in srgb, var(--chapter-accent) 48%, var(--lightgray));
+    background: color-mix(in srgb, var(--chapter-accent) 14%, var(--light));
+  }
+}
+
+@media all and ($mobile) {
+  .explorer-content ul.explorer-ul {
+    padding-inline: 0.8rem;
+  }
+
+  .explorer-content ul.explorer-ul > li > .folder-container .folder-title {
+    font-size: 0.9rem;
+  }
+}

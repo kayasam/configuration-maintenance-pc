@@ -1,3 +1,9 @@
+---
+title: "TP 5 — Connectiques et réseau"
+aliases:
+  - "/tp/06-tp-peripheriques"
+---
+
 # TP 5 – Connectiques et configuration réseau
 
 > [!TIP] Ressource du TP

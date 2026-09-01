@@ -1,3 +1,9 @@
+---
+title: "TP 4 — Stockage et partitionnement"
+aliases:
+  - "/tp/05-tp-stockage"
+---
+
 # TP 4 – Stockage, partitionnement et analyse
 
 > [!TIP] Ressource du TP

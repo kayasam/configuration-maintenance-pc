@@ -1,3 +1,9 @@
+---
+title: "TP 6 — Maintenance et diagnostic"
+aliases:
+  - "/tp/07-tp-maintenance"
+---
+
 # TP 6 – Cellule de crise support
 
 > [!TIP] Ressource du TP

@@ -1,3 +1,9 @@
+---
+title: "02. Composants du PC"
+aliases:
+  - "/cours/02-composants-pc"
+---
+
 # Chapitre 2 – Les composants d'un PC et leur rôle
 
 > [!TIP] Ressources du chapitre

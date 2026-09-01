@@ -1,3 +1,9 @@
+---
+title: "06. Périphériques et réseau"
+aliases:
+  - "/cours/06-peripheriques"
+---
+
 # Chapitre 5 – Périphériques, réseau et impression
 
 > [!TIP] Ressources du chapitre

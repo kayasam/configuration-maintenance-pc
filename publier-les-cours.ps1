@@ -13,10 +13,18 @@ $staticRoot = Join-Path $projectRoot "site-content"
 $stageRoot = Join-Path $projectRoot ".publication-stage"
 $destinationContent = Join-Path $projectRoot "content"
 $stageCourses = Join-Path $stageRoot "cours"
-$stageTp = Join-Path $stageRoot "tp"
-$stageResources = Join-Path $stageRoot "Ressources"
 $stageAssets = Join-Path $stageRoot "assets"
 $utf8WithoutBom = [Text.UTF8Encoding]::new($false)
+
+$chapterDefinitions = @(
+  @{ Slug = "01-role-du-technicien"; Title = "01. Rôle du technicien"; Course = "01-role-du-technicien.md"; Tp = "01-tp-role-technicien.md"; TpTitle = "TP 1 — Support et ticketing" },
+  @{ Slug = "02-composants-pc"; Title = "02. Composants du PC"; Course = "02-composants-pc.md"; Tp = "02-tp-composants-pc.md"; TpTitle = "TP 2 — Choisir une configuration" },
+  @{ Slug = "03-pc-portables"; Title = "03. Choisir un PC portable"; Course = "03-pc-portables.md"; Tp = $null; TpTitle = $null },
+  @{ Slug = "04-bios-demarrage"; Title = "04. BIOS et démarrage"; Course = "04-bios-demarrage.md"; Tp = "04-tp-bios-demarrage.md"; TpTitle = "TP 3 — BIOS, UEFI et démarrage" },
+  @{ Slug = "05-stockage"; Title = "05. Stockage et systèmes"; Course = "05-stockage.md"; Tp = "05-tp-stockage.md"; TpTitle = "TP 4 — Stockage et partitionnement" },
+  @{ Slug = "06-peripheriques"; Title = "06. Périphériques et réseau"; Course = "06-peripheriques.md"; Tp = "06-tp-peripheriques.md"; TpTitle = "TP 5 — Connectiques et réseau" },
+  @{ Slug = "07-maintenance-diagnostic"; Title = "07. Maintenance et diagnostic"; Course = "07-maintenance-diagnostic.md"; Tp = "07-tp-maintenance.md"; TpTitle = "TP 6 — Maintenance et diagnostic" }
+)
 
 function Assert-Directory {
   param([string]$Path, [string]$Description)
@@ -67,6 +75,25 @@ function Copy-MirroredDirectory {
   }
 }
 
+function Add-PublicMetadata {
+  param([string]$Path, [string]$Title, [string[]]$Aliases)
+  $content = [IO.File]::ReadAllText($Path)
+  $aliasLines = ($Aliases | ForEach-Object { "  - `"$_`"" }) -join "`n"
+  $metadata = "title: `"$Title`"`naliases:`n$aliasLines"
+
+  if ($content -match '\A---\r?\n') {
+    $frontmatter = [regex]::Match($content, '\A---\r?\n(?<body>.*?)\r?\n---\r?\n', [Text.RegularExpressions.RegexOptions]::Singleline)
+    if (-not $frontmatter.Success) { throw "Frontmatter invalide : $Path" }
+    $body = $frontmatter.Groups['body'].Value
+    if ($body -notmatch '(?m)^title:') { $body += "`n" + ($metadata -split "`n")[0] }
+    if ($body -notmatch '(?m)^aliases?:') { $body += "`naliases:`n$aliasLines" }
+    $content = "---`n$body`n---`n" + $content.Substring($frontmatter.Length)
+  } else {
+    $content = "---`n$metadata`n---`n`n$content"
+  }
+  [IO.File]::WriteAllText($Path, $content, $utf8WithoutBom)
+}
+
 Write-Host ""
 Write-Host "Publication de Configuration et maintenance PC" -ForegroundColor Cyan
 Write-Host "==============================================" -ForegroundColor Cyan
@@ -77,8 +104,13 @@ Assert-Directory $sourceHtmlRoot "Le dossier des cours HTML"
 Assert-Directory $sourceHtmlAssets "Le dossier des ressources HTML"
 Assert-Directory $staticRoot "Les pages fixes du site"
 Assert-Directory (Join-Path $projectRoot ".git") "Le dépôt Git"
-Assert-File (Join-Path $sourceRoot "Ressources\programme\programme.md") "Le programme Markdown"
-Assert-File (Join-Path $sourceRoot "Ressources\programme\configuration-et-maintenance-pc.pdf") "Le programme PDF"
+
+foreach ($chapter in $chapterDefinitions) {
+  Assert-File (Join-Path $sourceRoot "cours\$($chapter.Course)") "Cours du chapitre $($chapter.Slug)"
+  if ($chapter.Tp) {
+    Assert-File (Join-Path $sourceRoot "tp\$($chapter.Tp)") "TP du chapitre $($chapter.Slug)"
+  }
+}
 
 $quizChapters = @(
   "01-role-du-technicien",
@@ -100,11 +132,35 @@ foreach ($relativePath in $requiredQuizFiles) {
 }
 
 Remove-SafeDirectory $stageRoot
-New-Item -ItemType Directory -Path $stageCourses, $stageTp, $stageResources, $stageAssets -Force | Out-Null
+New-Item -ItemType Directory -Path $stageCourses, $stageAssets -Force | Out-Null
 
-Write-Host "1/6 - Copie des cours et des TP..."
-Copy-MirroredDirectory (Join-Path $sourceRoot "cours") $stageCourses @("*.excalidraw", "*.excalidraw.md")
-Copy-MirroredDirectory (Join-Path $sourceRoot "tp") $stageTp @("*.excalidraw", "*.excalidraw.md")
+Write-Host "1/6 - Classement des cours et des TP par chapitre..."
+foreach ($chapter in $chapterDefinitions) {
+  $chapterRoot = Join-Path $stageRoot $chapter.Slug
+  New-Item -ItemType Directory -Path $chapterRoot -Force | Out-Null
+  $courseDestination = Join-Path $chapterRoot "index.md"
+  Copy-Item -LiteralPath (Join-Path $sourceRoot "cours\$($chapter.Course)") -Destination $courseDestination -Force
+  Add-PublicMetadata -Path $courseDestination -Title $chapter.Title -Aliases @("/cours/$($chapter.Slug)")
+
+  if ($chapter.Tp) {
+    $tpRoot = Join-Path $chapterRoot "tp"
+    New-Item -ItemType Directory -Path $tpRoot -Force | Out-Null
+    $tpDestination = Join-Path $tpRoot $chapter.Tp
+    Copy-Item -LiteralPath (Join-Path $sourceRoot "tp\$($chapter.Tp)") -Destination $tpDestination -Force
+    Add-PublicMetadata -Path $tpDestination -Title $chapter.TpTitle -Aliases @("/tp/$([IO.Path]::GetFileNameWithoutExtension($chapter.Tp))")
+
+    $tpIndex = @"
+---
+title: "Exercices pratiques"
+---
+
+# Exercices pratiques
+
+- [[$([IO.Path]::GetFileNameWithoutExtension($chapter.Tp))|$($chapter.TpTitle)]]
+"@
+    [IO.File]::WriteAllText((Join-Path $tpRoot "index.md"), $tpIndex, $utf8WithoutBom)
+  }
+}
 
 Write-Host "2/6 - Copie des versions HTML et des ressources..."
 Get-ChildItem -LiteralPath $sourceHtmlRoot -File -Filter "*.html" | ForEach-Object {
@@ -128,14 +184,9 @@ Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.html" | ForEach-Object
 Copy-MirroredDirectory $sourceHtmlAssets $stageAssets
 Copy-MirroredDirectory (Join-Path $staticRoot "assets\quiz") (Join-Path $stageAssets "quiz")
 Copy-MirroredDirectory (Join-Path $staticRoot "cours\quiz") (Join-Path $stageCourses "quiz")
-Copy-Item -LiteralPath (Join-Path $sourceRoot "Ressources\programme\programme.md") -Destination $stageResources -Force
-Copy-Item -LiteralPath (Join-Path $sourceRoot "Ressources\programme\configuration-et-maintenance-pc.pdf") -Destination $stageResources -Force
 
 $staticMappings = @(
-  @{ Source = "index.md"; Destination = "index.md" },
-  @{ Source = "cours\index.md"; Destination = "cours\index.md" },
-  @{ Source = "tp\index.md"; Destination = "tp\index.md" },
-  @{ Source = "Ressources\index.md"; Destination = "Ressources\index.md" }
+  @{ Source = "index.md"; Destination = "index.md" }
 )
 foreach ($mapping in $staticMappings) {
   $source = Join-Path $staticRoot $mapping.Source
@@ -158,24 +209,27 @@ Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter "*.md" | ForEach-Ob
 }
 Write-Host "$hiddenDocuments document(s) conservé(s) uniquement dans le coffre."
 
-Write-Host "4/6 - Ajout des liens HTML et des téléchargements..."
-Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.md" | Where-Object { $_.Name -ne "index.md" } | ForEach-Object {
-  $original = [IO.File]::ReadAllText($_.FullName)
-  $htmlName = $_.BaseName + "-interactif.html"
+Write-Host "4/6 - Ajout des liens HTML, quiz et téléchargements..."
+foreach ($chapter in $chapterDefinitions) {
+  $markdownPath = Join-Path (Join-Path $stageRoot $chapter.Slug) "index.md"
+  $original = [IO.File]::ReadAllText($markdownPath)
+  $htmlName = $chapter.Slug + "-interactif.html"
   $htmlUrl = "https://kayasam.github.io/configuration-maintenance-pc/cours/$htmlName"
-  $quizName = $_.BaseName + ".html"
+  $quizName = $chapter.Slug + ".html"
   $quizUrl = "https://kayasam.github.io/configuration-maintenance-pc/cours/quiz/$quizName"
-  $downloadUrl = "https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/$($_.Name)"
+  $downloadUrl = "https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/$($chapter.Course)"
   $quizPath = Join-Path (Join-Path $stageCourses "quiz") $quizName
   if ((Test-Path -LiteralPath (Join-Path $stageCourses $htmlName)) -and (Test-Path -LiteralPath $quizPath)) {
     $block = "`n`n> [!TIP] Ressources du chapitre`n> - [Faire le quiz — 20 questions]($quizUrl)`n> - [Ouvrir la version HTML interactive]($htmlUrl)`n> - <a href=`"$downloadUrl`" download>Télécharger ce cours en Markdown</a>`n"
     $h1 = [regex]::new('(?m)^(#\s+.+)\r?$')
     $updated = $h1.Replace($original, { param($match) $match.Value + $block }, 1)
-    [IO.File]::WriteAllText($_.FullName, $updated, $utf8WithoutBom)
+    [IO.File]::WriteAllText($markdownPath, $updated, $utf8WithoutBom)
   }
 }
 
-Get-ChildItem -LiteralPath $stageTp -File -Filter "*.md" | Where-Object { $_.Name -ne "index.md" } | ForEach-Object {
+Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter "*.md" | Where-Object {
+  $_.Directory.Name -eq "tp" -and $_.Name -ne "index.md"
+} | ForEach-Object {
   $original = [IO.File]::ReadAllText($_.FullName)
   $downloadUrl = "https://kayasam.github.io/configuration-maintenance-pc/telechargements/tp/$($_.Name)"
   $block = "`n`n> [!TIP] Ressource du TP`n> - <a href=`"$downloadUrl`" download>Télécharger ce TP en Markdown</a>`n"
@@ -191,7 +245,7 @@ Remove-SafeDirectory $stageRoot
 Push-Location $projectRoot
 try {
   Write-Host "6/6 - Formatage et vérification du build Quartz..."
-  & npx prettier content site-content quartz/styles/custom.scss quartz/styles/pc.scss --write
+  & npx prettier content site-content quartz/styles/custom.scss quartz/styles/pc.scss quartz/styles/explorer-pc.scss --write
   if ($LASTEXITCODE -ne 0) { throw "Le formatage a échoué." }
   & npx quartz build
   if ($LASTEXITCODE -ne 0) { throw "Le build Quartz a échoué. Aucun commit n'a été créé." }

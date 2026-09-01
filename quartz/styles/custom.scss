@@ -1,5 +1,6 @@
 @use "./variables.scss" as *;
 @use "./pc.scss";
+@use "./explorer-pc.scss";
 
 @media all and ($desktop) {
   .page > #quartz-body > .sidebar {

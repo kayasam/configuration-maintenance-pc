@@ -60,15 +60,17 @@ jobs:
       - name: Publish individual Markdown downloads
         run: |
           mkdir -p public/telechargements/cours public/telechargements/tp
-          find content/cours -maxdepth 1 -type f -name "*.md" -exec cp {} public/telechargements/cours/ \;
-          find content/tp -maxdepth 1 -type f -name "*.md" -exec cp {} public/telechargements/tp/ \;
+          find content -mindepth 2 -maxdepth 2 -type f -name "index.md" -path "content/[0-9][0-9]-*/*" -print0 | while IFS= read -r -d '' file; do
+            chapter="$(basename "$(dirname "$file")")"
+            cp "$file" "public/telechargements/cours/$chapter.md"
+          done
+          find content -mindepth 3 -maxdepth 3 -type f -name "*.md" -path "content/[0-9][0-9]-*/tp/*" ! -name "index.md" -exec cp {} public/telechargements/tp/ \;
 
       - name: Create Obsidian archive
         run: |
           mkdir -p download/Configuration-Maintenance-PC
+          find content -mindepth 1 -maxdepth 1 -type d -name "[0-9][0-9]-*" -exec cp -R {} download/Configuration-Maintenance-PC/ \;
           cp -R content/cours download/Configuration-Maintenance-PC/
-          cp -R content/tp download/Configuration-Maintenance-PC/
-          cp -R content/Ressources download/Configuration-Maintenance-PC/
           cp -R content/assets download/Configuration-Maintenance-PC/
           cd download
           archive="../public/configuration-maintenance-pc-obsidian.zip"
@@ -76,9 +78,8 @@ jobs:
 
           markdown_count="$(unzip -Z1 "$archive" | grep -cE '\.md$' || true)"
           html_count="$(unzip -Z1 "$archive" | grep -cE '\.html$' || true)"
-          pdf_count="$(unzip -Z1 "$archive" | grep -cE '\.pdf$' || true)"
-          if [ "$markdown_count" -eq 0 ] || [ "$html_count" -eq 0 ] || [ "$pdf_count" -eq 0 ]; then
-            echo "Archive incomplète : Markdown=$markdown_count, HTML=$html_count, PDF=$pdf_count"
+          if [ "$markdown_count" -eq 0 ] || [ "$html_count" -eq 0 ]; then
+            echo "Archive incomplète : Markdown=$markdown_count, HTML=$html_count"
             exit 1
           fi
 

@@ -15,7 +15,7 @@
       title: "Le rôle du technicien support",
       intro:
         "Validez la prise en charge, la communication et la méthode de diagnostic avant d'intervenir sur un poste.",
-      chapterLink: "../01-role-du-technicien",
+      chapterLink: "../../01-role-du-technicien/",
       questions: [
         q(
           "Métier",
@@ -266,7 +266,7 @@
       title: "Les composants d'un PC",
       intro:
         "Vérifiez les rôles, les compatibilités et les symptômes associés aux principaux composants d'un poste.",
-      chapterLink: "../02-composants-pc",
+      chapterLink: "../../02-composants-pc/",
       questions: [
         q(
           "Architecture",
@@ -497,7 +497,7 @@
       title: "Choisir un PC portable",
       intro:
         "Évaluez écran, autonomie, évolutivité, connectique et compatibilité avec les usages professionnels.",
-      chapterLink: "../03-pc-portables",
+      chapterLink: "../../03-pc-portables/",
       questions: [
         q(
           "Mobilité",
@@ -713,7 +713,7 @@
       title: "BIOS, UEFI et démarrage",
       intro:
         "Situez chaque étape du démarrage et associez les symptômes aux contrôles BIOS, UEFI et POST.",
-      chapterLink: "../04-bios-demarrage",
+      chapterLink: "../../04-bios-demarrage/",
       questions: [
         q(
           "Firmware",
@@ -939,7 +939,7 @@
       title: "Stockage et systèmes",
       intro:
         "Distinguez technologie, format, bus et usages professionnels afin d'éviter les confusions de diagnostic.",
-      chapterLink: "../05-stockage",
+      chapterLink: "../../05-stockage/",
       questions: [
         q(
           "Concepts",
@@ -1170,7 +1170,7 @@
       title: "Périphériques, réseau et impression",
       intro:
         "Contrôlez pilotes, affichage, impression, USB et réseau avec une démarche d'isolement progressive.",
-      chapterLink: "../06-peripheriques",
+      chapterLink: "../../06-peripheriques/",
       questions: [
         q(
           "Installation",
@@ -1361,7 +1361,7 @@
       title: "Maintenance et résolution de pannes",
       intro:
         "Appliquez une méthode complète, exploitez les outils Windows et validez chaque intervention par des preuves.",
-      chapterLink: "../07-maintenance-diagnostic",
+      chapterLink: "../../07-maintenance-diagnostic/",
       questions: [
         q(
           "Maintenance",

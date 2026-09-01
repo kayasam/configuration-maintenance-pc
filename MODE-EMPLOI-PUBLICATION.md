@@ -15,9 +15,9 @@ Les sources officielles restent dans :
 
 Le script :
 
-- synchronise les 7 cours Markdown et leurs versions HTML ;
-- synchronise les 6 TP publics ;
-- copie le programme Markdown et PDF ;
+- range les 7 cours Markdown dans un dossier par chapitre ;
+- range les 6 TP publics sous leur chapitre associé ;
+- synchronise les versions HTML et les quiz ;
 - copie les ressources communes des cours HTML ;
 - conserve et publie les 7 quiz de 20 questions ;
 - ajoute automatiquement le lien du quiz correspondant dans chaque chapitre ;
@@ -25,6 +25,8 @@ Le script :
 - ajoute les liens HTML et téléchargements sans modifier le coffre ;
 - vérifie le build Quartz avant tout commit ;
 - crée le commit et l'envoie sur GitHub après confirmation.
+
+Le programme conservé dans le coffre Obsidian n'est pas publié sur le site des élèves.
 
 Site prévu : <https://kayasam.github.io/configuration-maintenance-pc/>
 

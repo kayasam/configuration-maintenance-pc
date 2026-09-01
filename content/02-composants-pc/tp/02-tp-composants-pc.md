@@ -1,3 +1,9 @@
+---
+title: "TP 2 — Choisir une configuration"
+aliases:
+  - "/tp/02-tp-composants-pc"
+---
+
 # TP 2 – Choisir et configurer une machine adaptée à un besoin
 
 > [!TIP] Ressource du TP

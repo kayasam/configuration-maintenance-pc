@@ -1,3 +1,9 @@
+---
+title: "01. Rôle du technicien"
+aliases:
+  - "/cours/01-role-du-technicien"
+---
+
 # Chapitre 1 – Le rôle du technicien support et l'environnement PC
 
 > [!TIP] Ressources du chapitre

@@ -1,3 +1,9 @@
+---
+title: "TP 1 — Support et ticketing"
+aliases:
+  - "/tp/01-tp-role-technicien"
+---
+
 # TP 1 – Prise en main du support et du ticketing
 
 > [!TIP] Ressource du TP
