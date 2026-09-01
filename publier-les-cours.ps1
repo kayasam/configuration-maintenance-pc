@@ -152,6 +152,20 @@ foreach ($chapter in $chapterDefinitions) {
   Copy-Item -LiteralPath (Join-Path $sourceChapter "$($chapter.Slug)-interactif.html") -Destination (Join-Path $archiveChapter "$($chapter.Slug)-interactif.html") -Force
   Add-PublicMetadata -Path $courseDestination -Title $chapter.Title -Aliases @("/cours/$($chapter.Slug)")
 
+  $sourceImages = Join-Path $sourceChapter "img"
+  if (Test-Path -LiteralPath $sourceImages -PathType Container) {
+    Copy-MirroredDirectory $sourceImages (Join-Path $chapterRoot "img")
+    Copy-MirroredDirectory $sourceImages (Join-Path $archiveChapter "img")
+
+    $publicCourse = [IO.File]::ReadAllText($courseDestination)
+    Get-ChildItem -LiteralPath $sourceImages -File | ForEach-Object {
+      $obsidianEmbed = '!\[\[' + [regex]::Escape($_.Name) + '(?:\|[^\]]+)?\]\]'
+      $webEmbed = "![](https://kayasam.github.io/configuration-maintenance-pc/" + $chapter.Slug + "/img/" + [Uri]::EscapeDataString($_.Name) + ")"
+      $publicCourse = [regex]::Replace($publicCourse, $obsidianEmbed, $webEmbed)
+    }
+    [IO.File]::WriteAllText($courseDestination, $publicCourse, $utf8WithoutBom)
+  }
+
   if ($chapter.Tp) {
     $tpRoot = Join-Path $chapterRoot "tp"
     $archiveTpRoot = Join-Path $archiveChapter "tp"

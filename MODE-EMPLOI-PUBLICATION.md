@@ -19,6 +19,7 @@ Le script :
 
 - range les 7 cours Markdown dans un dossier par chapitre ;
 - range les 6 TP publics sous leur chapitre associé ;
+- copie automatiquement le dossier `img` de chaque chapitre, y compris les SVG ;
 - synchronise les versions HTML et les quiz ;
 - copie les ressources communes des cours HTML ;
 - reconstruit un coffre étudiant propre dans `student-vault` pour le ZIP ;
@@ -31,7 +32,7 @@ Le script :
 
 Le programme conservé dans le coffre Obsidian n'est pas publié sur le site des élèves.
 Le ZIP ne contient ni dossier `assets`, ni programme, ni session : seulement les cours Markdown
-et HTML classés par chapitre, ainsi que les TP.
+et HTML classés par chapitre, les TP et les dossiers pédagogiques `img` utilisés par les cours.
 
 Site prévu : <https://kayasam.github.io/configuration-maintenance-pc/>
 
