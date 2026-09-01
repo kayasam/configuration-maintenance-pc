@@ -19,6 +19,8 @@ Le script :
 - synchronise les 6 TP publics ;
 - copie le programme Markdown et PDF ;
 - copie les ressources communes des cours HTML ;
+- conserve et publie les 7 quiz de 20 questions ;
+- ajoute automatiquement le lien du quiz correspondant dans chaque chapitre ;
 - exclut les sessions, archives et fichiers Excalidraw ;
 - ajoute les liens HTML et téléchargements sans modifier le coffre ;
 - vérifie le build Quartz avant tout commit ;
@@ -28,3 +30,16 @@ Site prévu : <https://kayasam.github.io/configuration-maintenance-pc/>
 
 > [!NOTE]
 > Dans les réglages du dépôt GitHub, sélectionner **GitHub Actions** comme source de GitHub Pages.
+
+## Où modifier les quiz
+
+Les sources durables des quiz se trouvent dans `site-content` :
+
+- questions : `site-content/assets/quiz/quiz-banks.js` ;
+- moteur : `site-content/assets/quiz/quiz-engine.js` ;
+- apparence : `site-content/assets/quiz/quiz.css` ;
+- pages : `site-content/cours/quiz/`.
+
+Ne pas modifier uniquement les copies présentes dans `content`. Ce dossier est reconstruit à
+chaque publication. Le script recopie les sources durables ci-dessus et refuse de continuer si
+une ressource obligatoire de quiz est absente.

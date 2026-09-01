@@ -2,6 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
+> - [Faire le quiz — 20 questions](https://kayasam.github.io/configuration-maintenance-pc/cours/quiz/07-maintenance-diagnostic.html)
 > - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/07-maintenance-diagnostic-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/07-maintenance-diagnostic.md" download>Télécharger ce cours en Markdown</a>
 

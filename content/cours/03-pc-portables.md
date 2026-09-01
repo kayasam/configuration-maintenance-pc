@@ -2,6 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
+> - [Faire le quiz — 20 questions](https://kayasam.github.io/configuration-maintenance-pc/cours/quiz/03-pc-portables.html)
 > - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/03-pc-portables-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/03-pc-portables.md" download>Télécharger ce cours en Markdown</a>
 

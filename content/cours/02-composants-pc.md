@@ -2,6 +2,7 @@
 
 > [!TIP] Ressources du chapitre
 >
+> - [Faire le quiz — 20 questions](https://kayasam.github.io/configuration-maintenance-pc/cours/quiz/02-composants-pc.html)
 > - [Ouvrir la version HTML interactive](https://kayasam.github.io/configuration-maintenance-pc/cours/02-composants-pc-interactif.html)
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/02-composants-pc.md" download>Télécharger ce cours en Markdown</a>
 

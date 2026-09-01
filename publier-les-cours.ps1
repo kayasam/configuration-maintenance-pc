@@ -80,6 +80,25 @@ Assert-Directory (Join-Path $projectRoot ".git") "Le dépôt Git"
 Assert-File (Join-Path $sourceRoot "Ressources\programme\programme.md") "Le programme Markdown"
 Assert-File (Join-Path $sourceRoot "Ressources\programme\configuration-et-maintenance-pc.pdf") "Le programme PDF"
 
+$quizChapters = @(
+  "01-role-du-technicien",
+  "02-composants-pc",
+  "03-pc-portables",
+  "04-bios-demarrage",
+  "05-stockage",
+  "06-peripheriques",
+  "07-maintenance-diagnostic"
+)
+$requiredQuizFiles = @(
+  "assets\quiz\quiz.css",
+  "assets\quiz\quiz-engine.js",
+  "assets\quiz\quiz-banks.js"
+)
+$requiredQuizFiles += $quizChapters | ForEach-Object { "cours\quiz\$_.html" }
+foreach ($relativePath in $requiredQuizFiles) {
+  Assert-File (Join-Path $staticRoot $relativePath) "Ressource de quiz obligatoire"
+}
+
 Remove-SafeDirectory $stageRoot
 New-Item -ItemType Directory -Path $stageCourses, $stageTp, $stageResources, $stageAssets -Force | Out-Null
 
@@ -107,6 +126,8 @@ Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.html" | ForEach-Object
   [IO.File]::WriteAllText($htmlPath, $html, $utf8WithoutBom)
 }
 Copy-MirroredDirectory $sourceHtmlAssets $stageAssets
+Copy-MirroredDirectory (Join-Path $staticRoot "assets\quiz") (Join-Path $stageAssets "quiz")
+Copy-MirroredDirectory (Join-Path $staticRoot "cours\quiz") (Join-Path $stageCourses "quiz")
 Copy-Item -LiteralPath (Join-Path $sourceRoot "Ressources\programme\programme.md") -Destination $stageResources -Force
 Copy-Item -LiteralPath (Join-Path $sourceRoot "Ressources\programme\configuration-et-maintenance-pc.pdf") -Destination $stageResources -Force
 
@@ -142,9 +163,12 @@ Get-ChildItem -LiteralPath $stageCourses -File -Filter "*.md" | Where-Object { $
   $original = [IO.File]::ReadAllText($_.FullName)
   $htmlName = $_.BaseName + "-interactif.html"
   $htmlUrl = "https://kayasam.github.io/configuration-maintenance-pc/cours/$htmlName"
+  $quizName = $_.BaseName + ".html"
+  $quizUrl = "https://kayasam.github.io/configuration-maintenance-pc/cours/quiz/$quizName"
   $downloadUrl = "https://kayasam.github.io/configuration-maintenance-pc/telechargements/cours/$($_.Name)"
-  if (Test-Path -LiteralPath (Join-Path $stageCourses $htmlName)) {
-    $block = "`n`n> [!TIP] Ressources du chapitre`n> - [Ouvrir la version HTML interactive]($htmlUrl)`n> - <a href=`"$downloadUrl`" download>Télécharger ce cours en Markdown</a>`n"
+  $quizPath = Join-Path (Join-Path $stageCourses "quiz") $quizName
+  if ((Test-Path -LiteralPath (Join-Path $stageCourses $htmlName)) -and (Test-Path -LiteralPath $quizPath)) {
+    $block = "`n`n> [!TIP] Ressources du chapitre`n> - [Faire le quiz — 20 questions]($quizUrl)`n> - [Ouvrir la version HTML interactive]($htmlUrl)`n> - <a href=`"$downloadUrl`" download>Télécharger ce cours en Markdown</a>`n"
     $h1 = [regex]::new('(?m)^(#\s+.+)\r?$')
     $updated = $h1.Replace($original, { param($match) $match.Value + $block }, 1)
     [IO.File]::WriteAllText($_.FullName, $updated, $utf8WithoutBom)
