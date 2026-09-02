@@ -10,7 +10,7 @@ aliases:
 >
 > - <a href="https://kayasam.github.io/configuration-maintenance-pc/telechargements/tp/06-tp-peripheriques.md" download>Télécharger ce TP en Markdown</a>
 
-> Chapitre associé : `cours/06-peripheriques.md`
+> Chapitre associé : [[Formations/configuration-maintenance-pc/cours/06-peripheriques/06-peripheriques.md]]
 
 ## Objectif
 
@@ -26,7 +26,7 @@ Consolider les notions du chapitre 5 en deux temps :
 ## Règle du jeu
 
 Pour chaque question, une seule réponse correcte.
-Notez vos réponses dans votre HedgeDoc avant de comparer avec le groupe.
+Notez vos réponses dans votre coffre Obsidian avant de comparer avec le groupe.
 
 ---
 
@@ -44,9 +44,6 @@ Pour chaque ligne, identifiez le connecteur décrit.
 | 6   | 8 broches, connecteur réseau filaire RJ                                    |         |
 | 7   | Identique visuellement au USB-C, logo éclair, jusqu'à 40 Gbps              |         |
 | 8   | Rectangulaire, 19 broches, standard vidéo grand public actuel              |         |
-
-> [!tip] Correction
-> USB-A · USB-B · USB-C · VGA · DisplayPort · RJ45 · Thunderbolt · HDMI
 
 ---
 
@@ -100,7 +97,7 @@ Ouvrez un terminal et notez :
 ipconfig /all
 ```
 
-Dans votre HedgeDoc, relevez :
+Dans votre coffre Obsidian, relevez :
 
 - le nom de l'interface réseau active
 - l'adresse IP actuelle
@@ -156,7 +153,7 @@ nslookup google.com
 
 ## Étape 5 – Analyse
 
-Répondez dans votre HedgeDoc :
+Répondez dans votre coffre Obsidian :
 
 1. Quelle est la différence entre un ping vers l'IP `8.8.8.8` et un ping vers `google.com` ?
 2. Si `ping 8.8.8.8` fonctionne mais pas `ping google.com`, quel composant est en cause ?
@@ -173,7 +170,7 @@ Repassez l'interface en **"Obtenir une adresse IP automatiquement"** et vérifie
 
 ## Rendu attendu
 
-Dans votre HedgeDoc :
+Dans votre coffre Obsidian :
 
 ```md
 # TP 5 – Connectiques et configuration réseau

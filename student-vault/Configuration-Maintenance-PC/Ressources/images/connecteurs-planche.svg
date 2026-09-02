@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity=".12"/></filter>
+    <filter id="connector-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#0f172a" flood-opacity=".3"/></filter>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#cbd5e1"/><stop offset="1" stop-color="#64748b"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fef3c7"/><stop offset=".45" stop-color="#f59e0b"/><stop offset="1" stop-color="#92400e"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+    <style>
+      .card{fill:#fff;stroke:#e2e8f0;filter:url(#card-shadow)} .name{font-size:14px;font-weight:700;fill:#1e293b;text-anchor:middle}
+      .desc{font-size:11px;fill:#64748b;text-anchor:middle}.usage{font-size:10.5px;fill:#64748b;text-anchor:middle}.key{font-size:11px;font-weight:700;fill:#2563eb;text-anchor:middle}
+      .shell{fill:url(#metal);stroke:#334155;stroke-width:1.2}.cavity{fill:#111827}.contact{fill:url(#gold)}
+    </style>
+  </defs>
+  <rect width="900" height="520" fill="#f8fafc"/>
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1e293b">Reconnaître les connectiques</text>
+  <text x="40" y="57" font-size="13" fill="#64748b">Vue de face. Silhouette, détrompeur et contacts permettent d'identifier le connecteur.</text>
+
+  <g transform="translate(40 88)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <rect x="-30" y="-17" width="60" height="34" rx="3" class="shell"/><rect x="-25" y="-12" width="50" height="24" rx="1.5" class="cavity"/>
+      <path d="M-23 1H23V11H-23Z" fill="url(#blue)"/><g class="contact"><rect x="-18" y="-10" width="6" height="9"/><rect x="-8" y="-10" width="6" height="9"/><rect x="2" y="-10" width="6" height="9"/><rect x="12" y="-10" width="6" height="9"/></g>
+    </g>
+    <text x="75" y="100" class="name">USB-A</text><text x="75" y="120" class="desc">Rectangulaire,</text><text x="75" y="135" class="desc">non réversible</text>
+    <text x="75" y="155" class="key">Bleu = USB 3.x</text><text x="75" y="171" class="usage">Clés, clavier, souris</text>
+  </g>
+
+  <g transform="translate(207 88)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <path d="M-22 18V-10L-12-20H12L22-10V18Z" class="shell"/><path d="M-16 13V-7L-9-14H9L16-7V13Z" class="cavity"/>
+      <path d="M-8 0H8V12H-8Z" fill="#e2e8f0"/><g class="contact"><rect x="-6" y="1" width="4" height="7"/><rect x="2" y="1" width="4" height="7"/></g>
+    </g>
+    <text x="75" y="100" class="name">USB-B</text><text x="75" y="120" class="desc">Carré, deux coins</text><text x="75" y="135" class="desc">supérieurs biseautés</text><text x="75" y="171" class="usage">Imprimantes</text>
+  </g>
+
+  <g transform="translate(374 88)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <path d="M-31-10L-23-17H23L31-10L26 15H-26Z" class="shell"/><path d="M-24-7L-19-12H19L24-7L21 10H-21Z" class="cavity"/>
+      <path d="M-19 1H19L17 9H-17Z" fill="#e2e8f0"/><g class="contact"><rect x="-15" y="1" width="3" height="6"/><rect x="-8" y="1" width="3" height="6"/><rect x="-1" y="1" width="3" height="6"/><rect x="6" y="1" width="3" height="6"/><rect x="13" y="1" width="3" height="6"/></g>
+    </g>
+    <text x="75" y="100" class="name">Micro-USB</text><text x="75" y="120" class="desc">Petit trapèze,</text><text x="75" y="135" class="desc">non réversible</text><text x="75" y="171" class="usage">Anciens téléphones</text>
+  </g>
+
+  <g transform="translate(541 88)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <rect x="-34" y="-17" width="68" height="34" rx="17" class="shell"/><rect x="-28" y="-11" width="56" height="22" rx="11" class="cavity"/><rect x="-19" y="-3" width="38" height="6" rx="3" fill="#cbd5e1"/>
+      <g class="contact"><path d="M-16-9h3v5h-3zm7 0h3v5h-3zm7 0h3v5h-3zm7 0h3v5H5zm7 0h3v5h-3zM-16 4h3v5h-3zm7 0h3v5h-3zm7 0h3v5h-3zm7 0h3v5H5zm7 0h3v5h-3z"/></g>
+    </g>
+    <text x="75" y="100" class="name">USB-C</text><text x="75" y="120" class="desc">Ovale, réversible</text><text x="75" y="140" class="key">Données + vidéo</text><text x="75" y="155" class="key">+ jusqu'à 240 W</text><text x="75" y="171" class="usage">Universel</text>
+  </g>
+
+  <g transform="translate(708 88)">
+    <rect width="151" height="180" rx="14" fill="#fff" stroke="#2563eb" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <path d="M77 19l-10 16h6l-5 13 12-17h-7z" fill="#2563eb"/>
+    <g transform="translate(75 64)" filter="url(#connector-shadow)">
+      <rect x="-34" y="-17" width="68" height="34" rx="17" class="shell"/><rect x="-28" y="-11" width="56" height="22" rx="11" class="cavity"/><rect x="-19" y="-3" width="38" height="6" rx="3" fill="#cbd5e1"/>
+      <g class="contact"><path d="M-16-9h3v5h-3zm7 0h3v5h-3zm7 0h3v5h-3zm7 0h3v5H5zm7 0h3v5h-3zM-16 4h3v5h-3zm7 0h3v5h-3zm7 0h3v5h-3zm7 0h3v5H5zm7 0h3v5h-3z"/></g>
+    </g>
+    <text x="75" y="100" class="name">Thunderbolt</text><text x="75" y="120" class="desc">Forme USB-C</text><text x="75" y="135" class="desc">+ logo éclair</text><text x="75" y="155" class="key">40 Gbit/s et plus</text><text x="75" y="171" class="usage">Docks, écrans</text>
+  </g>
+
+  <g transform="translate(40 278)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <path d="M-36-17H36V6L26 18H-26L-36 6Z" class="shell"/><path d="M-29-11H29V3L22 11H-22L-29 3Z" class="cavity"/><path d="M-20-4H20L17 8H-17Z" fill="#713f12"/>
+      <g class="contact"><path d="M-17-3h2v8h-2zm5 0h2v8h-2zm5 0h2v8h-2zm5 0h2v8h-2zm5 0h2v8H3zm5 0h2v8H8zm5 0h2v8h-2zm5 0h2v8h-2z"/></g>
+    </g>
+    <text x="75" y="100" class="name">HDMI</text><text x="75" y="120" class="desc">19 broches, base</text><text x="75" y="135" class="desc">biseautée</text><text x="75" y="155" class="key">Vidéo + audio</text><text x="75" y="171" class="usage">TV, écrans</text>
+  </g>
+
+  <g transform="translate(207 278)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <path d="M-35-18H35V18H-23L-35 6Z" class="shell"/><path d="M-28-11H28V11H-20L-28 3Z" class="cavity"/><path d="M-17-4H23V8H-17Z" fill="#713f12"/>
+      <g class="contact"><path d="M-14-3h2v9h-2zm6 0h2v9h-2zm6 0h2v9h-2zm6 0h2v9H4zm6 0h2v9h-2zm6 0h2v9h-2z"/></g>
+    </g>
+    <text x="75" y="100" class="name">DisplayPort</text><text x="75" y="120" class="desc">Un seul coin</text><text x="75" y="135" class="desc">biseauté</text><text x="75" y="155" class="key">Multi-écrans</text><text x="75" y="171" class="usage">Écrans PC, pro</text>
+  </g>
+
+  <g transform="translate(374 278)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <circle cx="-39" r="8" class="shell"/><circle cx="-39" r="2" fill="#334155"/><rect x="-30" y="-18" width="51" height="36" rx="3" fill="#f8fafc" stroke="#64748b"/><rect x="24" y="-13" width="8" height="26" rx="1" fill="#f8fafc" stroke="#64748b"/><circle cx="41" r="8" class="shell"/><circle cx="41" r="2" fill="#334155"/>
+      <g class="contact"><path d="M-24-11h3v3h-3zm8 0h3v3h-3zm8 0h3v3h-3zm8 0h3v3H0zm8 0h3v3H8zM-24-2h3v3h-3zm8 0h3v3h-3zm8 0h3v3h-3zm8 0h3v3H0zm8 0h3v3H8zM-24 7h3v3h-3zm8 0h3v3h-3zm8 0h3v3h-3zm8 0h3v3H0zm8 0h3v3H8z"/></g>
+    </g>
+    <text x="75" y="100" class="name">DVI</text><text x="75" y="120" class="desc">Grille de broches</text><text x="75" y="135" class="desc">+ lame plate</text><text x="75" y="155" class="key" fill="#d97706">Sans audio</text><text x="75" y="171" class="usage">Écrans anciens</text>
+  </g>
+
+  <g transform="translate(541 278)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <circle cx="-39" r="8" class="shell"/><circle cx="-39" r="2" fill="#334155"/><path d="M-29-19H29L24 19H-24Z" fill="url(#blue)" stroke="#1e3a8a"/><path d="M-23-13H23L19 13H-19Z" fill="#dbeafe" stroke="#93c5fd"/><circle cx="39" r="8" class="shell"/><circle cx="39" r="2" fill="#334155"/>
+      <g class="contact"><path d="M-16-8h3v3h-3zm8 0h3v3h-3zm8 0h3v3H0zm8 0h3v3H8zm8 0h3v3h-3zM-12-1h3v3h-3zm8 0h3v3h-3zm8 0h3v3H4zm8 0h3v3h-3zM-16 6h3v3h-3zm8 0h3v3h-3zm8 0h3v3H0zm8 0h3v3H8zm8 0h3v3h-3z"/></g>
+    </g>
+    <text x="75" y="100" class="name">VGA</text><text x="75" y="120" class="desc">Trapèze, 15 broches</text><text x="75" y="135" class="desc">sur 3 rangées</text><text x="75" y="155" class="key" fill="#dc2626">Analogique</text><text x="75" y="171" class="usage">Obsolète</text>
+  </g>
+
+  <g transform="translate(708 278)">
+    <rect width="151" height="180" rx="14" class="card"/>
+    <g transform="translate(75 52)" filter="url(#connector-shadow)">
+      <path d="M-30-20H30V20H-30Z" fill="#dbeafe" fill-opacity=".8" stroke="#475569"/><path d="M-20-20V-29H20V-20" fill="none" stroke="#475569" stroke-width="4"/><path d="M-16-29L-9-38H9L16-29" fill="#e2e8f0" stroke="#64748b"/><rect x="-24" y="-14" width="48" height="28" rx="2" class="cavity"/>
+      <g class="contact"><path d="M-20-13h3l-1 18h-3zm6 0h3l-1 18h-3zm6 0h3l-1 18h-3zm6 0h3V5h-3zm6 0h3l1 18H5zm6 0h3l1 18h-3zm6 0h3l1 18h-3zm6 0h2V5h-1z"/></g>
+    </g>
+    <text x="75" y="100" class="name">RJ45</text><text x="75" y="120" class="desc">8 contacts dorés</text><text x="75" y="135" class="desc">+ clip de maintien</text><text x="75" y="155" class="key">Réseau filaire</text><text x="75" y="171" class="usage">Ethernet</text>
+  </g>
+
+  <rect x="40" y="472" width="819" height="34" rx="10" fill="#fef2f2" stroke="#fecaca"/><circle cx="66" cy="489" r="11" fill="#dc2626"/><path d="M66 483v7m0 4v1" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="88" y="494" font-size="12.5" fill="#1e293b">Le connecteur ne détermine pas la norme : <tspan font-weight="700">USB-C</tspan> peut être en USB 2.0, et <tspan font-weight="700">Thunderbolt</tspan> utilise le même port physique.</text>
+</svg>

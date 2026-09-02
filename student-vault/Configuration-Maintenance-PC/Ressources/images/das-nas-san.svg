@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="500" fill="#f8fafc"/>
+
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1e293b">DAS, NAS et SAN</text>
+  <text x="40" y="57" font-size="13" fill="#64748b">Ce qui les distingue n'est pas le matériel, mais la façon dont le stockage est présenté au système.</text>
+
+  <!-- ============ DAS ============ -->
+  <rect x="40" y="76" width="260" height="376" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 40 92 a 16 16 0 0 1 16 -16 h 228 a 16 16 0 0 1 16 16 v 28 h -260 z" fill="#64748b"/>
+  <text x="62" y="106" font-size="15" font-weight="700" fill="#ffffff">DAS</text>
+  <text x="62" y="138" font-size="11" fill="#64748b">Direct Attached Storage</text>
+
+  <rect x="64" y="150" width="212" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="170" y="175" font-size="12.5" fill="#1e293b" text-anchor="middle">Un poste ou un serveur</text>
+  <line x1="170" y1="190" x2="170" y2="208" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="64" y="210" width="212" height="34" rx="10" fill="#e2e8f0"/>
+  <text x="170" y="232" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Câble interne direct</text>
+  <line x1="170" y1="244" x2="170" y2="262" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="64" y="264" width="212" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="170" y="289" font-size="12.5" fill="#1e293b" text-anchor="middle">Disque interne</text>
+
+  <line x1="64" y1="324" x2="276" y2="324" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="64" y="345" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">MODE D'ACCÈS</text>
+  <rect x="64" y="352" width="58" height="22" rx="11" fill="#dbeafe"/>
+  <text x="93" y="367" font-size="11.5" font-weight="700" fill="#1e40af" text-anchor="middle">Bloc</text>
+  <text x="64" y="398" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">PROTOCOLES</text>
+  <text x="64" y="416" font-size="12.5" fill="#1e293b">SATA, SAS, USB</text>
+  <text x="64" y="437" font-size="11.5" fill="#64748b">Stockage local, un seul hôte</text>
+
+  <!-- ============ NAS ============ -->
+  <rect x="320" y="76" width="260" height="376" rx="16" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <path d="M 320 92 a 16 16 0 0 1 16 -16 h 228 a 16 16 0 0 1 16 16 v 28 h -260 z" fill="#2563eb"/>
+  <text x="342" y="106" font-size="15" font-weight="700" fill="#ffffff">NAS</text>
+  <text x="342" y="138" font-size="11" fill="#64748b">Network Attached Storage</text>
+
+  <rect x="344" y="150" width="212" height="40" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="450" y="175" font-size="12.5" fill="#1e293b" text-anchor="middle">Les postes du réseau</text>
+  <line x1="450" y1="190" x2="450" y2="208" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="344" y="210" width="212" height="34" rx="10" fill="#2563eb"/>
+  <text x="450" y="232" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Réseau local existant</text>
+  <line x1="450" y1="244" x2="450" y2="262" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="344" y="264" width="212" height="40" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="450" y="289" font-size="12.5" fill="#1e293b" text-anchor="middle">Boîtier NAS</text>
+
+  <line x1="344" y1="324" x2="556" y2="324" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="344" y="345" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">MODE D'ACCÈS</text>
+  <rect x="344" y="352" width="72" height="22" rx="11" fill="#dcfce7"/>
+  <text x="380" y="367" font-size="11.5" font-weight="700" fill="#15803d" text-anchor="middle">Fichier</text>
+  <text x="344" y="398" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">PROTOCOLES</text>
+  <text x="344" y="416" font-size="12.5" fill="#1e293b">SMB / CIFS, NFS</text>
+  <text x="344" y="437" font-size="11.5" fill="#64748b">Partage de fichiers en PME</text>
+
+  <!-- ============ SAN ============ -->
+  <rect x="600" y="76" width="260" height="376" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 600 92 a 16 16 0 0 1 16 -16 h 228 a 16 16 0 0 1 16 16 v 28 h -260 z" fill="#1e40af"/>
+  <text x="622" y="106" font-size="15" font-weight="700" fill="#ffffff">SAN</text>
+  <text x="622" y="138" font-size="11" fill="#64748b">Storage Area Network</text>
+
+  <rect x="624" y="150" width="212" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="730" y="175" font-size="12.5" fill="#1e293b" text-anchor="middle">Serveurs, hyperviseurs</text>
+  <line x1="730" y1="190" x2="730" y2="208" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="624" y="210" width="212" height="34" rx="10" fill="#1e40af"/>
+  <text x="730" y="232" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Réseau dédié au stockage</text>
+  <line x1="730" y1="244" x2="730" y2="262" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="624" y="264" width="212" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="730" y="289" font-size="12.5" fill="#1e293b" text-anchor="middle">Baie de disques</text>
+
+  <line x1="624" y1="324" x2="836" y2="324" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="624" y="345" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">MODE D'ACCÈS</text>
+  <rect x="624" y="352" width="58" height="22" rx="11" fill="#dbeafe"/>
+  <text x="653" y="367" font-size="11.5" font-weight="700" fill="#1e40af" text-anchor="middle">Bloc</text>
+  <text x="624" y="398" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">PROTOCOLES</text>
+  <text x="624" y="416" font-size="12.5" fill="#1e293b">iSCSI, Fibre Channel</text>
+  <text x="624" y="437" font-size="11.5" fill="#64748b">Datacenter, virtualisation</text>
+
+  <!-- LEGENDE -->
+  <rect x="40" y="466" width="820" height="26" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="56" y="484" font-size="12" fill="#1e293b"><tspan font-weight="700">Bloc</tspan> = le système voit un disque brut, qu'il doit partitionner et formater lui-même. <tspan font-weight="700">Fichier</tspan> = il voit un dossier partagé, déjà formaté.</text>
+</svg>

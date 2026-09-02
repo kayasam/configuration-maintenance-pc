@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="a-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="560" fill="#f8fafc"/>
+
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1e293b">Les quatre paramètres d'une configuration IP</text>
+  <text x="40" y="57" font-size="13" fill="#64748b">Chacun répond à une question différente. Il en manque un, et une partie du réseau cesse de fonctionner.</text>
+
+  <!-- ===== SCHEMA RESEAU ===== -->
+  <rect x="40" y="76" width="819" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <text x="64" y="104" font-size="12" font-weight="700" fill="#64748b" letter-spacing="0.6">LE RÉSEAU LOCAL   192.168.56.0 / 24</text>
+
+  <rect x="64" y="118" width="150" height="62" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="139" y="142" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">Ce poste</text>
+  <text x="139" y="163" font-size="12" font-family="Consolas, monospace" fill="#2563eb" text-anchor="middle">192.168.56.50</text>
+
+  <rect x="250" y="118" width="150" height="62" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="325" y="142" font-size="13" fill="#1e293b" text-anchor="middle">Un collègue</text>
+  <text x="325" y="163" font-size="12" font-family="Consolas, monospace" fill="#64748b" text-anchor="middle">192.168.56.51</text>
+
+  <line x1="214" y1="149" x2="246" y2="149" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="436" y="118" width="150" height="62" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="511" y="142" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">Passerelle (box)</text>
+  <text x="511" y="163" font-size="12" font-family="Consolas, monospace" fill="#15803d" text-anchor="middle">192.168.56.1</text>
+  <line x1="400" y1="149" x2="432" y2="149" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-grey)"/>
+
+  <rect x="640" y="118" width="180" height="62" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="730" y="142" font-size="13" fill="#1e293b" text-anchor="middle">Internet</text>
+  <text x="730" y="163" font-size="11" fill="#64748b" text-anchor="middle">tout ce qui est ailleurs</text>
+  <line x1="586" y1="149" x2="636" y2="149" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-grey)"/>
+
+  <text x="64" y="204" font-size="11.5" fill="#64748b">Même réseau (192.168.56.x) → les postes se parlent <tspan font-weight="700" fill="#16a34a">directement</tspan>.</text>
+  <text x="64" y="224" font-size="11.5" fill="#64748b">Réseau différent → tout passe <tspan font-weight="700" fill="#16a34a">par la passerelle</tspan>. Sans elle, on reste enfermé dans le réseau local.</text>
+  <text x="64" y="244" font-size="11.5" fill="#64748b">Deux machines avec la <tspan font-weight="700" fill="#dc2626">même IP</tspan> = conflit d'adresse : les deux tombent en panne.</text>
+
+  <!-- ===== LES 4 PARAMETRES ===== -->
+  <rect x="40" y="278" width="197" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 40 294 a 16 16 0 0 1 16 -16 h 165 a 16 16 0 0 1 16 16 v 26 h -197 z" fill="#2563eb"/>
+  <text x="62" y="306" font-size="14" font-weight="700" fill="#ffffff">Adresse IP</text>
+  <text x="62" y="342" font-size="12" font-family="Consolas, monospace" fill="#2563eb">192.168.56.50</text>
+  <text x="62" y="368" font-size="11.5" fill="#1e293b">Qui suis-je ?</text>
+  <text x="62" y="392" font-size="11" fill="#64748b">L'identifiant unique de</text>
+  <text x="62" y="408" font-size="11" fill="#64748b">la machine sur le réseau.</text>
+  <text x="62" y="432" font-size="11" fill="#64748b">Deux machines ne peuvent</text>
+  <text x="62" y="448" font-size="11" fill="#64748b">pas avoir la même.</text>
+
+  <rect x="248" y="278" width="197" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 248 294 a 16 16 0 0 1 16 -16 h 165 a 16 16 0 0 1 16 16 v 26 h -197 z" fill="#2563eb"/>
+  <text x="270" y="306" font-size="14" font-weight="700" fill="#ffffff">Masque de sous-réseau</text>
+  <text x="270" y="342" font-size="12" font-family="Consolas, monospace" fill="#2563eb">255.255.255.0</text>
+  <text x="270" y="368" font-size="11.5" fill="#1e293b">Qui est mon voisin ?</text>
+  <text x="270" y="392" font-size="11" fill="#64748b">Sépare l'adresse en deux :</text>
+  <text x="270" y="408" font-size="11" fill="#64748b">la partie réseau et la</text>
+  <text x="270" y="424" font-size="11" fill="#64748b">partie machine.</text>
+  <text x="270" y="448" font-size="11" fill="#64748b">Ici : 192.168.56 = réseau.</text>
+
+  <rect x="456" y="278" width="197" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 456 294 a 16 16 0 0 1 16 -16 h 165 a 16 16 0 0 1 16 16 v 26 h -197 z" fill="#16a34a"/>
+  <text x="478" y="306" font-size="14" font-weight="700" fill="#ffffff">Passerelle</text>
+  <text x="478" y="342" font-size="12" font-family="Consolas, monospace" fill="#16a34a">192.168.56.1</text>
+  <text x="478" y="368" font-size="11.5" fill="#1e293b">Par où je sors ?</text>
+  <text x="478" y="392" font-size="11" fill="#64748b">La porte vers les autres</text>
+  <text x="478" y="408" font-size="11" fill="#64748b">réseaux, dont Internet.</text>
+  <text x="478" y="432" font-size="11" fill="#64748b">C'est presque toujours la</text>
+  <text x="478" y="448" font-size="11" fill="#64748b">box ou le routeur.</text>
+
+  <rect x="664" y="278" width="195" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 664 294 a 16 16 0 0 1 16 -16 h 163 a 16 16 0 0 1 16 16 v 26 h -195 z" fill="#d97706"/>
+  <text x="686" y="306" font-size="14" font-weight="700" fill="#ffffff">DNS</text>
+  <text x="686" y="342" font-size="12" font-family="Consolas, monospace" fill="#d97706">8.8.8.8</text>
+  <text x="686" y="368" font-size="11.5" fill="#1e293b">Comment je traduis ?</text>
+  <text x="686" y="392" font-size="11" fill="#64748b">L'annuaire qui convertit</text>
+  <text x="686" y="408" font-size="11" fill="#64748b">un nom (google.com) en</text>
+  <text x="686" y="424" font-size="11" fill="#64748b">adresse IP.</text>
+  <text x="686" y="448" font-size="11" fill="#64748b">Sans lui : « pas d'Internet »</text>
+
+  <!-- ===== DHCP / STATIQUE / APIPA ===== -->
+  <rect x="40" y="478" width="405" height="60" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="62" y="498" font-size="12.5" font-weight="700" fill="#1e293b">DHCP ou statique ?</text>
+  <text x="62" y="516" font-size="11.5" fill="#64748b">Le DHCP distribue ces 4 paramètres automatiquement.</text>
+  <text x="62" y="531" font-size="11.5" fill="#64748b">Statique = réservé aux serveurs, imprimantes, équipements réseau.</text>
+
+  <rect x="456" y="478" width="403" height="60" rx="12" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="478" y="500" font-size="12.5" font-weight="700" fill="#dc2626">Une IP en 169.254.x.x ? (APIPA)</text>
+  <text x="478" y="521" font-size="11.5" fill="#64748b">Le poste n'a pas trouvé de serveur DHCP. Il s'est auto-attribué une adresse.</text>
+</svg>

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="map-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="600" fill="#f8fafc"/>
+
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1e293b">Partitionner, formater, monter — l'analogie de l'immeuble</text>
+  <text x="40" y="57" font-size="13" fill="#64748b">Trois opérations distinctes. Un disque neuf ne devient utilisable qu'après les trois.</text>
+
+  <text x="40" y="84" font-size="11" font-weight="700" fill="#2563eb" letter-spacing="0.8">L'ANALOGIE</text>
+
+  <!-- ============ 1. IMMEUBLE BRUT ============ -->
+  <rect x="40" y="94" width="190" height="200" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <rect x="85" y="112" width="100" height="78" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="85" y1="126" x2="185" y2="126" stroke="#94a3b8" stroke-width="2"/>
+  <text x="135" y="165" font-size="22" fill="#cbd5e1" text-anchor="middle">∅</text>
+  <text x="135" y="218" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">Un immeuble brut</text>
+  <text x="60" y="242" font-size="11.5" fill="#64748b">Quatre murs et une dalle.</text>
+  <text x="60" y="259" font-size="11.5" fill="#64748b">Aucune cloison, aucune</text>
+  <text x="60" y="276" font-size="11.5" fill="#64748b">adresse : inhabitable.</text>
+
+  <!-- ============ 2. CLOISONS ============ -->
+  <rect x="250" y="94" width="190" height="200" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <rect x="295" y="112" width="100" height="78" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="295" y1="126" x2="395" y2="126" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="328" y1="126" x2="328" y2="190" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="362" y1="126" x2="362" y2="190" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="311" y="163" font-size="10" fill="#2563eb" text-anchor="middle">A</text>
+  <text x="345" y="163" font-size="10" fill="#2563eb" text-anchor="middle">B</text>
+  <text x="378" y="163" font-size="10" fill="#2563eb" text-anchor="middle">C</text>
+  <text x="345" y="218" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">On monte les cloisons</text>
+  <text x="270" y="242" font-size="11.5" fill="#64748b">L'espace est découpé en</text>
+  <text x="270" y="259" font-size="11.5" fill="#64748b">appartements distincts.</text>
+  <text x="270" y="276" font-size="11.5" fill="#64748b">Toujours vides.</text>
+
+  <!-- ============ 3. AMENAGEMENT ============ -->
+  <rect x="460" y="94" width="190" height="200" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <rect x="505" y="112" width="100" height="78" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="505" y1="126" x2="605" y2="126" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="538" y1="126" x2="538" y2="190" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="572" y1="126" x2="572" y2="190" stroke="#2563eb" stroke-width="2.5"/>
+  <rect x="509" y="134" width="24" height="10" rx="2" fill="#bfdbfe"/>
+  <rect x="509" y="150" width="14" height="16" rx="2" fill="#bfdbfe"/>
+  <rect x="525" y="150" width="8" height="16" rx="2" fill="#bfdbfe"/>
+  <rect x="509" y="172" width="24" height="12" rx="2" fill="#bfdbfe"/>
+  <rect x="542" y="134" width="26" height="10" rx="2" fill="#bfdbfe"/>
+  <rect x="542" y="150" width="26" height="16" rx="2" fill="#bfdbfe"/>
+  <rect x="542" y="172" width="12" height="12" rx="2" fill="#bfdbfe"/>
+  <rect x="576" y="134" width="25" height="10" rx="2" fill="#bfdbfe"/>
+  <rect x="576" y="150" width="10" height="16" rx="2" fill="#bfdbfe"/>
+  <rect x="589" y="150" width="12" height="16" rx="2" fill="#bfdbfe"/>
+  <text x="555" y="218" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">On aménage</text>
+  <text x="480" y="242" font-size="11.5" fill="#64748b">Placards, étagères, plan de</text>
+  <text x="480" y="259" font-size="11.5" fill="#64748b">rangement : on sait enfin</text>
+  <text x="480" y="276" font-size="11.5" fill="#64748b">où poser les affaires.</text>
+
+  <!-- ============ 4. ADRESSE ============ -->
+  <rect x="670" y="94" width="190" height="200" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <rect x="715" y="106" width="100" height="70" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="715" y1="118" x2="815" y2="118" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="748" y1="118" x2="748" y2="176" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="782" y1="118" x2="782" y2="176" stroke="#2563eb" stroke-width="2.5"/>
+  <rect x="757" y="156" width="16" height="20" fill="#2563eb"/>
+  <rect x="700" y="184" width="130" height="12" rx="2" fill="#cbd5e1"/>
+  <line x1="706" y1="190" x2="824" y2="190" stroke="#ffffff" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="765" y1="176" x2="765" y2="184" stroke="#2563eb" stroke-width="2.5"/>
+  <rect x="731" y="202" width="68" height="18" rx="4" fill="#dcfce7" stroke="#86efac"/>
+  <text x="765" y="215" font-size="10.5" font-weight="700" fill="#15803d" text-anchor="middle">12 rue…</text>
+  <text x="765" y="240" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">On donne une adresse</text>
+  <text x="690" y="262" font-size="11.5" fill="#64748b">Une rue, un numéro : on</text>
+  <text x="690" y="279" font-size="11.5" fill="#64748b">peut enfin y entrer.</text>
+
+  <!-- ============ FLECHES DE CORRESPONDANCE ============ -->
+  <text x="40" y="312" font-size="11" font-weight="700" fill="#2563eb" letter-spacing="0.8">LA RÉALITÉ TECHNIQUE</text>
+
+  <line x1="135" y1="320" x2="135" y2="336" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#map-arrow)"/>
+  <line x1="345" y1="320" x2="345" y2="336" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#map-arrow)"/>
+  <line x1="555" y1="320" x2="555" y2="336" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#map-arrow)"/>
+  <line x1="765" y1="320" x2="765" y2="336" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#map-arrow)"/>
+
+  <!-- ============ TECHNIQUE 1 ============ -->
+  <rect x="40" y="342" width="190" height="184" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 40 358 a 16 16 0 0 1 16 -16 h 158 a 16 16 0 0 1 16 16 v 24 h -190 z" fill="#64748b"/>
+  <text x="60" y="368" font-size="13" font-weight="700" fill="#ffffff">Disque neuf</text>
+  <text x="60" y="404" font-size="11.5" fill="#1e293b">Non initialisé : aucune</text>
+  <text x="60" y="421" font-size="11.5" fill="#1e293b">table de partition.</text>
+  <text x="60" y="446" font-size="11" fill="#64748b">Visible dans le BIOS et</text>
+  <text x="60" y="462" font-size="11" fill="#64748b">dans la gestion des disques,</text>
+  <text x="60" y="478" font-size="11" fill="#64748b">mais pas dans l'explorateur.</text>
+
+  <!-- ============ TECHNIQUE 2 ============ -->
+  <rect x="250" y="342" width="190" height="184" rx="16" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <path d="M 250 358 a 16 16 0 0 1 16 -16 h 158 a 16 16 0 0 1 16 16 v 24 h -190 z" fill="#2563eb"/>
+  <text x="270" y="368" font-size="13" font-weight="700" fill="#ffffff">Partitionnement</text>
+  <text x="270" y="404" font-size="11.5" fill="#1e293b">Table <tspan font-weight="700">MBR</tspan> ou <tspan font-weight="700">GPT</tspan>,</text>
+  <text x="270" y="421" font-size="11.5" fill="#1e293b">puis découpage en volumes.</text>
+  <rect x="270" y="434" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="278" y="448" font-size="10" font-family="Consolas, monospace" fill="#334155">Gestion des disques</text>
+  <rect x="270" y="458" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="278" y="472" font-size="10" font-family="Consolas, monospace" fill="#334155">cfdisk /dev/sdb</text>
+  <text x="270" y="497" font-size="11" fill="#64748b">→ /dev/sdb1</text>
+
+  <!-- ============ TECHNIQUE 3 ============ -->
+  <rect x="460" y="342" width="190" height="184" rx="16" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <path d="M 460 358 a 16 16 0 0 1 16 -16 h 158 a 16 16 0 0 1 16 16 v 24 h -190 z" fill="#2563eb"/>
+  <text x="480" y="368" font-size="13" font-weight="700" fill="#ffffff">Formatage</text>
+  <text x="480" y="404" font-size="11.5" fill="#1e293b">Installation du <tspan font-weight="700">système</tspan></text>
+  <text x="480" y="421" font-size="11.5" fill="#1e293b"><tspan font-weight="700">de fichiers</tspan> : NTFS, exFAT,</text>
+  <text x="480" y="438" font-size="11.5" fill="#1e293b">ext4…</text>
+  <rect x="480" y="450" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="488" y="464" font-size="10" font-family="Consolas, monospace" fill="#334155">Formater (NTFS)</text>
+  <rect x="480" y="474" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="488" y="488" font-size="10" font-family="Consolas, monospace" fill="#334155">mkfs.ext4 /dev/sdb1</text>
+
+  <!-- ============ TECHNIQUE 4 ============ -->
+  <rect x="670" y="342" width="190" height="184" rx="16" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <path d="M 670 358 a 16 16 0 0 1 16 -16 h 158 a 16 16 0 0 1 16 16 v 24 h -190 z" fill="#16a34a"/>
+  <text x="690" y="368" font-size="13" font-weight="700" fill="#ffffff">Montage</text>
+  <text x="690" y="404" font-size="11.5" fill="#1e293b">Rattachement du volume</text>
+  <text x="690" y="421" font-size="11.5" fill="#1e293b">à un point d'accès.</text>
+  <rect x="690" y="434" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="698" y="448" font-size="10" font-family="Consolas, monospace" fill="#334155">Lettre D:\ (Windows)</text>
+  <rect x="690" y="458" width="150" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="698" y="472" font-size="10" font-family="Consolas, monospace" fill="#334155">mount /mnt/partage</text>
+  <text x="690" y="497" font-size="11" fill="#16a34a" font-weight="700">Enfin accessible.</text>
+
+  <!-- ============ NOTE ============ -->
+  <rect x="40" y="544" width="820" height="34" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="60" y="565" font-size="12.5" fill="#1e293b">Sauter une étape et rien ne fonctionne : un immeuble sans cloisons ne se loue pas, un appartement sans adresse reste introuvable.</text>
+</svg>
