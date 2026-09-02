@@ -8,7 +8,7 @@ description: Support de formation pour comprendre, configurer, maintenir et diag
 <section class="pc-hero">
   <span class="pc-kicker">Support interactif · Technicien informatique</span>
   <h2>Comprendre le matériel. Diagnostiquer avec méthode.</h2>
-  <p>Sept chapitres progressifs pour prendre en charge un poste, choisir ses composants, maîtriser le démarrage et le stockage, puis résoudre les pannes courantes.</p>
+  <p>Six chapitres progressifs pour prendre en charge un poste, choisir ses composants, puis maîtriser le démarrage, le stockage et les périphériques.</p>
   <div class="pc-actions">
     <a href="./01-role-du-technicien/">Commencer le parcours →</a>
     <a href="https://kayasam.github.io/configuration-maintenance-pc/cours/parcours-interactif.html">Ouvrir le parcours HTML</a>
@@ -24,7 +24,6 @@ description: Support de formation pour comprendre, configurer, maintenir et diag
   <a class="pc-card" href="./04-bios-demarrage/"><span class="pc-card__number">04</span><small>Démarrage</small><strong>BIOS et UEFI</strong><span>POST, ordre de démarrage, Secure Boot et modes de boot.</span></a>
   <a class="pc-card" href="./05-stockage/"><span class="pc-card__number">05</span><small>Données</small><strong>Stockage et systèmes</strong><span>HDD, SSD, NVMe, partitionnement, NAS, SAN et RAID.</span></a>
   <a class="pc-card" href="./06-peripheriques/"><span class="pc-card__number">06</span><small>Connectivité</small><strong>Périphériques et réseau</strong><span>Pilotes, affichage, USB, impression, Ethernet et Wi-Fi.</span></a>
-  <a class="pc-card" href="./07-maintenance-diagnostic/"><span class="pc-card__number">07</span><small>Diagnostic</small><strong>Maintenance et dépannage</strong><span>Prévention, résolution de pannes et outils Windows.</span></a>
 </div>
 
 ## Emporter la formation

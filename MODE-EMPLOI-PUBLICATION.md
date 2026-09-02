@@ -20,13 +20,13 @@ Fondamentaux Réseaux.
 
 Le script :
 
-- range les 7 cours Markdown dans un dossier par chapitre ;
-- range les 6 TP publics sous leur chapitre associé ;
+- range les 6 cours Markdown publiés dans un dossier par chapitre ;
+- range les 5 TP publics sous leur chapitre associé ;
 - synchronise le dossier central `Ressources\images`, y compris les SVG ;
 - synchronise les versions HTML et les quiz ;
 - copie les ressources communes des cours HTML ;
 - reconstruit un coffre étudiant propre dans `student-vault` pour le ZIP ;
-- conserve et publie les 7 quiz de 20 questions ;
+- conserve et publie les 6 quiz de 20 questions ;
 - ajoute automatiquement le lien du quiz correspondant dans chaque chapitre ;
 - exclut les sessions, archives et fichiers Excalidraw ;
 - ajoute les liens HTML et téléchargements sans modifier le coffre ;

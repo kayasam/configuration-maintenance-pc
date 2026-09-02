@@ -27,8 +27,7 @@ $chapterDefinitions = @(
   @{ Slug = "03-pc-portables"; Title = "03. Choisir un PC portable"; Course = "03-pc-portables.md"; Tp = $null; TpTitle = $null },
   @{ Slug = "04-bios-demarrage"; Title = "04. BIOS et démarrage"; Course = "04-bios-demarrage.md"; Tp = "04-tp-bios-demarrage.md"; TpTitle = "TP 3 — BIOS, UEFI et démarrage" },
   @{ Slug = "05-stockage"; Title = "05. Stockage et systèmes"; Course = "05-stockage.md"; Tp = "05-tp-stockage.md"; TpTitle = "TP 4 — Stockage et partitionnement" },
-  @{ Slug = "06-peripheriques"; Title = "06. Périphériques et réseau"; Course = "06-peripheriques.md"; Tp = "06-tp-peripheriques.md"; TpTitle = "TP 5 — Connectiques et réseau" },
-  @{ Slug = "07-maintenance-diagnostic"; Title = "07. Maintenance et diagnostic"; Course = "07-maintenance-diagnostic.md"; Tp = "07-tp-maintenance.md"; TpTitle = "TP 6 — Maintenance et diagnostic" }
+  @{ Slug = "06-peripheriques"; Title = "06. Périphériques et réseau"; Course = "06-peripheriques.md"; Tp = "06-tp-peripheriques.md"; TpTitle = "TP 5 — Connectiques et réseau" }
 )
 
 function Assert-Directory {
@@ -99,6 +98,17 @@ function Add-PublicMetadata {
   [IO.File]::WriteAllText($Path, $content, $utf8WithoutBom)
 }
 
+function Remove-RetiredChapterLinks {
+  param([string]$Html)
+  $cleanHtml = [regex]::Replace(
+    $Html,
+    '<a\b[^>]*href="(?:\.\./)?07-maintenance-diagnostic/07-maintenance-diagnostic-interactif\.html"[^>]*>.*?</a>',
+    '',
+    [Text.RegularExpressions.RegexOptions]::Singleline
+  )
+  return [regex]::Replace($cleanHtml, '(?m)^[ \t]+$', '')
+}
+
 Write-Host ""
 Write-Host "Publication de Configuration et maintenance PC" -ForegroundColor Cyan
 Write-Host "==============================================" -ForegroundColor Cyan
@@ -126,8 +136,7 @@ $quizChapters = @(
   "03-pc-portables",
   "04-bios-demarrage",
   "05-stockage",
-  "06-peripheriques",
-  "07-maintenance-diagnostic"
+  "06-peripheriques"
 )
 $requiredQuizFiles = @(
   "assets\quiz\quiz.css",
@@ -155,7 +164,9 @@ foreach ($chapter in $chapterDefinitions) {
   New-Item -ItemType Directory -Path $archiveChapter -Force | Out-Null
   Copy-Item -LiteralPath (Join-Path $sourceChapter $chapter.Course) -Destination $courseDestination -Force
   Copy-Item -LiteralPath (Join-Path $sourceChapter $chapter.Course) -Destination (Join-Path $archiveChapter $chapter.Course) -Force
-  Copy-Item -LiteralPath (Join-Path $sourceChapter "$($chapter.Slug)-interactif.html") -Destination (Join-Path $archiveChapter "$($chapter.Slug)-interactif.html") -Force
+  $archiveHtmlPath = Join-Path $archiveChapter "$($chapter.Slug)-interactif.html"
+  $archiveHtml = Remove-RetiredChapterLinks -Html ([IO.File]::ReadAllText((Join-Path $sourceChapter "$($chapter.Slug)-interactif.html")))
+  [IO.File]::WriteAllText($archiveHtmlPath, $archiveHtml, $utf8WithoutBom)
   Add-PublicMetadata -Path $courseDestination -Title $chapter.Title -Aliases @("/cours/$($chapter.Slug)")
 
   if ($chapter.Tp) {
@@ -185,24 +196,24 @@ foreach ($chapter in $chapterDefinitions) {
   $sourceHtml = Join-Path $sourceRoot "cours\$($chapter.Slug)\$($chapter.Slug)-interactif.html"
   $publicHtml = Join-Path $stageCourses "$($chapter.Slug)-interactif.html"
   Copy-Item -LiteralPath $sourceHtml -Destination $publicHtml -Force
-  $html = [IO.File]::ReadAllText($publicHtml)
+  $html = Remove-RetiredChapterLinks -Html ([IO.File]::ReadAllText($publicHtml))
   foreach ($targetChapter in $chapterDefinitions) {
     $html = $html.Replace("../$($targetChapter.Slug)/$($targetChapter.Slug)-interactif.html", "$($targetChapter.Slug)-interactif.html")
   }
   [IO.File]::WriteAllText($publicHtml, $html, $utf8WithoutBom)
 }
 $sourceParcours = Join-Path $sourceRoot "cours\parcours-interactif.html"
-Copy-Item -LiteralPath $sourceParcours -Destination (Join-Path $stageCourses "parcours-interactif.html") -Force
-Copy-Item -LiteralPath $sourceParcours -Destination (Join-Path $archiveStageVault "cours\parcours-interactif.html") -Force
 $publicParcours = Join-Path $stageCourses "parcours-interactif.html"
-$parcoursHtml = [IO.File]::ReadAllText($publicParcours)
+$parcoursHtml = Remove-RetiredChapterLinks -Html ([IO.File]::ReadAllText($sourceParcours))
+$parcoursHtml = $parcoursHtml.Replace("Sept chapitres", "Six chapitres")
 foreach ($targetChapter in $chapterDefinitions) {
   $parcoursHtml = $parcoursHtml.Replace("$($targetChapter.Slug)/$($targetChapter.Slug)-interactif.html", "$($targetChapter.Slug)-interactif.html")
 }
 [IO.File]::WriteAllText($publicParcours, $parcoursHtml, $utf8WithoutBom)
+[IO.File]::WriteAllText((Join-Path $archiveStageVault "cours\parcours-interactif.html"), (Remove-RetiredChapterLinks -Html ([IO.File]::ReadAllText($sourceParcours))).Replace("Sept chapitres", "Six chapitres"), $utf8WithoutBom)
 Copy-MirroredDirectory $sourceHtmlAssets $stageAssets
 Copy-MirroredDirectory (Join-Path $staticRoot "assets\quiz") (Join-Path $stageAssets "quiz")
-Copy-MirroredDirectory (Join-Path $staticRoot "cours\quiz") (Join-Path $stageCourses "quiz")
+Copy-MirroredDirectory (Join-Path $staticRoot "cours\quiz") (Join-Path $stageCourses "quiz") -ExcludedFiles @("07-maintenance-diagnostic.html")
 
 $staticMappings = @(
   @{ Source = "index.md"; Destination = "index.md" }
@@ -228,6 +239,9 @@ Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter "*.md" | ForEach-Ob
     },
     [Text.RegularExpressions.RegexOptions]::IgnoreCase
   )
+  $retiredChapterLink = '\[\[Formations/configuration-maintenance-pc/cours/07-maintenance-diagnostic/07-maintenance-diagnostic\.md\]\]'
+  $markdown = [regex]::Replace($markdown, "\s+Voir $retiredChapterLink\.", ".")
+  $markdown = [regex]::Replace($markdown, "(?m)^[-*]\s+[^\r\n]*$retiredChapterLink\s*\r?\n?", "")
   [IO.File]::WriteAllText($markdownPath, $markdown, $utf8WithoutBom)
 }
 

@@ -415,7 +415,6 @@ La méthode consiste à **tester de plus en plus loin**. La première étape qui
 - Lignes PCIe et cartes d'extension → [[Formations/configuration-maintenance-pc/cours/02-composants-pc/02-composants-pc.md]]
 - Connectiques et ports des portables, docks → [[Formations/configuration-maintenance-pc/cours/03-pc-portables/03-pc-portables.md]]
 - Stockage réseau, NAS et partages → [[Formations/configuration-maintenance-pc/cours/05-stockage/05-stockage.md]]
-- Méthode générale de diagnostic → [[Formations/configuration-maintenance-pc/cours/07-maintenance-diagnostic/07-maintenance-diagnostic.md]]
 
 <!--
 VISUELS — tous locaux dans Ressources/images/, aucun lien externe.

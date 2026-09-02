@@ -343,7 +343,7 @@ Quand un disque tombe, la grappe passe en mode **dégradé** : elle fonctionne e
 Une variante moderne ajoute un **1** : une copie **hors ligne** ou non réinscriptible, seule protection réelle contre un ransomware qui chiffrerait aussi les sauvegardes accessibles.
 
 > [!warning]
-> Une sauvegarde jamais testée n'est pas une sauvegarde. La seule preuve qu'elle fonctionne est une **restauration réussie**. Voir [[Formations/configuration-maintenance-pc/cours/07-maintenance-diagnostic/07-maintenance-diagnostic.md]].
+> Une sauvegarde jamais testée n'est pas une sauvegarde. La seule preuve qu'elle fonctionne est une **restauration réussie**..
 
 ---
 
@@ -366,7 +366,6 @@ Une variante moderne ajoute un **1** : une copie **hors ligne** ou non réinscri
 - Modes de démarrage, MBR/GPT et partition EFI → [[Formations/configuration-maintenance-pc/cours/04-bios-demarrage/04-bios-demarrage.md]]
 - Lignes PCIe et carte mère → [[Formations/configuration-maintenance-pc/cours/02-composants-pc/02-composants-pc.md]]
 - Stockage soudé sur portable → [[Formations/configuration-maintenance-pc/cours/03-pc-portables/03-pc-portables.md]]
-- Démarche de diagnostic et sauvegardes → [[Formations/configuration-maintenance-pc/cours/07-maintenance-diagnostic/07-maintenance-diagnostic.md]]
 
 <!--
 VISUELS — tous locaux dans Ressources/images/, aucun lien externe.
