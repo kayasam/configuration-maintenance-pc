@@ -4,7 +4,7 @@ aliases:
   - "/tp/06-tp-peripheriques"
 ---
 
-# TP 5 – Connectiques et configuration réseau
+# TP 6 – Connectiques et configuration réseau
 
 > [!TIP] Ressource du TP
 >
@@ -14,7 +14,7 @@ aliases:
 
 ## Objectif
 
-Consolider les notions du chapitre 5 en deux temps :
+Consolider les notions du chapitre 6 en deux temps :
 
 1. Identifier des connectiques à partir de leur description
 2. Configurer manuellement une interface réseau sous Windows 11
@@ -173,7 +173,7 @@ Repassez l'interface en **"Obtenir une adresse IP automatiquement"** et vérifie
 Dans votre coffre Obsidian :
 
 ```md
-# TP 5 – Connectiques et configuration réseau
+# TP 6 – Connectiques et configuration réseau
 
 ## Partie 1 – Quiz
 

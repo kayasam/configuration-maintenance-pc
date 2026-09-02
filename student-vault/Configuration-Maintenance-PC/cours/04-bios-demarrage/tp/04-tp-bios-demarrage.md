@@ -1,4 +1,4 @@
-# TP 3 – BIOS, UEFI et démarrage des systèmes
+# TP 4 – BIOS, UEFI et démarrage des systèmes
 
 > Chapitre associé : `cours/04-bios-demarrage.md`
 

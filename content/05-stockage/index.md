@@ -4,7 +4,7 @@ aliases:
   - "/cours/05-stockage"
 ---
 
-# Chapitre 4 – Stockage et systèmes
+# Chapitre 5 – Stockage et systèmes
 
 > [!TIP] Ressources du chapitre
 >

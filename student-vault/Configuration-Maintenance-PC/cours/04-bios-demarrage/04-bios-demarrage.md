@@ -1,4 +1,4 @@
-# Chapitre 3 – BIOS / UEFI et démarrage du PC
+# Chapitre 4 – BIOS / UEFI et démarrage du PC
 
 > TP associé : [[Formations/configuration-maintenance-pc/cours/04-bios-demarrage/tp/04-tp-bios-demarrage.md]]
 

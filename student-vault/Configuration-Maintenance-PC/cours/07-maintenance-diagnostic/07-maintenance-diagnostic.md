@@ -1,4 +1,4 @@
-# Chapitre 6 – Maintenance et résolution de pannes
+# Chapitre 7 – Maintenance et résolution de pannes
 
 ## Maintenance préventive et corrective
 

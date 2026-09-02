@@ -4,7 +4,7 @@ aliases:
   - "/tp/07-tp-maintenance"
 ---
 
-# TP 6 – Cellule de crise support
+# TP 7 – Cellule de crise support
 
 > [!TIP] Ressource du TP
 >

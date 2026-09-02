@@ -1,4 +1,4 @@
-# Chapitre 4 – Stockage et systèmes
+# Chapitre 5 – Stockage et systèmes
 
 > TP associé : [[Formations/configuration-maintenance-pc/cours/05-stockage/tp/05-tp-stockage.md]]
 

@@ -1,4 +1,4 @@
-# TP 4 – Stockage, partitionnement et analyse
+# TP 5 – Stockage, partitionnement et analyse
 
 > Chapitre associé : `cours/05-stockage.md`
 

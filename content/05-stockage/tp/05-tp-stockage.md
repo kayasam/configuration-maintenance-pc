@@ -4,7 +4,7 @@ aliases:
   - "/tp/05-tp-stockage"
 ---
 
-# TP 4 – Stockage, partitionnement et analyse
+# TP 5 – Stockage, partitionnement et analyse
 
 > [!TIP] Ressource du TP
 >

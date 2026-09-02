@@ -1,4 +1,4 @@
-# TP 6 – Cellule de crise support
+# TP 7 – Cellule de crise support
 
 > Chapitre associé : `cours/07-maintenance-diagnostic.md`
 

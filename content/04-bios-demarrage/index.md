@@ -4,7 +4,7 @@ aliases:
   - "/cours/04-bios-demarrage"
 ---
 
-# Chapitre 3 – BIOS / UEFI et démarrage du PC
+# Chapitre 4 – BIOS / UEFI et démarrage du PC
 
 > [!TIP] Ressources du chapitre
 >

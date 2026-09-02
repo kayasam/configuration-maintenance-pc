@@ -4,7 +4,7 @@ aliases:
   - "/cours/03-pc-portables"
 ---
 
-# Chapitre 2b – Choisir un PC portable
+# Chapitre 3 – Choisir un PC portable
 
 > [!TIP] Ressources du chapitre
 >
