@@ -1,0 +1,23 @@
+/* Adapt the existing manual companions to the shared Quartz shell and theme. */
+html[data-theme] { --accentSoft: color-mix(in srgb,var(--accent) 12%,transparent); }
+html[data-theme] .content,
+html[data-theme] .side-card,
+html[data-theme] .interactive-panel,
+html[data-theme] .concepts,
+html[data-theme] .quiz-block,
+html[data-theme] .motherboard-lab,
+html[data-theme] .visual-cards { background:var(--surface);color:var(--text); }
+html[data-theme] h2,html[data-theme] h3,html[data-theme] th { color:var(--text); }
+html[data-theme] nav,html[data-theme] th,html[data-theme] pre,
+html[data-theme] .code-block,html[data-theme] .concept-card,
+html[data-theme] .visual-card,html[data-theme] .quiz-question { background:var(--surface2); }
+html[data-theme] .answers button,html[data-theme] .icon-btn { background:var(--surface2);color:var(--text); }
+html[data-theme] .callout { color:var(--text);background:color-mix(in srgb,var(--accent) 8%,var(--surface)); }
+html.support-embedded body > header,
+html.support-embedded body > nav,
+html.support-embedded .sidebar,
+html.support-embedded .pager,
+html.support-embedded .theme-toolbar,
+html.support-embedded .theme-toggle { display:none!important; }
+html.support-embedded main { display:block;max-width:none;margin:0;padding:0; }
+html.support-embedded .content { padding:clamp(16px,3vw,28px); }

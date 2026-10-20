@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Configuration et maintenance PC - Les composants d'un PC">
+<title>02 - Les composants d'un PC</title>
+<script>
+document.documentElement.dataset.theme=localStorage.getItem('pc-course-theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');
+</script>
+<style>
+:root{--bg:#0b0f17;--surface:#151a24;--surface2:#1f2633;--border:#2d3748;--text:#e5e7eb;--muted:#94a3b8;--accent:#34d399;--accentSoft:#34d39926;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--radius:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,var(--accentSoft),transparent 34rem),var(--bg);color:var(--text);font-family:Segoe UI,system-ui,sans-serif;line-height:1.65}a{color:var(--accent)}img,iframe{max-width:100%;border:0}header{padding:42px 24px 28px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#0e1420 0%,#0b0f17 100%)}.hero{max-width:1120px;margin:auto;display:grid;grid-template-columns:100px 1fr;gap:22px;align-items:center}.hero-icon{width:92px;height:92px;display:grid;place-items:center;border-radius:22px;background:var(--accentSoft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}.hero-icon svg{width:62px;height:62px}.eyebrow{margin:0 0 6px;color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.hero h1{margin:0;font-size:clamp(2rem,4vw,3.1rem);line-height:1.1}.hero p{margin:10px 0 0;color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.tag{font-family:Consolas,monospace;font-size:.72rem;color:var(--accent);border:1px solid var(--accent);background:var(--accentSoft);border-radius:5px;padding:3px 8px}nav{position:sticky;top:0;z-index:10;background:rgba(15,20,30,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow:auto}.nav-inner{max-width:1120px;margin:auto;display:flex;gap:6px;padding:8px 16px}.nav-inner a{color:var(--muted);text-decoration:none;white-space:nowrap;padding:9px 12px;border-radius:8px;font-size:.86rem;border:1px solid transparent}.nav-inner a span{font-family:Consolas,monospace;margin-right:6px;color:var(--accent)}.nav-inner a.active,.nav-inner a:hover{color:var(--text);background:var(--surface2);border-color:var(--border)}.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50}main{max-width:1120px;margin:auto;padding:26px 20px 64px;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:24px}.content,.side-card,.interactive-panel,.concepts,.quiz-block,.motherboard-lab,.visual-cards{background:rgba(21,26,36,.88);border:1px solid var(--border);border-radius:var(--radius)}.content{padding:26px}.content h1{display:none}.content h2,.interactive-panel h2,.concepts h2,.quiz-block h2,.motherboard-lab h2,.visual-cards h2{font-size:1.35rem;margin:26px 0 12px;color:#fff;border-left:4px solid var(--accent);padding-left:12px}.content h3{font-size:1.08rem;margin:22px 0 10px;color:#dbeafe}.content h4{margin:18px 0 8px}.content p{margin:0 0 14px}.content ul,.content ol{padding-left:24px}.content li{margin:5px 0}.table-wrap{overflow:auto;margin:16px 0;border:1px solid var(--border);border-radius:10px}table{width:100%;border-collapse:collapse;font-size:.92rem}th{background:var(--surface2);color:#fff;text-align:left}th,td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}tr:last-child td{border-bottom:0}tr:hover td{background:#ffffff07}.callout{margin:18px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--border);border-left:5px solid var(--accent);background:var(--accentSoft)}.callout.warning{border-left-color:var(--warn);background:#f59e0b18}.callout.success{border-left-color:var(--ok);background:#22c55e18}.callout-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;color:#fff}.code-block{position:relative;margin:16px 0}pre{overflow:auto;margin:0;padding:18px;background:#080c12;border:1px solid var(--border);border-radius:10px}code{font-family:Consolas,Cascadia Code,monospace;color:#a7f3d0}.copy{position:absolute;right:8px;top:8px}blockquote{margin:16px 0;padding:14px 16px;border-left:4px solid var(--accent);background:#ffffff08;border-radius:8px}.video-frame{position:relative;margin:18px 0;border-radius:12px;overflow:hidden;background:#05070b;border:1px solid var(--border);aspect-ratio:16/9}.video-frame iframe{width:100%;height:100%;position:absolute;inset:0}.media{margin:18px 0}.media img,.content p img{display:block;max-height:420px;object-fit:contain;margin:auto;border-radius:10px;border:1px solid var(--border);background:#fff}.sidebar{position:sticky;top:58px;align-self:start;display:flex;flex-direction:column;gap:16px}.side-card{padding:16px}.side-card h2{margin:0 0 10px;font-size:1rem}.toc a{display:block;color:var(--muted);text-decoration:none;padding:7px 0;border-bottom:1px solid #ffffff0b;font-size:.88rem}.toc a:hover{color:var(--accent)}.interactive-panel,.concepts,.quiz-block,.motherboard-lab,.visual-cards{padding:22px;margin-top:22px}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:16px}.icon-btn{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:8px;padding:7px 10px;cursor:pointer}.icon-btn:hover{border-color:var(--accent);color:var(--accent)}.schema{width:100%;height:auto;margin-top:12px}.schema-node rect{fill:var(--surface2);stroke:var(--border);stroke-width:2;transition:.2s}.schema-node text{fill:var(--text);font-size:15px;font-weight:700;pointer-events:none}.schema-node .schema-small{fill:var(--muted);font-size:12px;font-weight:400}.schema-node.active rect,.schema-node:hover rect{stroke:var(--accent);fill:var(--accentSoft)}.schema-link{fill:none;stroke:var(--accent);stroke-width:3;opacity:.7}.schema-caption{color:var(--muted);font-size:.9rem}.mb-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}.motherboard-svg{width:100%;height:auto;border:1px solid var(--border);border-radius:14px;background:radial-gradient(circle at 40% 35%,#34d3991c,transparent 22rem),#081018}.motherboard-svg text{fill:#e5e7eb;font-weight:800;font-size:18px;pointer-events:none}.motherboard-svg .small{font-size:14px;font-weight:500;fill:#94a3b8}.motherboard-svg .mb-part{cursor:pointer;outline:none}.motherboard-svg .mb-part>*{transition:filter .2s,stroke-width .2s,opacity .2s}.motherboard-svg .mb-part:hover>*,.motherboard-svg .mb-part.active>*{filter:url(#soft-glow)}.motherboard-svg .mb-part.active rect,.motherboard-svg .mb-part:hover rect{stroke-width:7}.floating-component{opacity:.96}.mb-hint{fill:#94a3b8!important;font-size:20px!important}.mb-detail-wrap{position:sticky;top:76px}.mb-detail{display:none;border:1px solid var(--border);border-radius:14px;background:#0f172a;padding:16px}.mb-detail.active{display:block}.detail-icon{color:var(--accent);background:var(--accentSoft);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:12px;margin-bottom:12px}.detail-icon svg{display:block;width:100%;height:auto;max-height:130px}.mb-detail h3{margin:0 0 8px;color:#fff}.mb-detail p{font-size:.92rem}.visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.visual-card{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px}.visual-svg{color:var(--accent);background:#07111b;border-radius:10px;border:1px solid #ffffff12}.visual-svg svg{display:block;width:100%;height:auto}.visual-card span{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:800}.visual-card h3{margin:2px 0 5px;color:#fff}.visual-card p{margin:0;color:var(--muted);font-size:.9rem}.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.concept-card{text-align:left;border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:10px;padding:14px;cursor:pointer}.concept-card span{color:var(--accent);font-family:Consolas,monospace;font-weight:800}.concept-card strong{display:block;margin:8px 0}.concept-card small{color:var(--muted)}.concept-card.done{border-color:var(--ok);background:#22c55e18}.quiz{border:1px solid var(--border);border-radius:10px;padding:16px;margin:14px 0;background:#ffffff05}.quiz h3{margin:0 0 12px;font-size:1rem}.answers{display:flex;flex-wrap:wrap;gap:8px}.answers button{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:8px;padding:9px 11px;cursor:pointer}.answers button.good{border-color:var(--ok);background:#22c55e22}.answers button.bad{border-color:var(--bad);background:#ef444422}.feedback{margin:10px 0 0;color:var(--muted)}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.pager a{flex:1;text-decoration:none;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--surface);color:var(--text)}.pager a:last-child{text-align:right}.pager span{display:block;color:var(--muted);font-size:.8rem}@media(max-width:1000px){.mb-layout{grid-template-columns:1fr}.mb-detail-wrap{position:static}.motherboard-svg .floating-component{display:none}}@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-icon{width:78px;height:78px}.hero-icon svg{width:52px}.nav-inner{justify-content:flex-start}main{grid-template-columns:1fr}.sidebar{position:static;order:-1}.content{padding:20px}.panel-head{display:block}}@media(max-width:560px){header{padding:30px 18px}.answers{display:grid}.visual-card{grid-template-columns:1fr}.pager{display:block}.pager a{display:block;margin-top:10px;text-align:left!important}}
+</style>
+<style>
+html{color-scheme:dark}html[data-theme="light"]{color-scheme:light;--bg:#f3f7f6;--surface:#ffffff;--surface2:#edf4f2;--border:#cbd9d5;--text:#17211f;--muted:#586b66;--accent:#087f5b;--accentSoft:#0ca67818;--ok:#16803c;--warn:#b65f00;--bad:#c92a2a}
+body{transition:background-color .2s,color .2s}html[data-theme="light"] body{background:radial-gradient(circle at top left,#0ca67816,transparent 34rem),var(--bg)}
+html[data-theme="light"] header{background:linear-gradient(135deg,#e9f5f1 0%,#f8fbfa 100%)}html[data-theme="light"] nav{background:#f8fbfaf2}html[data-theme="light"] .content,html[data-theme="light"] .side-card,html[data-theme="light"] .interactive-panel,html[data-theme="light"] .concepts,html[data-theme="light"] .quiz-block,html[data-theme="light"] .motherboard-lab,html[data-theme="light"] .visual-cards{background:#ffffffed;box-shadow:0 16px 45px #153a3010}
+html[data-theme="light"] .content h2,html[data-theme="light"] .interactive-panel h2,html[data-theme="light"] .concepts h2,html[data-theme="light"] .quiz-block h2,html[data-theme="light"] .motherboard-lab h2,html[data-theme="light"] .visual-cards h2,html[data-theme="light"] .content h3,html[data-theme="light"] .callout-title,html[data-theme="light"] th,html[data-theme="light"] .visual-card h3,html[data-theme="light"] .mb-detail h3{color:#17211f}
+html[data-theme="light"] .mb-detail{background:#f8fbfa}html[data-theme="light"] .visual-svg{background:#eaf4f1}html[data-theme="light"] pre{background:#17211f}html[data-theme="light"] blockquote,html[data-theme="light"] .quiz{background:#0ca6780b}html[data-theme="light"] tr:hover td{background:#0ca6780b}
+.hero{position:relative;padding-right:160px}.theme-toggle{position:absolute;right:0;top:4px;display:flex;align-items:center;gap:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:700;box-shadow:0 8px 22px #00000016}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.theme-toggle svg{width:19px;height:19px}.theme-toggle .moon{display:none}html[data-theme="light"] .theme-toggle .sun{display:none}html[data-theme="light"] .theme-toggle .moon{display:block}nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+main{max-width:1500px;grid-template-columns:minmax(0,1fr) 280px}.motherboard-lab{grid-column:1/-1;margin-top:0;padding:28px}.content{min-width:0}.mb-layout{grid-template-columns:minmax(680px,1fr) 340px;gap:24px}.motherboard-svg{display:block;min-width:0;box-shadow:inset 0 0 0 1px #ffffff0c,0 18px 45px #0000001f}.mb-canvas{min-width:0}.mb-side{min-width:0}.lab-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0 18px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface2)}.explore-status{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.9rem}.explore-status strong{color:var(--text)}.status-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--accentSoft)}.lab-actions{display:flex;gap:8px}.component-key{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.component-key button{border:1px solid var(--border);background:var(--surface2);color:var(--muted);border-radius:999px;padding:7px 10px;cursor:pointer;font-size:.78rem}.component-key button:hover,.component-key button.active{border-color:var(--accent);color:var(--accent);background:var(--accentSoft)}.motherboard-svg .small-label{font-size:12px;font-weight:700;fill:#cbd5e1}.motherboard-svg .board-details{opacity:.72;pointer-events:none}.motherboard-svg .mb-part:focus{outline:none}.motherboard-svg .mb-part:focus>*{filter:url(#soft-glow)}.mb-detail{box-shadow:0 18px 45px #0000001c}.detail-kicker{display:inline-block;margin-bottom:8px;color:var(--accent);font:700 .72rem/1 Consolas,monospace;text-transform:uppercase;letter-spacing:.08em}.motherboard-lab.is-expanded{position:fixed;inset:12px;z-index:1000;margin:0;overflow:auto;background:var(--bg);border-color:var(--accent);box-shadow:0 30px 80px #0008}.motherboard-lab.is-expanded .mb-layout{grid-template-columns:minmax(780px,1fr) 380px}.motherboard-lab.is-expanded .motherboard-svg{max-height:calc(100vh - 235px)}body.schema-open{overflow:hidden}.expand-label-close{display:none}.motherboard-lab.is-expanded .expand-label-open{display:none}.motherboard-lab.is-expanded .expand-label-close{display:inline}
+@media(max-width:1150px){.mb-layout,.motherboard-lab.is-expanded .mb-layout{grid-template-columns:1fr}.mb-detail-wrap{position:static}.mb-side{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.mb-detail.active{display:grid;grid-template-columns:150px 1fr;gap:16px}.motherboard-lab.is-expanded .motherboard-svg{max-height:none}}
+@media(max-width:900px){main{grid-template-columns:1fr}.motherboard-lab{grid-column:1;order:1}.content{order:2}.sidebar{position:static;order:3}.hero{grid-template-columns:1fr}}
+@media(max-width:700px){.hero{padding-right:0}.theme-toggle{position:static;margin-top:18px;width:max-content}.motherboard-lab{padding:18px}.lab-toolbar{align-items:flex-start;flex-direction:column}.lab-actions{width:100%}.lab-actions .icon-btn{flex:1}.mb-detail.active{display:block}.motherboard-lab.is-expanded{inset:4px}.component-key{display:grid;grid-template-columns:repeat(2,1fr)}.component-key button{text-align:left}.motherboard-svg{min-width:720px}.mb-canvas{overflow:auto}}
+</style>
+<link rel="stylesheet" href="https://kayasam.github.io/configuration-maintenance-pc/assets/themes/theme.css"><link rel="stylesheet" href="https://kayasam.github.io/configuration-maintenance-pc/assets/pc-support.css"><script src="https://kayasam.github.io/configuration-maintenance-pc/assets/themes/theme.js"></script><script>if(window.parent!==window)document.documentElement.classList.add("support-embedded");</script></head>
+<body>
+<div class="progress" id="progress"></div>
+<header>
+  <div class="hero">
+    <div class="hero-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><rect x="16" y="14" width="64" height="68" rx="8" fill="none" stroke="currentColor" stroke-width="6"/><rect x="34" y="28" width="28" height="24" rx="4" fill="currentColor" opacity=".75"/><path d="M24 66h48M24 58h14M58 58h14M26 22v-8M42 22v-8M58 22v-8M74 22v-8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+    <div>
+      <p class="eyebrow">Configuration et maintenance PC · Chapitre 02</p>
+      <h1>Les composants d'un PC</h1>
+      <p>Carte mère, CPU, RAM, PSU, PCIe et GPU</p>
+      <div class="tags"><span class="tag">CPU</span><span class="tag">RAM</span><span class="tag">PCIe</span></div>
+    </div>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Passer au thème clair">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.4 8.4 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span data-theme-label>Thème clair</span>
+    </button>
+  </div>
+</header>
+<nav><div class="nav-inner"><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/01-role-du-technicien/html/" target="_top"><span>01</span>Le rôle du technicien support</a><a class="active" href="https://kayasam.github.io/configuration-maintenance-pc/pc/02-composants-pc/html/" target="_top"><span>02</span>Les composants d'un PC</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/03-pc-portables/html/" target="_top"><span>03</span>Choisir un PC portable</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/04-bios-demarrage/html/" target="_top"><span>04</span>BIOS / UEFI et démarrage</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/05-stockage/html/" target="_top"><span>05</span>Stockage et systèmes</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/06-peripheriques/html/" target="_top"><span>06</span>Périphériques, réseau et impression</a></div></nav>
+<main>
+  <section class="motherboard-lab" id="schema-carte-mere">
+    <div class="panel-head">
+      <div>
+        <p class="eyebrow">Atelier visuel</p>
+        <h2>Carte mère interactive</h2>
+        <p>Cliquer sur un composant pour voir son rôle, ce qu'il faut vérifier et le symptôme qu'il peut provoquer.</p>
+      </div>
+    </div>
+    <div class="lab-toolbar">
+      <div class="explore-status"><span class="status-dot" aria-hidden="true"></span><span><strong data-explored-count>1 composant exploré</strong> sur 15</span></div>
+      <div class="lab-actions">
+        <button class="icon-btn" type="button" data-reset-schema>Réinitialiser</button>
+        <button class="icon-btn" type="button" data-expand-schema aria-expanded="false"><span class="expand-label-open">Agrandir le schéma</span><span class="expand-label-close">Fermer le plein écran</span></button>
+      </div>
+    </div>
+    <div class="mb-layout">
+      <div class="mb-canvas">
+      <svg class="motherboard-svg" viewBox="0 0 980 680" role="img" aria-label="Carte mère interactive avec composants">
+        <defs>
+          <linearGradient id="mb-board" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#17352f"/>
+            <stop offset="1" stop-color="#0d1f28"/>
+          </linearGradient>
+          <pattern id="trace-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+            <path d="M0 18H34M18 0V34" stroke="#5eead433" stroke-width="1"/>
+          </pattern>
+          <filter id="soft-glow"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#34d399" flood-opacity=".45"/></filter>
+        </defs>
+
+        <rect x="58" y="36" width="670" height="600" rx="26" fill="url(#mb-board)" stroke="#56cfb2" stroke-width="5"/>
+        <rect x="78" y="56" width="630" height="560" rx="18" fill="url(#trace-grid)" opacity=".8"/>
+
+        <path d="M204 175H330V92H568V210H662M232 402H428V545H652M456 226V343H612M154 124H96V514H202" fill="none" stroke="#7dd3fc88" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M358 292H430M430 292V390M430 390H528M216 314H340M340 314V252" fill="none" stroke="#fde68a88" stroke-width="4" stroke-linecap="round"/>
+        <g class="board-details" fill="#94a3b8" stroke="#cbd5e1" stroke-width="2">
+          <circle cx="178" cy="174" r="9"/><circle cx="178" cy="204" r="9"/><circle cx="178" cy="234" r="9"/>
+          <rect x="154" y="262" width="48" height="14" rx="4"/><rect x="154" y="286" width="48" height="14" rx="4"/>
+          <circle cx="690" cy="430" r="8"/><circle cx="665" cy="430" r="8"/><circle cx="640" cy="430" r="8"/>
+          <path d="M454 118v28M470 118v28M186 350h44M186 364h44M592 452h74" fill="none"/>
+        </g>
+
+        <g class="mb-part" data-part="io" tabindex="0">
+          <rect x="72" y="98" width="72" height="394" rx="12" fill="#111827" stroke="#94a3b8" stroke-width="4"/>
+          <rect x="90" y="128" width="38" height="26" rx="4" fill="#475569"/>
+          <rect x="90" y="174" width="38" height="26" rx="4" fill="#2563eb"/>
+          <rect x="90" y="222" width="38" height="26" rx="4" fill="#2563eb"/>
+          <rect x="88" y="278" width="42" height="34" rx="4" fill="#16a34a"/>
+          <rect x="94" y="358" width="30" height="82" rx="8" fill="#334155"/>
+          <text x="108" y="522" text-anchor="middle">I/O</text>
+        </g>
+
+        <g class="mb-part active" data-part="socket" tabindex="0">
+          <rect x="246" y="140" width="188" height="188" rx="16" fill="#d1d5db" stroke="#f8fafc" stroke-width="7"/>
+          <rect x="276" y="170" width="128" height="128" rx="10" fill="#1f2937" stroke="#94a3b8" stroke-width="5"/>
+          <path d="M292 186h96M292 210h96M292 234h96M292 258h96M292 282h96" stroke="#6b7280" stroke-width="3"/>
+          <text x="340" y="242" text-anchor="middle" fill="#e2e8f0">Socket CPU</text>
+        </g>
+
+        <g class="mb-part" data-part="vrm" tabindex="0">
+          <rect x="210" y="82" width="24" height="62" rx="5" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <rect x="246" y="82" width="24" height="42" rx="5" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <rect x="282" y="82" width="24" height="42" rx="5" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <rect x="318" y="82" width="24" height="42" rx="5" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <rect x="354" y="82" width="24" height="42" rx="5" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <text x="296" y="64" text-anchor="middle">VRM</text>
+        </g>
+
+        <g class="mb-part" data-part="cpu8" tabindex="0">
+          <rect x="526" y="72" width="120" height="44" rx="7" fill="#111827" stroke="#f97316" stroke-width="4"/>
+          <g fill="#f9731655" stroke="#f97316" stroke-width="2"><rect x="538" y="79" width="18" height="13" rx="2"/><rect x="563" y="79" width="18" height="13" rx="2"/><rect x="588" y="79" width="18" height="13" rx="2"/><rect x="613" y="79" width="18" height="13" rx="2"/><rect x="538" y="96" width="18" height="13" rx="2"/><rect x="563" y="96" width="18" height="13" rx="2"/><rect x="588" y="96" width="18" height="13" rx="2"/><rect x="613" y="96" width="18" height="13" rx="2"/></g>
+          <text x="586" y="138" text-anchor="middle">CPU 8 pins</text>
+        </g>
+
+        <g class="mb-part" data-part="ram" tabindex="0">
+          <rect x="492" y="156" width="34" height="248" rx="7" fill="#111827" stroke="#86efac" stroke-width="4"/>
+          <rect x="542" y="156" width="34" height="248" rx="7" fill="#111827" stroke="#86efac" stroke-width="4"/>
+          <rect x="592" y="156" width="34" height="248" rx="7" fill="#111827" stroke="#86efac" stroke-width="4"/>
+          <rect x="642" y="156" width="34" height="248" rx="7" fill="#111827" stroke="#86efac" stroke-width="4"/>
+          <path d="M509 176v204M559 176v204M609 176v204M659 176v204" stroke="#22c55e66" stroke-width="5"/>
+          <g fill="#86efac"><path d="M500 150h18l-3 12h-12ZM550 150h18l-3 12h-12ZM600 150h18l-3 12h-12ZM650 150h18l-3 12h-12Z"/><path d="M500 410h18l-3-12h-12ZM550 410h18l-3-12h-12ZM600 410h18l-3-12h-12ZM650 410h18l-3-12h-12Z"/></g>
+          <path d="M500 278h18M550 278h18M600 278h18M650 278h18" stroke="#081018" stroke-width="7"/>
+          <text x="584" y="436" text-anchor="middle">Slots RAM</text>
+        </g>
+
+        <g class="mb-part" data-part="chipset" tabindex="0">
+          <rect x="474" y="448" width="104" height="104" rx="14" fill="#0f172a" stroke="#facc15" stroke-width="5"/>
+          <circle cx="526" cy="500" r="30" fill="#facc1528" stroke="#facc15" stroke-width="4"/>
+          <text x="526" y="582" text-anchor="middle">Chipset</text>
+        </g>
+
+        <g class="mb-part" data-part="pcie" tabindex="0">
+          <rect x="176" y="392" width="270" height="44" rx="8" fill="#111827" stroke="#c084fc" stroke-width="5"/>
+          <path d="M192 414h40M246 414h174" stroke="#c084fc" stroke-width="7" stroke-linecap="round"/>
+          <path d="M232 401v26M246 401v26" stroke="#111827" stroke-width="7"/>
+          <path d="M446 400h15v18l-8 10h-7" fill="#c084fc55" stroke="#c084fc" stroke-width="4" stroke-linejoin="round"/>
+          <text x="310" y="468" text-anchor="middle">PCIe x16</text>
+        </g>
+
+        <g class="mb-part" data-part="m2" tabindex="0">
+          <rect x="214" y="506" width="220" height="32" rx="6" fill="#111827" stroke="#38bdf8" stroke-width="5"/>
+          <circle cx="410" cy="522" r="7" fill="none" stroke="#38bdf8" stroke-width="4"/>
+          <rect x="236" y="514" width="70" height="16" rx="3" fill="#38bdf855"/>
+          <text x="324" y="570" text-anchor="middle">M.2 SSD</text>
+        </g>
+
+        <g class="mb-part" data-part="sata" tabindex="0">
+          <g transform="translate(596 462)">
+            <rect width="102" height="32" rx="6" fill="#111827" stroke="#fb7185" stroke-width="4"/>
+            <path d="M14 9H88V17H36V23H14Z" fill="#fb718538" stroke="#fb7185" stroke-width="2.5" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(596 506)">
+            <rect width="102" height="32" rx="6" fill="#111827" stroke="#fb7185" stroke-width="4"/>
+            <path d="M14 9H88V17H36V23H14Z" fill="#fb718538" stroke="#fb7185" stroke-width="2.5" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(596 550)">
+            <rect width="102" height="32" rx="6" fill="#111827" stroke="#fb7185" stroke-width="4"/>
+            <path d="M14 9H88V17H36V23H14Z" fill="#fb718538" stroke="#fb7185" stroke-width="2.5" stroke-linejoin="round"/>
+          </g>
+          <text x="647" y="612" text-anchor="middle">SATA</text>
+        </g>
+
+        <g class="mb-part" data-part="power24" tabindex="0">
+          <rect x="746" y="196" width="70" height="178" rx="10" fill="#111827" stroke="#f8fafc" stroke-width="5"/>
+          <g fill="#e5e7eb99">
+            <rect x="762" y="216" width="12" height="12"/><rect x="788" y="216" width="12" height="12"/>
+            <rect x="762" y="242" width="12" height="12"/><rect x="788" y="242" width="12" height="12"/>
+            <rect x="762" y="268" width="12" height="12"/><rect x="788" y="268" width="12" height="12"/>
+            <rect x="762" y="294" width="12" height="12"/><rect x="788" y="294" width="12" height="12"/>
+            <rect x="762" y="320" width="12" height="12"/><rect x="788" y="320" width="12" height="12"/>
+          </g>
+          <text x="782" y="404" text-anchor="middle">ATX 24</text>
+        </g>
+
+        <g class="mb-part" data-part="cmos" tabindex="0">
+          <circle cx="414" cy="352" r="38" fill="#cbd5e1" stroke="#f8fafc" stroke-width="5"/>
+          <circle cx="414" cy="352" r="25" fill="#64748b" stroke="#334155" stroke-width="3"/>
+          <path d="M403 352h22M414 341v22" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+          <text x="414" y="407" text-anchor="middle" class="small-label">Pile CMOS</text>
+        </g>
+
+        <g class="mb-part" data-part="bios" tabindex="0">
+          <rect x="158" y="318" width="66" height="50" rx="7" fill="#111827" stroke="#f59e0b" stroke-width="4"/>
+          <path d="M150 326h8M150 338h8M150 350h8M150 362h8M224 326h8M224 338h8M224 350h8M224 362h8" stroke="#f59e0b" stroke-width="3"/>
+          <text x="191" y="348" text-anchor="middle" class="small-label">BIOS</text>
+        </g>
+
+        <g class="mb-part" data-part="usb" tabindex="0">
+          <rect x="172" y="574" width="114" height="28" rx="6" fill="#111827" stroke="#38bdf8" stroke-width="4"/>
+          <g fill="#38bdf8"><circle cx="190" cy="588" r="4"/><circle cx="208" cy="588" r="4"/><circle cx="226" cy="588" r="4"/><circle cx="244" cy="588" r="4"/><circle cx="262" cy="588" r="4"/></g>
+          <text x="229" y="625" text-anchor="middle" class="small-label">USB façade</text>
+        </g>
+
+        <g class="mb-part" data-part="front" tabindex="0">
+          <rect x="454" y="586" width="132" height="28" rx="6" fill="#111827" stroke="#a3e635" stroke-width="4"/>
+          <g fill="#a3e635"><circle cx="472" cy="600" r="4"/><circle cx="491" cy="600" r="4"/><circle cx="510" cy="600" r="4"/><circle cx="529" cy="600" r="4"/><circle cx="548" cy="600" r="4"/><circle cx="567" cy="600" r="4"/></g>
+          <text x="520" y="640" text-anchor="middle" class="small-label">Panneau avant</text>
+        </g>
+
+        <g class="mb-part" data-part="fan" tabindex="0">
+          <rect x="404" y="82" width="82" height="30" rx="6" fill="#111827" stroke="#2dd4bf" stroke-width="4"/>
+          <circle cx="425" cy="97" r="5" fill="#2dd4bf"/><circle cx="445" cy="97" r="5" fill="#2dd4bf"/><circle cx="465" cy="97" r="5" fill="#2dd4bf"/>
+          <text x="445" y="132" text-anchor="middle" class="small-label">CPU_FAN</text>
+        </g>
+
+        <g transform="translate(746 444)">
+          <rect width="170" height="138" rx="16" fill="#101827" stroke="#34d399" stroke-width="3"/>
+          <text x="85" y="31" text-anchor="middle" fill="#34d399">Repères</text>
+          <text x="18" y="59" class="small" fill="#cbd5e1">• contour coloré = zone</text>
+          <text x="18" y="82" class="small" fill="#cbd5e1">• clic = rôle + panne</text>
+          <text x="18" y="105" class="small" fill="#cbd5e1">• Tab + Entrée = clavier</text>
+        </g>
+
+        <text x="756" y="84" class="mb-hint">15 zones à explorer</text>
+        <text x="756" y="112" class="mb-hint small">connecteurs, bus et diagnostic</text>
+      </svg>
+
+      <div class="component-key" aria-label="Sélection rapide d'un composant">
+        <button type="button" data-select-part="socket" class="active">Socket CPU</button><button type="button" data-select-part="vrm">VRM</button><button type="button" data-select-part="fan">CPU_FAN</button><button type="button" data-select-part="cpu8">EPS 8 pins</button><button type="button" data-select-part="ram">RAM</button><button type="button" data-select-part="power24">ATX 24 pins</button><button type="button" data-select-part="pcie">PCIe x16</button><button type="button" data-select-part="m2">M.2</button><button type="button" data-select-part="sata">SATA</button><button type="button" data-select-part="chipset">Chipset</button><button type="button" data-select-part="cmos">Pile CMOS</button><button type="button" data-select-part="bios">BIOS/UEFI</button><button type="button" data-select-part="usb">USB façade</button><button type="button" data-select-part="front">Panneau avant</button><button type="button" data-select-part="io">I/O arrière</button>
+      </div>
+      </div>
+
+      <div class="mb-side">
+        <div class="mb-detail-wrap"><article class="mb-detail active" data-detail="socket">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="28" y="13" width="64" height="64" rx="8" fill="#101827" stroke="currentColor" stroke-width="5"/><rect x="42" y="27" width="36" height="36" rx="5" fill="currentColor" opacity=".25"/><path d="M24 22h-9M24 36h-9M24 50h-9M24 64h-9M96 22h9M96 36h9M96 50h9M96 64h9" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div>
+          <h3>Socket CPU</h3>
+          <p><strong>Rôle :</strong> Accueille le processeur et impose la compatibilité de plateforme.</p>
+          <p><strong>À vérifier :</strong> Même génération de CPU ne suffit pas : il faut vérifier le socket, le chipset et parfois la version du BIOS/UEFI.</p>
+          <p><strong>Symptôme typique :</strong> CPU incompatible : écran noir, POST bloqué, ventilateurs qui tournent sans affichage.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="vrm">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><path d="M15 66h90" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><g fill="#101827" stroke="currentColor" stroke-width="4"><rect x="18" y="24" width="18" height="35" rx="3"/><rect x="42" y="24" width="18" height="35" rx="3"/><rect x="66" y="24" width="18" height="35" rx="3"/></g><circle cx="98" cy="43" r="13" fill="currentColor" opacity=".28" stroke="currentColor" stroke-width="4"/><path d="M92 43h12" stroke="currentColor" stroke-width="4"/></svg></div>
+        <div>
+          <h3>VRM</h3>
+          <p><strong>Rôle :</strong> Stabilise la tension envoyée au processeur.</p>
+          <p><strong>À vérifier :</strong> Sur une machine puissante, des VRM faibles peuvent provoquer chauffe, baisse de fréquence ou instabilité.</p>
+          <p><strong>Symptôme typique :</strong> Redémarrages en charge, throttling, ventilateurs bruyants autour du socket.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="ram">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="16" y="30" width="88" height="30" rx="5" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M30 60v10M48 60v10M66 60v10M84 60v10" stroke="currentColor" stroke-width="4"/><rect x="28" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/><rect x="50" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/><rect x="72" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/></svg></div>
+        <div>
+          <h3>Slots RAM</h3>
+          <p><strong>Rôle :</strong> Accueillent les barrettes mémoire, idéalement en dual channel.</p>
+          <p><strong>À vérifier :</strong> Les générations DDR ne sont pas interchangeables. On installe les barrettes dans les slots recommandés par le manuel.</p>
+          <p><strong>Symptôme typique :</strong> PC qui ne démarre pas, bips POST, écrans bleus ou lenteurs si la RAM manque.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="pcie">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="16" y="26" width="88" height="38" rx="6" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M30 64v12M48 64v12M66 64v12M84 64v12" stroke="currentColor" stroke-width="4"/><circle cx="32" cy="45" r="7" fill="currentColor" opacity=".35"/><path d="M48 45h38" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h3>PCIe x16</h3>
+          <p><strong>Rôle :</strong> Connecte la carte graphique ou une carte d'extension rapide.</p>
+          <p><strong>À vérifier :</strong> La taille physique x16 ne garantit pas toujours 16 lignes câblées. Le manuel de la carte mère tranche.</p>
+          <p><strong>Symptôme typique :</strong> GPU non détecté, performances réduites, affichage branché sur la mauvaise sortie.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="m2">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="18" y="34" width="84" height="22" rx="4" fill="#101827" stroke="currentColor" stroke-width="5"/><circle cx="94" cy="45" r="5" fill="none" stroke="currentColor" stroke-width="3"/><rect x="30" y="40" width="22" height="10" rx="2" fill="currentColor" opacity=".35"/></svg></div>
+        <div>
+          <h3>Slot M.2</h3>
+          <p><strong>Rôle :</strong> Reçoit un SSD compact, en SATA ou NVMe selon la carte.</p>
+          <p><strong>À vérifier :</strong> M.2 est un format physique. NVMe est un protocole sur PCIe : les deux notions sont différentes.</p>
+          <p><strong>Symptôme typique :</strong> SSD absent du BIOS, disque lent, mauvais emplacement ou mode SATA/NVMe confondu.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="sata">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><g fill="#101827" stroke="currentColor" stroke-width="4"><rect x="18" y="15" width="84" height="24" rx="5"/><rect x="18" y="51" width="84" height="24" rx="5"/></g><path d="M29 22h62v7H47v5H29ZM29 58h62v7H47v5H29Z" fill="currentColor" opacity=".38" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Ports SATA</h3>
+          <p><strong>Rôle :</strong> Connectent HDD, SSD SATA et lecteurs optiques.</p>
+          <p><strong>À reconnaître :</strong> Le détrompeur intérieur forme un <strong>L</strong>. Il impose le sens d'insertion : on ne force jamais le câble.</p>
+          <p><strong>À vérifier :</strong> Un disque nécessite deux câbles : données vers la carte mère et alimentation depuis le bloc PSU.</p>
+          <p><strong>Symptôme typique :</strong> Disque non détecté : vérifier câble SATA, alimentation, port, puis gestion des disques.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="power24">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="26" y="18" width="68" height="54" rx="7" fill="#101827" stroke="currentColor" stroke-width="5"/><g fill="currentColor" opacity=".45"><rect x="38" y="30" width="10" height="10"/><rect x="55" y="30" width="10" height="10"/><rect x="72" y="30" width="10" height="10"/><rect x="38" y="49" width="10" height="10"/><rect x="55" y="49" width="10" height="10"/><rect x="72" y="49" width="10" height="10"/></g></svg></div>
+        <div>
+          <h3>ATX 24 pins</h3>
+          <p><strong>Rôle :</strong> Alimentation principale de la carte mère.</p>
+          <p><strong>À vérifier :</strong> Sans ce connecteur bien enclenché, la carte ne reçoit pas correctement ses tensions principales.</p>
+          <p><strong>Symptôme typique :</strong> Aucun démarrage, voyants absents ou comportement instable.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="cpu8">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="20" y="18" width="80" height="54" rx="8" fill="#101827" stroke="currentColor" stroke-width="5"/><g fill="currentColor" opacity=".34"><path d="M30 28h14v14H30zM49 28h14v14H49zM68 28h14v14H68zM87 28h3v14h-3z"/><path d="M30 48h14v14H30zM49 48h14v14H49zM68 48h14v14H68zM87 48h3v14h-3z"/></g><path d="M44 18l5 6h22l5-6" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
+        <div>
+          <h3>EPS CPU 8 pins</h3>
+          <p><strong>Rôle :</strong> Alimente directement l'étage CPU.</p>
+          <p><strong>À vérifier :</strong> À ne pas confondre avec certains câbles PCIe GPU, même si les formes semblent proches.</p>
+          <p><strong>Symptôme typique :</strong> Ventilateurs qui tournent, mais pas de POST ou extinction immédiate.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="chipset">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="25" y="12" width="70" height="66" rx="9" fill="#101827" stroke="currentColor" stroke-width="5"/><circle cx="60" cy="45" r="20" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="3"/><path d="M60 25v40M40 45h40M46 31l28 28M74 31 46 59" stroke="currentColor" stroke-width="3" opacity=".7"/></svg></div>
+        <div>
+          <h3>Chipset</h3>
+          <p><strong>Rôle :</strong> Gère une partie des échanges entre stockage, USB, PCIe et périphériques.</p>
+          <p><strong>À vérifier :</strong> Il complète le CPU : certaines lignes et fonctions passent par lui, avec de la bande passante partagée.</p>
+          <p><strong>Symptôme typique :</strong> Ports ou périphériques absents, limites de lignes PCIe, fonctions indisponibles.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="io">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="17" y="12" width="86" height="66" rx="8" fill="#101827" stroke="currentColor" stroke-width="5"/><rect x="27" y="23" width="28" height="13" rx="2" fill="#2563eb"/><rect x="27" y="43" width="28" height="13" rx="2" fill="#2563eb"/><rect x="65" y="22" width="27" height="23" rx="3" fill="#16a34a"/><g fill="none" stroke="currentColor" stroke-width="3"><circle cx="71" cy="62" r="5"/><circle cx="87" cy="62" r="5"/></g></svg></div>
+        <div>
+          <span class="detail-kicker">Connectique externe</span>
+          <h3>Backplate I/O</h3>
+          <p><strong>Rôle :</strong> Expose les ports vers l'extérieur : USB, réseau, audio, vidéo.</p>
+          <p><strong>À vérifier :</strong> Pour diagnostiquer un périphérique, on commence souvent par changer de port ou tester en façade/arrière.</p>
+          <p><strong>Symptôme typique :</strong> USB instable, réseau absent, mauvais port vidéo utilisé.</p>
+        </div>
+      </article><article class="mb-detail " data-detail="cmos">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><circle cx="60" cy="45" r="30" fill="#64748b" stroke="currentColor" stroke-width="5"/><path d="M48 45h24M60 33v24" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <div><span class="detail-kicker">Mémoire des réglages</span><h3>Pile CMOS</h3><p><strong>Rôle :</strong> Maintient l'horloge et certains réglages du firmware lorsque le PC est hors tension.</p><p><strong>À vérifier :</strong> Tension de la pile, date et heure qui se réinitialisent, paramètres UEFI perdus.</p><p><strong>Symptôme typique :</strong> Heure incorrecte, message CMOS checksum, ordre de démarrage oublié.</p></div>
+      </article><article class="mb-detail " data-detail="bios">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="30" y="22" width="60" height="46" rx="6" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M21 30h9M21 42h9M21 54h9M21 66h9M90 30h9M90 42h9M90 54h9M90 66h9" stroke="currentColor" stroke-width="4"/></svg></div>
+        <div><span class="detail-kicker">Firmware</span><h3>Puce BIOS / UEFI</h3><p><strong>Rôle :</strong> Contient le firmware qui initialise le matériel et lance la séquence de démarrage.</p><p><strong>À vérifier :</strong> Version compatible avec le CPU, procédure de mise à jour et méthode de récupération.</p><p><strong>Symptôme typique :</strong> POST bloqué après changement de CPU, démarrage impossible après mise à jour interrompue.</p></div>
+      </article><article class="mb-detail " data-detail="usb">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="20" y="30" width="80" height="30" rx="6" fill="#101827" stroke="currentColor" stroke-width="5"/><g fill="currentColor"><circle cx="36" cy="45" r="4"/><circle cx="50" cy="45" r="4"/><circle cx="64" cy="45" r="4"/><circle cx="78" cy="45" r="4"/></g></svg></div>
+        <div><span class="detail-kicker">Boîtier</span><h3>Connecteur USB interne</h3><p><strong>Rôle :</strong> Relie les ports USB de façade à la carte mère.</p><p><strong>À vérifier :</strong> Type d'en-tête (USB 2.0, USB 3.x, USB-C) et sens du détrompeur.</p><p><strong>Symptôme typique :</strong> Ports avant inactifs ou périphériques qui se déconnectent.</p></div>
+      </article><article class="mb-detail " data-detail="front">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><rect x="18" y="31" width="84" height="28" rx="5" fill="#101827" stroke="currentColor" stroke-width="5"/><g fill="currentColor"><circle cx="34" cy="45" r="4"/><circle cx="50" cy="45" r="4"/><circle cx="66" cy="45" r="4"/><circle cx="82" cy="45" r="4"/></g></svg></div>
+        <div><span class="detail-kicker">Commandes du boîtier</span><h3>Panneau avant (F_PANEL)</h3><p><strong>Rôle :</strong> Relie bouton Power, Reset et voyants du boîtier.</p><p><strong>À vérifier :</strong> Position des broches dans le manuel ; les LED ont une polarité, les boutons non.</p><p><strong>Symptôme typique :</strong> Rien ne se passe au bouton Power alors que la carte est alimentée.</p></div>
+      </article><article class="mb-detail " data-detail="fan">
+        <div class="detail-icon"><svg viewBox="0 0 120 90"><circle cx="60" cy="45" r="30" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M60 45c-4-21 14-23 17-13 3 9-7 15-17 13Zm0 0c21-4 23 14 13 17-9 3-15-7-13-17Zm0 0c4 21-14 23-17 13-3-9 7-15 17-13Z" fill="currentColor" opacity=".45"/></svg></div>
+        <div><span class="detail-kicker">Refroidissement</span><h3>CPU_FAN</h3><p><strong>Rôle :</strong> Alimente et contrôle le ventilateur du refroidisseur CPU.</p><p><strong>À vérifier :</strong> Le ventilateur processeur doit être branché sur CPU_FAN, pas seulement sur un connecteur système.</p><p><strong>Symptôme typique :</strong> Alerte au démarrage, température CPU élevée ou arrêt de protection.</p></div>
+      </article></div>
+      </div>
+    </div>
+  </section>
+  <article class="content">
+    <section class="visual-cards">
+    <p class="eyebrow">Lecture rapide</p>
+    <h2>Les composants en une minute</h2>
+    <div class="visual-grid">
+      <article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="28" y="13" width="64" height="64" rx="8" fill="#101827" stroke="currentColor" stroke-width="5"/><rect x="42" y="27" width="36" height="36" rx="5" fill="currentColor" opacity=".25"/><path d="M24 22h-9M24 36h-9M24 50h-9M24 64h-9M96 22h9M96 36h9M96 50h9M96 64h9" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+            <div>
+              <span>Calcul</span>
+              <h3>Processeur (CPU)</h3>
+              <p>Exécute les instructions. À relier au socket, au TDP et à l'usage réel.</p>
+            </div>
+          </article><article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="16" y="30" width="88" height="30" rx="5" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M30 60v10M48 60v10M66 60v10M84 60v10" stroke="currentColor" stroke-width="4"/><rect x="28" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/><rect x="50" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/><rect x="72" y="39" width="12" height="12" rx="2" fill="currentColor" opacity=".4"/></svg></div>
+            <div>
+              <span>Travail</span>
+              <h3>Mémoire vive (RAM)</h3>
+              <p>Espace de travail temporaire. Quantité, génération DDR et dual channel comptent.</p>
+            </div>
+          </article><article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="18" y="34" width="84" height="22" rx="4" fill="#101827" stroke="currentColor" stroke-width="5"/><circle cx="94" cy="45" r="5" fill="none" stroke="currentColor" stroke-width="3"/><rect x="30" y="40" width="22" height="10" rx="2" fill="currentColor" opacity=".35"/></svg></div>
+            <div>
+              <span>Stockage</span>
+              <h3>SSD M.2 / NVMe</h3>
+              <p>Stockage compact et rapide. Attention : M.2 n'est pas toujours NVMe.</p>
+            </div>
+          </article><article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="16" y="26" width="88" height="38" rx="6" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M30 64v12M48 64v12M66 64v12M84 64v12" stroke="currentColor" stroke-width="4"/><circle cx="32" cy="45" r="7" fill="currentColor" opacity=".35"/><path d="M48 45h38" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+            <div>
+              <span>Affichage</span>
+              <h3>Carte graphique (GPU)</h3>
+              <p>Produit l'affichage et accélère 3D, vidéo, IA ou calcul graphique.</p>
+            </div>
+          </article><article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="26" y="18" width="68" height="54" rx="7" fill="#101827" stroke="currentColor" stroke-width="5"/><g fill="currentColor" opacity=".45"><rect x="38" y="30" width="10" height="10"/><rect x="55" y="30" width="10" height="10"/><rect x="72" y="30" width="10" height="10"/><rect x="38" y="49" width="10" height="10"/><rect x="55" y="49" width="10" height="10"/><rect x="72" y="49" width="10" height="10"/></g></svg></div>
+            <div>
+              <span>Énergie</span>
+              <h3>Alimentation (PSU)</h3>
+              <p>Convertit le courant et stabilise l'énergie. Qualité et marge sont critiques.</p>
+            </div>
+          </article><article class="visual-card">
+            <div class="visual-svg"><svg viewBox="0 0 120 90"><rect x="20" y="16" width="80" height="58" rx="10" fill="#101827" stroke="currentColor" stroke-width="5"/><path d="M36 34h48M36 48h36M36 62h22" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+            <div>
+              <span>Plateforme</span>
+              <h3>Carte mère</h3>
+              <p>La plateforme qui relie tout : socket, RAM, ports, bus, stockage et extensions.</p>
+            </div>
+          </article>
+    </div>
+  </section>
+    <h1>Les composants d'un PC</h1>
+<h2 id="vue-d-ensemble-de-l-architecture">Vue d'ensemble de l'architecture</h2>
+<p>Un poste de travail est composé de plusieurs éléments interdépendants :</p>
+<div class="table-wrap"><table><thead><tr><th>Composant</th><th>Rôle</th></tr></thead><tbody><tr><td><strong>Boîtier</strong></td><td>Protège et organise les composants</td></tr><tr><td><strong>Carte mère</strong></td><td>Relie et fait communiquer tous les composants</td></tr><tr><td><strong>Processeur (CPU)</strong></td><td>Effectue les calculs</td></tr><tr><td><strong>Mémoire vive (RAM)</strong></td><td>Stocke temporairement les données en cours d'utilisation</td></tr><tr><td><strong>Stockage</strong></td><td>Conserve les données (SSD, HDD)</td></tr><tr><td><strong>Carte graphique (GPU)</strong></td><td>Gère l'affichage</td></tr><tr><td><strong>Alimentation (PSU)</strong></td><td>Fournit l'énergie électrique</td></tr></tbody></table></div>
+<p>Chaque composant a un rôle précis. Une panne ou une limite de performance vient souvent de l'un d'eux.</p>
+<h2 id="la-carte-mere">La carte mère</h2>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/-hAxNlLgBXg?si=XZKN0AU4ApMcyV9T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>La carte mère détermine :</p>
+<ul><li>le type de processeur utilisable (socket)</li><li>le type et la quantité de RAM</li><li>les possibilités d'évolution (slots PCIe, ports SATA, M.2)</li></ul>
+<p>Elle centralise toutes les connexions internes.</p>
+<blockquote><a href="https://northernmicro.com/spirit-manuals/spirit-q370-as-sff-guide-dutilisateur/Diagramme_de_la_carte_m%C3%A8re.htm" target="_blank" rel="noopener">Diagramme de la carte mère — Northernmicro</a></blockquote>
+<div class="table-wrap"><table><thead><tr><th>Composant</th><th>Rôle</th></tr></thead><tbody><tr><td><strong>Socket CPU</strong></td><td>Accueil du processeur — détermine la compatibilité</td></tr><tr><td><strong>VRM (étages d'alimentation)</strong></td><td>Régule et stabilise la tension envoyée au CPU</td></tr><tr><td><strong>Slots RAM</strong></td><td>Accueillent les barrettes de RAM</td></tr><tr><td><strong>Alimentation 24 pins</strong></td><td>Alimentation principale de la carte mère</td></tr><tr><td><strong>Chipset</strong></td><td>Gère les communications entre CPU, mémoire, stockage et périphériques</td></tr><tr><td><strong>Slot PCIe x16</strong></td><td>Accueille la carte graphique</td></tr><tr><td><strong>Slot M.2</strong></td><td>SSD NVMe — stockage très haute vitesse</td></tr><tr><td><strong>Connecteurs SATA</strong></td><td>Stockage classique (HDD, SSD SATA)</td></tr><tr><td><strong>Backplate I/O</strong></td><td>USB, réseau, audio, vidéo vers l'extérieur</td></tr></tbody></table></div>
+<h2 id="le-processeur-cpu">Le processeur (CPU)</h2>
+<p>Le <strong>processeur (CPU)</strong> est le composant central du PC. Il exécute les instructions des programmes et coordonne les autres composants.</p>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/z80inke28CM?si=_Mq1rdLOXmtlDRfB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Sans CPU fonctionnel, le PC ne démarre pas.</p>
+<blockquote><a href="https://fr.wikipedia.org/wiki/Processeur" target="_blank" rel="noopener">Processeur — Wikipédia</a></blockquote>
+<h3 id="parametres-cles">Paramètres clés</h3>
+<div class="table-wrap"><table><thead><tr><th>Paramètre</th><th>Rôle</th></tr></thead><tbody><tr><td><strong>Socket</strong></td><td>Compatibilité avec la carte mère</td></tr><tr><td><strong>Cœurs / threads</strong></td><td>Capacité à traiter plusieurs tâches simultanément</td></tr><tr><td><strong>Fréquence (GHz)</strong></td><td>Vitesse de traitement par cœur</td></tr><tr><td><strong>GPU intégré</strong></td><td>Affichage sans carte dédiée (bureautique)</td></tr><tr><td><strong>TDP</strong></td><td>Dissipation thermique — impacte refroidissement et bruit</td></tr><tr><td><strong>Mémoire supportée</strong></td><td>Type DDR, fréquence max, quantité</td></tr></tbody></table></div>
+<h3 id="intel-gammes-principales">Intel – gammes principales</h3>
+<div class="table-wrap"><table><thead><tr><th>Gamme</th><th>Usage</th></tr></thead><tbody><tr><td>Core i3 / i5 / i7 / i9</td><td>Desktop et mobile, entrée au haut de gamme</td></tr><tr><td>Core Ultra 5 / 7 / 9</td><td>Génération récente, architecture modulaire, NPU IA</td></tr></tbody></table></div>
+<p>Suffixes courants : <strong>K</strong> (overclocking), <strong>F</strong> (pas de GPU), <strong>T</strong> (basse conso), <strong>U/H/HX</strong> (mobile)</p>
+<blockquote><a href="https://www.intel.fr/content/www/fr/fr/products/details/processors/core.html" target="_blank" rel="noopener">Processeurs Intel® Core™</a></blockquote>
+<h3 id="amd-gammes-principales">AMD – gammes principales</h3>
+<div class="table-wrap"><table><thead><tr><th>Gamme</th><th>Usage</th></tr></thead><tbody><tr><td>Ryzen 3 / 5 / 7 / 9</td><td>Desktop et mobile</td></tr><tr><td>Ryzen AI</td><td>Génération récente avec NPU IA</td></tr></tbody></table></div>
+<p>Suffixes courants : <strong>X</strong> (haute fréquence), <strong>3D</strong> (cache L3 massif, gaming), <strong>G</strong> (GPU intégré), <strong>U/HS/HX</strong> (mobile)</p>
+<blockquote><a href="https://www.amd.com/fr/products/specifications/processors.html" target="_blank" rel="noopener">Spécifications AMD</a></blockquote>
+<h3 id="lien-cpu-usage">Lien CPU ↔ usage</h3>
+<div class="table-wrap"><table><thead><tr><th>Usage</th><th>CPU recommandé</th></tr></thead><tbody><tr><td>Bureautique</td><td>Peu de cœurs, GPU intégré</td></tr><tr><td>Multitâche / développement</td><td>Plus de cœurs et de threads</td></tr><tr><td>Gaming</td><td>Bonne fréquence + cache, GPU dédié</td></tr><tr><td>Station de travail</td><td>Nombreux cœurs, refroidissement adapté</td></tr></tbody></table></div>
+<h3 id="symptomes-courants">Symptômes courants</h3>
+<ul><li>PC lent malgré un SSD → CPU saturé</li><li>Ventilateurs bruyants → TDP élevé ou refroidissement insuffisant</li><li>Redémarrages en charge → problème thermique ou d'alimentation</li><li>Écran noir au démarrage → CPU incompatible ou sans GPU intégré</li></ul>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : le socket conditionne toute la plateforme. Le choix du CPU dépend toujours de l'usage, jamais uniquement du prix.</p></aside>
+<h2 id="la-memoire-vive-ram">La mémoire vive (RAM)</h2>
+<p>La <strong>RAM</strong> est l'espace de travail du processeur : elle stocke temporairement les données en cours d'utilisation.</p>
+<p>La RAM est <strong>volatile</strong> : son contenu est perdu à l'arrêt du PC.</p>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/zoxmZkN9--Y?si=F7SsVKJVVJgxMQMO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<blockquote><a href="https://www.malekal.com/memoire-ram-ordinateur-qu-est-ce-que-c-est/" target="_blank" rel="noopener">La mémoire RAM — malekal.com</a></blockquote>
+<h3 id="principe-ddr-double-data-rate">Principe DDR (Double Data Rate)</h3>
+<p>La RAM moderne effectue <strong>deux transferts par cycle d'horloge</strong> (front montant + front descendant).</p>
+<ul><li>DDR5-6000 → fréquence réelle : 3000 MHz</li><li>Chaque génération (DDR3, DDR4, DDR5) est <strong>physiquement incompatible</strong> avec les autres</li></ul>
+<h3 id="single-channel-vs-dual-channel">Single Channel vs Dual Channel</h3>
+<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Bus</th><th>Bande passante</th></tr></thead><tbody><tr><td><strong>Single channel</strong></td><td>64 bits</td><td>Performances de base</td></tr><tr><td><strong>Dual channel</strong></td><td>2 × 64 bits</td><td>Bande passante doublée</td></tr></tbody></table></div>
+<aside class="callout success"><div class="callout-title">Bon réflexe</div><p>Toujours installer la RAM en <strong>paires identiques</strong> pour activer le dual channel.</p></aside>
+<h3 id="reperes-capacite">Repères capacité</h3>
+<div class="table-wrap"><table><thead><tr><th>Capacité</th><th>Usage</th></tr></thead><tbody><tr><td>8 Go</td><td>Usage léger</td></tr><tr><td>16 Go</td><td>Usage standard (recommandé)</td></tr><tr><td>32 Go+</td><td>Usages avancés (vidéo, dev, virtualisation)</td></tr></tbody></table></div>
+<h3 id="la-latence-cas-latency">La latence (CAS Latency)</h3>
+<div class="code-block"><button class="icon-btn copy" type="button" aria-label="Copier le code">Copier</button><pre><code class="language-">Latence (ns) = CL / fréquence réelle (MHz) × 1000</code></pre></div>
+<p>Fréquence élevée ≠ latence faible — le compromis fréquence/CL compte.</p>
+<h3 id="symptomes-lies-a-la-ram">Symptômes liés à la RAM</h3>
+<ul><li>PC lent avec disque très actif → manque de RAM (swap actif)</li><li>Applications qui se ferment → saturation mémoire</li><li>Écran bleu aléatoire → barrette défectueuse</li><li>PC ne démarre pas → RAM incompatible ou mal installée</li></ul>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : la RAM est l'espace de travail du CPU. Dual channel améliore fortement les performances. Une RAM inadaptée provoque lenteurs et instabilités.</p></aside>
+<h2 id="l-alimentation-psu">L'alimentation (PSU)</h2>
+<p>L'<strong>alimentation (PSU)</strong> convertit le courant secteur en tensions stables pour tous les composants.</p>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/rhh_4fkS4jk?si=Xbama00xX9FpcXGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Une alimentation de mauvaise qualité peut provoquer instabilités, redémarrages et pannes matérielles.</p>
+<h3 id="puissance-et-rendement">Puissance et rendement</h3>
+<div class="table-wrap"><table><thead><tr><th>Paramètre</th><th>Rôle</th></tr></thead><tbody><tr><td><strong>Puissance (W)</strong></td><td>Doit couvrir tous les composants + marge de stabilité</td></tr><tr><td><strong>Certification 80 PLUS</strong></td><td>Bronze → Titanium — plus le rendement est élevé, moins ça chauffe</td></tr></tbody></table></div>
+<h3 id="types-de-modularite">Types de modularité</h3>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Câbles</th></tr></thead><tbody><tr><td><strong>Non modulaire</strong></td><td>Tous fixes</td></tr><tr><td><strong>Semi-modulaire</strong></td><td>Câbles principaux fixes</td></tr><tr><td><strong>Modulaire</strong></td><td>Tous amovibles — facilite le montage et la maintenance</td></tr></tbody></table></div>
+<h3 id="connecteurs-principaux">Connecteurs principaux</h3>
+<ul><li><strong>24 pins</strong> — carte mère</li><li><strong>4/8 pins CPU</strong> — processeur</li><li><strong>PCIe</strong> — carte graphique</li><li><strong>SATA</strong> — stockage</li></ul>
+<h3 id="symptomes-lies-a-l-alimentation">Symptômes liés à l'alimentation</h3>
+<ul><li>PC qui ne démarre pas</li><li>Redémarrages aléatoires</li><li>Ventilateurs qui s'arrêtent brutalement</li><li>Instabilité lors de fortes charges</li></ul>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : l'alimentation est un composant critique souvent sous-estimé. La puissance doit être adaptée + une marge est nécessaire. La certification 80 PLUS est un bon indicateur de qualité.</p></aside>
+<h2 id="les-lignes-pci-express-pcie">Les lignes PCI Express (PCIe)</h2>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/isnKSodxP7o?si=yCoU1m22OtRZ6NEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Le <strong>PCI Express (PCIe)</strong> est le bus de communication haut débit entre le CPU et les composants rapides : carte graphique, SSD NVMe, cartes d'extension.</p>
+<blockquote><a href="https://fr.wikipedia.org/wiki/PCI_Express" target="_blank" rel="noopener">PCI Express — Wikipédia</a></blockquote>
+<h3 id="lignes-lanes-et-slots">Lignes (lanes) et slots</h3>
+<div class="table-wrap"><table><thead><tr><th>Slot</th><th>Lignes</th><th>Usage courant</th></tr></thead><tbody><tr><td><strong>x1</strong></td><td>1</td><td>Carte réseau, USB, son</td></tr><tr><td><strong>x4</strong></td><td>4</td><td>SSD NVMe, carte RAID</td></tr><tr><td><strong>x8</strong></td><td>8</td><td>GPU en configuration dual</td></tr><tr><td><strong>x16</strong></td><td>16</td><td>Carte graphique principale</td></tr></tbody></table></div>
+<h3 id="evolution-des-versions">Évolution des versions</h3>
+<div class="table-wrap"><table><thead><tr><th>Version</th><th>Débit par ligne</th><th>Débit x16</th></tr></thead><tbody><tr><td>PCIe 3.0</td><td>~1 Go/s</td><td>~15,75 Go/s</td></tr><tr><td>PCIe 4.0</td><td>~2 Go/s</td><td>~31,5 Go/s</td></tr><tr><td>PCIe 5.0</td><td>~4 Go/s</td><td>~63 Go/s</td></tr></tbody></table></div>
+<p>La <strong>rétrocompatibilité</strong> est assurée (une carte PCIe 3.0 fonctionne dans un slot PCIe 4.0).</p>
+<h3 id="points-d-attention">Points d'attention</h3>
+<ul><li>Un slot x16 peut être câblé en x8 → performances réduites si GPU dessus</li><li>Les lignes PCIe proviennent du <strong>CPU</strong> (rapides) ou du <strong>chipset</strong> (partagées)</li><li>La taille physique du slot ≠ nombre réel de lignes actives</li></ul>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : plus de lignes = plus de bande passante. Le format du slot ne garantit pas toujours le câblage réel.</p></aside>
+<h2 id="la-carte-graphique-gpu">La carte graphique (GPU)</h2>
+<p>Une <strong>carte graphique</strong> produit l'affichage et accélère les calculs graphiques (2D, 3D, vidéo, IA).</p>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/my_y3xEFEsE?si=SlR3pWXZfpiGsFrv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<h3 id="gpu-integre-vs-dedie">GPU intégré vs dédié</h3>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Caractéristiques</th><th>Usage</th></tr></thead><tbody><tr><td><strong>GPU intégré</strong></td><td>Intégré au CPU, performances limitées</td><td>Bureautique, mobilité</td></tr><tr><td><strong>GPU dédié</strong></td><td>VRAM dédiée, performances élevées</td><td>Jeu, 3D, montage, calcul</td></tr></tbody></table></div>
+<h3 id="nomenclature-nvidia">Nomenclature NVIDIA</h3>
+<div class="table-wrap"><table><thead><tr><th>Élément</th><th>Exemples</th></tr></thead><tbody><tr><td>Préfixe</td><td>RTX (ray tracing, DLSS) / GTX (ancienne gamme)</td></tr><tr><td>Génération</td><td>50 = série 50xx</td></tr><tr><td>Gamme</td><td>90 = ultra-haut de gamme / 60 = milieu</td></tr><tr><td>Suffixe</td><td>Ti (plus performant), SUPER (intermédiaire)</td></tr></tbody></table></div>
+<blockquote><a href="https://www.nvidia.com/fr-fr/geforce/graphics-cards/" target="_blank" rel="noopener">NVIDIA GeForce</a></blockquote>
+<h3 id="nomenclature-amd">Nomenclature AMD</h3>
+<div class="table-wrap"><table><thead><tr><th>Élément</th><th>Exemples</th></tr></thead><tbody><tr><td>Préfixe</td><td>RX</td></tr><tr><td>Génération</td><td>9 = RDNA 4</td></tr><tr><td>Gamme</td><td>900 = haut de gamme / 600 = milieu</td></tr><tr><td>Suffixe</td><td>XT / XTX</td></tr></tbody></table></div>
+<blockquote><a href="https://fr.wikipedia.org/wiki/Radeon" target="_blank" rel="noopener">Radeon — Wikipédia</a></blockquote>
+<h3 id="nomenclature-intel-arc">Nomenclature Intel Arc</h3>
+<div class="table-wrap"><table><thead><tr><th>Élément</th><th>Exemples</th></tr></thead><tbody><tr><td>Préfixe génération</td><td>B = Battlemage</td></tr><tr><td>Gamme</td><td>3 = entrée / 7 = performance</td></tr><tr><td>Exemple</td><td>B580 16 Go</td></tr></tbody></table></div>
+<blockquote><a href="https://fr.wikipedia.org/wiki/Intel_Arc" target="_blank" rel="noopener">Intel Arc — Wikipédia</a></blockquote>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : la structure des noms permet d'identifier rapidement génération et performance. GPU intégré = usage simple. GPU dédié = performances élevées.</p></aside>
+<h1>Les composants d'un PC</h1>
+<h2 id="objectif">Objectif</h2>
+<p>Construire une configuration PC cohérente, adaptée à un usage donné, en justifiant le choix de chaque composant.</p>
+<h2 id="contexte">Contexte</h2>
+<p>Vous êtes technicien support. Un utilisateur vous demande conseil pour l'achat d'un PC (tour seule).</p>
+<h2 id="outils">Outils</h2>
+<p>Utiliser au moins un configurateur :</p>
+<ul><li><a href="https://pcpartpicker.com/" target="_blank" rel="noopener">PCPartPicker</a></li><li><a href="https://www.ldlc.com/" target="_blank" rel="noopener">LDLC</a></li><li><a href="https://www.materiel.net/" target="_blank" rel="noopener">Matériel.net</a></li><li><a href="https://www.cybertek.fr/" target="_blank" rel="noopener">Cybertek</a></li></ul>
+<h2 id="cas-a-choisir">Cas à choisir</h2>
+<div class="table-wrap"><table><thead><tr><th>Cas</th><th>Usage</th><th>Budget</th></tr></thead><tbody><tr><td><strong>Cas 1 — PC bureautique</strong></td><td>Bureautique / web / multimédia léger</td><td>~600 €</td></tr><tr><td><strong>Cas 2 — PC gaming</strong></td><td>Jeux vidéo récents</td><td>~1400 €</td></tr></tbody></table></div>
+<h2 id="contraintes-techniques">Contraintes techniques</h2>
+<p>La configuration doit inclure : boîtier, carte mère, CPU, RAM, stockage, alimentation.</p>
+<p>Points de vigilance :</p>
+<ul><li>compatibilité CPU / carte mère</li><li>type et quantité de RAM</li><li>puissance et qualité de l'alimentation</li><li>lignes PCIe si nécessaire</li></ul>
+<h2 id="rendu-attendu">Rendu attendu</h2>
+<p>Un document <strong>Markdown</strong> dans votre HedgeDoc, contenant :</p>
+<ul><li>le besoin choisi</li><li>la liste des composants avec prix</li><li>le budget total</li><li>la justification de chaque composant</li></ul>
+<aside class="callout warning"><div class="callout-title">Attention</div><p>Le raisonnement compte plus que la configuration finale. Justifiez chaque choix en lien avec le besoin.</p></aside>
+    <section class="concepts">
+    <p class="eyebrow">Cartes de révision</p>
+    <h2>Notions à manipuler</h2>
+    <div class="concept-grid">
+      <button class="concept-card" type="button"><span>01</span><strong>Vue d'ensemble de l'architecture</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>02</span><strong>La carte mère</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>03</span><strong>Le processeur (CPU)</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>04</span><strong>La mémoire vive (RAM)</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>05</span><strong>L'alimentation (PSU)</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>06</span><strong>Les lignes PCI Express (PCIe)</strong><small>Cliquer pour marquer comme revu</small></button>
+    </div>
+  </section>
+    <section class="quiz-block">
+    <p class="eyebrow">Auto-évaluation</p>
+    <h2>Quiz rapide</h2>
+    <div class="quiz" data-good="0">
+        <h3>1. Quel composant relie et coordonne les composants internes ?</h3>
+        <div class="answers"><button type="button" data-answer="0">La carte mère</button><button type="button" data-answer="1">Le boîtier</button><button type="button" data-answer="2">L'écran</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div><div class="quiz" data-good="1">
+        <h3>2. Le socket conditionne principalement la compatibilité du...</h3>
+        <div class="answers"><button type="button" data-answer="0">SSD</button><button type="button" data-answer="1">CPU</button><button type="button" data-answer="2">clavier</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div><div class="quiz" data-good="0">
+        <h3>3. Pour activer le dual channel, on installe idéalement la RAM...</h3>
+        <div class="answers"><button type="button" data-answer="0">en paire identique</button><button type="button" data-answer="1">sur un seul slot</button><button type="button" data-answer="2">sans tenir compte des slots</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+  </section>
+    <div class="pager">
+      <a href="https://kayasam.github.io/configuration-maintenance-pc/pc/01-role-du-technicien/html/" target="_top"><span>Chapitre précédent</span>Le rôle du technicien support</a>
+      <a href="https://kayasam.github.io/configuration-maintenance-pc/pc/03-pc-portables/html/" target="_top"><span>Chapitre suivant</span>Choisir un PC portable</a>
+    </div>
+  </article>
+  <aside class="sidebar">
+    <div class="side-card">
+      <h2>Dans ce chapitre</h2>
+      <div class="toc"><a href="#vue-d-ensemble-de-l-architecture">Vue d'ensemble de l'architecture</a><a href="#la-carte-mere">La carte mère</a><a href="#le-processeur-cpu">Le processeur (CPU)</a><a href="#la-memoire-vive-ram">La mémoire vive (RAM)</a><a href="#l-alimentation-psu">L'alimentation (PSU)</a><a href="#les-lignes-pci-express-pcie">Les lignes PCI Express (PCIe)</a><a href="#la-carte-graphique-gpu">La carte graphique (GPU)</a><a href="#objectif">Objectif</a><a href="#contexte">Contexte</a><a href="#outils">Outils</a><a href="#cas-a-choisir">Cas à choisir</a><a href="#contraintes-techniques">Contraintes techniques</a></div>
+    </div>
+    <div class="side-card">
+      <h2>Objectif support</h2>
+      <p>Relier chaque notion à un symptôme observable, puis justifier les tests effectués.</p>
+    </div>
+  </aside>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.nextElementSibling.innerText;try{await navigator.clipboard.writeText(code);btn.textContent='Copié'}catch(e){btn.textContent='Sélectionnez le code'}setTimeout(()=>btn.textContent='Copier',1400)}));
+document.querySelectorAll('.schema-node').forEach(node=>node.addEventListener('click',()=>node.classList.toggle('active')));
+const themeButton=document.querySelector('[data-theme-toggle]');
+const syncThemeButton=()=>{const light=document.documentElement.dataset.theme==='light';themeButton?.setAttribute('aria-label',light?'Passer au thème sombre':'Passer au thème clair');const label=themeButton?.querySelector('[data-theme-label]');if(label)label.textContent=light?'Thème sombre':'Thème clair'};
+themeButton?.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;localStorage.setItem('pc-course-theme',next);syncThemeButton()});syncThemeButton();
+const exploredParts=new Set(['socket']);
+const updateExplored=()=>{const count=exploredParts.size;const label=document.querySelector('[data-explored-count]');if(label)label.textContent=`${count} composant${count>1?'s':''} exploré${count>1?'s':''}`};
+const selectPart=id=>{const selected=document.querySelector(`.mb-part[data-part="${id}"]`);if(!selected)return;document.querySelectorAll('.mb-part').forEach(p=>p.classList.toggle('active',p===selected));document.querySelectorAll('.mb-detail').forEach(d=>d.classList.toggle('active',d.dataset.detail===id));document.querySelectorAll('[data-select-part]').forEach(b=>{const active=b.dataset.selectPart===id;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});exploredParts.add(id);updateExplored()};
+document.querySelectorAll('.mb-part').forEach(part=>{part.setAttribute('role','button');part.setAttribute('aria-label',`Afficher la fiche : ${part.dataset.part}`);part.addEventListener('click',()=>selectPart(part.dataset.part));part.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPart(part.dataset.part)}})});
+document.querySelectorAll('[data-select-part]').forEach(button=>button.addEventListener('click',()=>selectPart(button.dataset.selectPart)));
+document.querySelector('[data-reset-schema]')?.addEventListener('click',()=>{exploredParts.clear();selectPart('socket');exploredParts.clear();updateExplored()});
+const motherboardLab=document.querySelector('.motherboard-lab');const expandButton=document.querySelector('[data-expand-schema]');
+const setExpanded=expanded=>{motherboardLab?.classList.toggle('is-expanded',expanded);document.body.classList.toggle('schema-open',expanded);expandButton?.setAttribute('aria-expanded',String(expanded))};
+expandButton?.addEventListener('click',()=>setExpanded(!motherboardLab.classList.contains('is-expanded')));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&motherboardLab?.classList.contains('is-expanded'))setExpanded(false)});updateExplored();
+document.querySelectorAll('.concept-card').forEach(card=>card.addEventListener('click',()=>card.classList.toggle('done')));
+document.querySelectorAll('.quiz').forEach(quiz=>{quiz.querySelectorAll('[data-answer]').forEach(btn=>btn.addEventListener('click',()=>{const good=quiz.dataset.good;quiz.querySelectorAll('[data-answer]').forEach(b=>{b.disabled=true;if(b.dataset.answer===good)b.classList.add('good')});if(btn.dataset.answer===good){quiz.querySelector('.feedback').textContent='Correct. Garde cette logique pour le TP.'}else{btn.classList.add('bad');quiz.querySelector('.feedback').textContent='Pas tout à fait. Regarde la réponse mise en vert.'}}))});
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%'},{passive:true});
+</script>
+</body>
+</html>

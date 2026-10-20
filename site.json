@@ -1,0 +1,62 @@
+{
+  "title": "Configuration et maintenance PC",
+  "shortTitle": "Maintenance PC",
+  "description": "Comprendre le matériel, configurer un poste et diagnostiquer avec méthode.",
+  "baseUrl": "https://kayasam.github.io/configuration-maintenance-pc",
+  "sourceRoot": "sources",
+  "tracks": [
+    {
+      "id": "pc",
+      "title": "Configuration et maintenance PC",
+      "description": "Six chapitres pour apprendre, pratiquer et vérifier ses acquis.",
+      "chapters": [
+        {
+          "slug": "01-role-du-technicien",
+          "course": "01-role-du-technicien.md",
+          "html": "01-role-du-technicien.html",
+          "quiz": "01-role-du-technicien-quiz.json",
+          "correction": "01-tp-role-technicien-correction.md",
+          "tp": "01-tp-role-technicien.md"
+        },
+        {
+          "slug": "02-composants-pc",
+          "course": "02-composants-pc.md",
+          "html": "02-composants-pc.html",
+          "quiz": "02-composants-pc-quiz.json",
+          "correction": "02-tp-composants-pc-correction.md",
+          "tp": "02-tp-composants-pc.md"
+        },
+        {
+          "slug": "03-pc-portables",
+          "course": "03-pc-portables.md",
+          "html": "03-pc-portables.html",
+          "quiz": "03-pc-portables-quiz.json"
+        },
+        {
+          "slug": "04-bios-demarrage",
+          "course": "04-bios-demarrage.md",
+          "html": "04-bios-demarrage.html",
+          "quiz": "04-bios-demarrage-quiz.json",
+          "correction": "04-tp-bios-demarrage-correction.md",
+          "tp": "04-tp-bios-demarrage.md"
+        },
+        {
+          "slug": "05-stockage",
+          "course": "05-stockage.md",
+          "html": "05-stockage.html",
+          "quiz": "05-stockage-quiz.json",
+          "correction": "05-tp-stockage-correction.md",
+          "tp": "05-tp-stockage.md"
+        },
+        {
+          "slug": "06-peripheriques",
+          "course": "06-peripheriques.md",
+          "html": "06-peripheriques.html",
+          "quiz": "06-peripheriques-quiz.json",
+          "correction": "06-tp-peripheriques-correction.md",
+          "tp": "06-tp-peripheriques.md"
+        }
+      ]
+    }
+  ]
+}

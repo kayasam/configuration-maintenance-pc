@@ -1,56 +1,19 @@
-# Publier la formation depuis le coffre Obsidian
+# Formation PC — modèle commun Linux et Bash
 
-Les sources officielles restent dans :
+Les sources officielles restent dans le coffre Obsidian. Le site lit seulement les six chapitres déclarés par `scripts/import-pc.py`, leurs HTML manuels, les cinq TP et les images. Le chapitre 07 retiré reste exclu. Aucun dossier du coffre ne doit être déplacé par ces scripts.
 
-- `C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc\cours`
-- `C:\Users\kayaw\Nextcloud\Obsidian\CoffreSam\Formations\configuration-maintenance-pc\Ressources\images`
+Les quiz se modifient dans `site-content/assets/quiz/quiz-banks.js`. Les copies intermédiaires dans `sources/` sont privées et régénérées. `content/` contient le résultat public généré, à ne pas modifier à la main.
 
-Chaque dossier de chapitre contient le cours Markdown, sa version HTML interactive et, lorsqu'il
-existe, un sous-dossier `tp`. Le fichier `parcours-interactif.html` reste à la racine de `cours`.
-Toutes les illustrations sont centralisées dans `Ressources\images`, comme dans la formation
-Fondamentaux Réseaux.
+## Prévisualiser
 
-## Publication rapide
+Exécuter `./construire.ps1`, puis `python scripts/serve-preview.py --port 8791`. Ouvrir http://127.0.0.1:8791/configuration-maintenance-pc/.
 
-1. Terminer les modifications dans Obsidian et attendre la synchronisation Nextcloud.
-2. Ouvrir `D:\Projet-git\configuration-maintenance-pc`.
-3. Double-cliquer sur `Publier les cours.cmd`.
-4. Saisir un message de publication, ou appuyer sur Entrée.
-5. Confirmer avec `O`.
+Le site propose Cours / HTML / Quiz / TP selon les ressources disponibles, les menus masquables, un ZIP et un seul PDF complet sur l’accueil. Les images et les liens des supports hors ligne sont vérifiés. Les anciennes adresses publiques redirigent vers les nouvelles pages.
 
-Le script :
+## Publier
 
-- range les 6 cours Markdown publiés dans un dossier par chapitre ;
-- range les 5 TP publics sous leur chapitre associé ;
-- synchronise le dossier central `Ressources\images`, y compris les SVG ;
-- synchronise les versions HTML et les quiz ;
-- copie les ressources communes des cours HTML ;
-- reconstruit un coffre étudiant propre dans `student-vault` pour le ZIP ;
-- conserve et publie les 6 quiz de 20 questions ;
-- ajoute automatiquement le lien du quiz correspondant dans chaque chapitre ;
-- exclut les sessions, archives et fichiers Excalidraw ;
-- ajoute les liens HTML et téléchargements sans modifier le coffre ;
-- vérifie le build Quartz avant tout commit ;
-- crée le commit et l'envoie sur GitHub après confirmation.
+`Publier les cours.cmd` prépare et vérifie le site avant de demander confirmation. `./publier.ps1` prépare seulement ; `./publier.ps1 -Push` construit, vérifie puis publie sur le dépôt configuration-maintenance-pc.
 
-Le programme conservé dans le coffre Obsidian n'est pas publié sur le site des élèves.
-Le ZIP ne contient ni dossier `assets`, ni programme, ni session : seulement les cours Markdown
-et HTML classés par chapitre, les TP et le dossier pédagogique `Ressources\images`.
+Le workflow GitHub déploie les fichiers publics déjà préparés : il ne lit jamais le coffre local. Les corrigés restent privés tant que leur frontmatter ne comporte pas `publier: true`. Avant de publier un corrigé, utiliser la forme v2 avec énoncé et réponses repliées ; le contrôle de construction l’exige.
 
-Site prévu : <https://kayasam.github.io/configuration-maintenance-pc/>
-
-> [!NOTE]
-> Dans les réglages du dépôt GitHub, sélectionner **GitHub Actions** comme source de GitHub Pages.
-
-## Où modifier les quiz
-
-Les sources durables des quiz se trouvent dans `site-content` :
-
-- questions : `site-content/assets/quiz/quiz-banks.js` ;
-- moteur : `site-content/assets/quiz/quiz-engine.js` ;
-- apparence : `site-content/assets/quiz/quiz.css` ;
-- pages : `site-content/cours/quiz/`.
-
-Ne pas modifier uniquement les copies présentes dans `content`. Ce dossier est reconstruit à
-chaque publication. Le script recopie les sources durables ci-dessus et refuse de continuer si
-une ressource obligatoire de quiz est absente.
+La sauvegarde intégrale précédant cette adaptation est conservée dans `D:/Projet-git/backups/pc-avant-modele-20261020-100726.zip`. L’historique Git conserve aussi la version précédente.

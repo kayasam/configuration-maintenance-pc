@@ -4,6 +4,13 @@ import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/re
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
+import courseNavigation from "./scripts/course-navigation.inline"
+import courseResources from "./scripts/course-resources.inline"
+import supportViewer from "./scripts/support-viewer.inline"
+import siteExperience from "./scripts/site-experience.inline"
+import courseResourceIndex from "../../content/assets/course-resources.json"
+import workshopIndex from "../../content/assets/workshops.json"
+import siteIdentity from "../../content/assets/site.json"
 
 export default (() => {
   const Head: QuartzComponent = ({
@@ -92,6 +99,9 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <script id="course-resource-data" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseResourceIndex).replaceAll("<", "\\u003c") }} />
+        <script id="workshop-data" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workshopIndex).replaceAll("<", "\\u003c") }} />
+        <script id="site-data" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentity).replaceAll("<", "\\u003c") }} />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
@@ -108,5 +118,8 @@ export default (() => {
     )
   }
 
+  Head.afterDOMLoaded = [courseNavigation, courseResources, supportViewer, siteExperience]
+    .map((script) => "(() => {\n" + script + "\n})();")
+    .join("\n")
   return Head
 }) satisfies QuartzComponentConstructor

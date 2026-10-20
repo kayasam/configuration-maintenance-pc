@@ -6,7 +6,7 @@
   if (!root) return
 
   const quizId = root.dataset.quiz
-  const data = window.pcQuizBanks && window.pcQuizBanks[quizId]
+  const data = window.linuxQuizBanks && window.linuxQuizBanks[quizId]
   if (!data || !Array.isArray(data.questions) || data.questions.length !== 20) {
     root.innerHTML = '<p class="quiz-error">Le quiz demandé ne peut pas être chargé.</p>'
     return
@@ -14,7 +14,7 @@
 
   const total = data.questions.length
   const objective = Math.ceil(total * 0.8)
-  document.title = data.title + " — Quiz Configuration & Maintenance PC"
+  document.title = data.title + " — Quiz " + (data.track || "Linux")
   document.getElementById("quiz-kicker").textContent = data.chapter
   document.getElementById("quiz-title").textContent = data.title
   document.getElementById("quiz-intro").textContent = data.intro
@@ -38,7 +38,7 @@
   let index = 0
   let score = 0
   let answered = false
-  let answerOffset = 0
+  let correctPositions = []
 
   function shuffle(values) {
     const copy = values.slice()
@@ -70,7 +70,7 @@
     theme.textContent = question.theme
     title.textContent = question.question
     answers.replaceChildren()
-    const correctPosition = (index + answerOffset) % letters.length
+    const correctPosition = correctPositions[index]
     distributeChoices(question, correctPosition).forEach(function (choiceIndex, displayedIndex) {
       const button = document.createElement("button")
       button.type = "button"
@@ -97,17 +97,32 @@
       if (buttonIndex === choiceIndex && !isCorrect) button.classList.add("wrong")
     })
     const status = document.createElement("strong")
-    status.textContent = isCorrect ? "Bonne réponse" : "Réponse incorrecte"
-    const explanation = document.createElement("span")
+    status.textContent = isCorrect ? "Bonne réponse" : "Réponse à revoir"
+    const answerReview = document.createElement("p")
+    answerReview.className = "feedback-answer"
+    answerReview.textContent = isCorrect
+      ? "Votre choix est juste : « " + question.choices[question.answer] + " »."
+      : "Vous avez choisi « " +
+        question.choices[choiceIndex] +
+        " ». La réponse attendue était « " +
+        question.choices[question.answer] +
+        " »."
+    const explanation = document.createElement("p")
+    explanation.className = "feedback-explanation"
     explanation.textContent = question.explanation
-    feedback.append(status, explanation)
+    const advice = document.createElement("p")
+    advice.className = "feedback-advice"
+    advice.textContent = isCorrect
+      ? "Repère acquis : relisez l’explication pour fixer la distinction dans la durée."
+      : "Conseil : comparez les deux notions citées, puis reformulez la bonne définition avec vos propres mots."
+    feedback.append(status, answerReview, explanation, advice)
     feedback.className = "feedback visible " + (isCorrect ? "correct" : "wrong")
     next.disabled = false
     next.focus()
   }
 
   function saveBest(value) {
-    const key = "configuration-maintenance-pc-quiz-" + data.id
+    const key = "linux-initiation-quiz-" + data.id
     try {
       const previous = Number(localStorage.getItem(key) || 0)
       const best = Math.max(previous, value)
@@ -147,15 +162,18 @@
     result.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
-  function start() {
+  function start(scroll = false) {
     order = shuffle(data.questions.map((_, questionIndex) => questionIndex))
     index = 0
     score = 0
-    answerOffset = Math.floor(Math.random() * letters.length)
+    // Mélanger une répartition équilibrée : cinq bonnes réponses par lettre.
+    correctPositions = shuffle(
+      Array.from({ length: total }, (_, questionIndex) => questionIndex % letters.length),
+    )
     panel.classList.remove("hidden")
     result.classList.remove("visible")
     renderQuestion()
-    panel.scrollIntoView({ behavior: "smooth", block: "start" })
+    if (scroll) panel.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
   next.addEventListener("click", function () {
@@ -166,6 +184,6 @@
       renderQuestion()
     }
   })
-  document.getElementById("restart-quiz").addEventListener("click", start)
+  document.getElementById("restart-quiz").addEventListener("click", () => start(true))
   start()
 })()

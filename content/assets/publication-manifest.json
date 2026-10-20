@@ -1,0 +1,86 @@
+{
+  "chapters": [
+    {
+      "key": "pc/01-role-du-technicien",
+      "title": "Chapitre 1 – Le rôle du technicien support et l'environnement PC",
+      "tp": true,
+      "correction": false
+    },
+    {
+      "key": "pc/02-composants-pc",
+      "title": "Chapitre 2 – Les composants d'un PC et leur rôle",
+      "tp": true,
+      "correction": false
+    },
+    {
+      "key": "pc/03-pc-portables",
+      "title": "Chapitre 3 – Choisir un PC portable",
+      "tp": false,
+      "correction": false
+    },
+    {
+      "key": "pc/04-bios-demarrage",
+      "title": "Chapitre 4 – BIOS / UEFI et démarrage du PC",
+      "tp": true,
+      "correction": false
+    },
+    {
+      "key": "pc/05-stockage",
+      "title": "Chapitre 5 – Stockage et systèmes",
+      "tp": true,
+      "correction": false
+    },
+    {
+      "key": "pc/06-peripheriques",
+      "title": "Chapitre 6 – Périphériques, réseau et impression",
+      "tp": true,
+      "correction": false
+    }
+  ],
+  "exercises": [
+    {
+      "key": "pc/01-role-du-technicien/tp",
+      "correctionKey": "pc/01-role-du-technicien/tp-corrigev2",
+      "downloadStem": "01-role-du-technicien",
+      "track": "pc",
+      "correction": false
+    },
+    {
+      "key": "pc/02-composants-pc/tp",
+      "correctionKey": "pc/02-composants-pc/tp-corrigev2",
+      "downloadStem": "02-composants-pc",
+      "track": "pc",
+      "correction": false
+    },
+    {
+      "key": "pc/04-bios-demarrage/tp",
+      "correctionKey": "pc/04-bios-demarrage/tp-corrigev2",
+      "downloadStem": "04-bios-demarrage",
+      "track": "pc",
+      "correction": false
+    },
+    {
+      "key": "pc/05-stockage/tp",
+      "correctionKey": "pc/05-stockage/tp-corrigev2",
+      "downloadStem": "05-stockage",
+      "track": "pc",
+      "correction": false
+    },
+    {
+      "key": "pc/06-peripheriques/tp",
+      "correctionKey": "pc/06-peripheriques/tp-corrigev2",
+      "downloadStem": "06-peripheriques",
+      "track": "pc",
+      "correction": false
+    }
+  ],
+  "corrections": [],
+  "tracks": [
+    {
+      "id": "pc",
+      "title": "Configuration et maintenance PC",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/"
+    }
+  ],
+  "templateVersion": 1
+}

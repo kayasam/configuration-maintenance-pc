@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Configuration et maintenance PC - Stockage et systèmes">
+<title>05 - Stockage et systèmes</title>
+<style>
+:root{--bg:#0b0f17;--surface:#151a24;--surface2:#1f2633;--border:#2d3748;--text:#e5e7eb;--muted:#94a3b8;--accent:#22d3ee;--accentSoft:#22d3ee26;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--radius:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,var(--accentSoft),transparent 34rem),var(--bg);color:var(--text);font-family:Segoe UI,system-ui,sans-serif;line-height:1.65}a{color:var(--accent)}img,iframe{max-width:100%;border:0}header{padding:42px 24px 28px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#0e1420 0%,#0b0f17 100%)}.hero{max-width:1120px;margin:auto;display:grid;grid-template-columns:100px 1fr;gap:22px;align-items:center}.hero-icon{width:92px;height:92px;display:grid;place-items:center;border-radius:22px;background:var(--accentSoft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}.hero-icon svg{width:62px;height:62px}.eyebrow{margin:0 0 6px;color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.hero h1{margin:0;font-size:clamp(2rem,4vw,3.1rem);line-height:1.1}.hero p{margin:10px 0 0;color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.tag{font-family:Consolas,monospace;font-size:.72rem;color:var(--accent);border:1px solid var(--accent);background:var(--accentSoft);border-radius:5px;padding:3px 8px}nav{position:sticky;top:0;z-index:10;background:rgba(15,20,30,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow:auto}.nav-inner{max-width:1120px;margin:auto;display:flex;gap:6px;padding:8px 16px}.nav-inner a{color:var(--muted);text-decoration:none;white-space:nowrap;padding:9px 12px;border-radius:8px;font-size:.86rem;border:1px solid transparent}.nav-inner a span{font-family:Consolas,monospace;margin-right:6px;color:var(--accent)}.nav-inner a.active,.nav-inner a:hover{color:var(--text);background:var(--surface2);border-color:var(--border)}.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50}main{max-width:1120px;margin:auto;padding:26px 20px 64px;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:24px}.content,.side-card,.interactive-panel,.concepts,.quiz-block,.motherboard-lab,.visual-cards{background:rgba(21,26,36,.88);border:1px solid var(--border);border-radius:var(--radius)}.content{padding:26px}.content h1{display:none}.content h2,.interactive-panel h2,.concepts h2,.quiz-block h2,.motherboard-lab h2,.visual-cards h2{font-size:1.35rem;margin:26px 0 12px;color:#fff;border-left:4px solid var(--accent);padding-left:12px}.content h3{font-size:1.08rem;margin:22px 0 10px;color:#dbeafe}.content h4{margin:18px 0 8px}.content p{margin:0 0 14px}.content ul,.content ol{padding-left:24px}.content li{margin:5px 0}.table-wrap{overflow:auto;margin:16px 0;border:1px solid var(--border);border-radius:10px}table{width:100%;border-collapse:collapse;font-size:.92rem}th{background:var(--surface2);color:#fff;text-align:left}th,td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}tr:last-child td{border-bottom:0}tr:hover td{background:#ffffff07}.callout{margin:18px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--border);border-left:5px solid var(--accent);background:var(--accentSoft)}.callout.warning{border-left-color:var(--warn);background:#f59e0b18}.callout.success{border-left-color:var(--ok);background:#22c55e18}.callout-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;color:#fff}.code-block{position:relative;margin:16px 0}pre{overflow:auto;margin:0;padding:18px;background:#080c12;border:1px solid var(--border);border-radius:10px}code{font-family:Consolas,Cascadia Code,monospace;color:#a7f3d0}.copy{position:absolute;right:8px;top:8px}blockquote{margin:16px 0;padding:14px 16px;border-left:4px solid var(--accent);background:#ffffff08;border-radius:8px}.video-frame{position:relative;margin:18px 0;border-radius:12px;overflow:hidden;background:#05070b;border:1px solid var(--border);aspect-ratio:16/9}.video-frame iframe{width:100%;height:100%;position:absolute;inset:0}.media{margin:18px 0}.media img,.content p img{display:block;max-height:420px;object-fit:contain;margin:auto;border-radius:10px;border:1px solid var(--border);background:#fff}.sidebar{position:sticky;top:58px;align-self:start;display:flex;flex-direction:column;gap:16px}.side-card{padding:16px}.side-card h2{margin:0 0 10px;font-size:1rem}.toc a{display:block;color:var(--muted);text-decoration:none;padding:7px 0;border-bottom:1px solid #ffffff0b;font-size:.88rem}.toc a:hover{color:var(--accent)}.interactive-panel,.concepts,.quiz-block,.motherboard-lab,.visual-cards{padding:22px;margin-top:22px}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:16px}.icon-btn{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:8px;padding:7px 10px;cursor:pointer}.icon-btn:hover{border-color:var(--accent);color:var(--accent)}.schema{width:100%;height:auto;margin-top:12px}.schema-node rect{fill:var(--surface2);stroke:var(--border);stroke-width:2;transition:.2s}.schema-node text{fill:var(--text);font-size:15px;font-weight:700;pointer-events:none}.schema-node .schema-small{fill:var(--muted);font-size:12px;font-weight:400}.schema-node.active rect,.schema-node:hover rect{stroke:var(--accent);fill:var(--accentSoft)}.schema-link{fill:none;stroke:var(--accent);stroke-width:3;opacity:.7}.schema-caption{color:var(--muted);font-size:.9rem}.mb-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}.motherboard-svg{width:100%;height:auto;border:1px solid var(--border);border-radius:14px;background:radial-gradient(circle at 40% 35%,#34d3991c,transparent 22rem),#081018}.motherboard-svg text{fill:#e5e7eb;font-weight:800;font-size:18px;pointer-events:none}.motherboard-svg .small{font-size:14px;font-weight:500;fill:#94a3b8}.motherboard-svg .mb-part{cursor:pointer;outline:none}.motherboard-svg .mb-part>*{transition:filter .2s,stroke-width .2s,opacity .2s}.motherboard-svg .mb-part:hover>*,.motherboard-svg .mb-part.active>*{filter:url(#soft-glow)}.motherboard-svg .mb-part.active rect,.motherboard-svg .mb-part:hover rect{stroke-width:7}.floating-component{opacity:.96}.mb-hint{fill:#94a3b8!important;font-size:20px!important}.mb-detail-wrap{position:sticky;top:76px}.mb-detail{display:none;border:1px solid var(--border);border-radius:14px;background:#0f172a;padding:16px}.mb-detail.active{display:block}.detail-icon{color:var(--accent);background:var(--accentSoft);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:12px;margin-bottom:12px}.detail-icon svg{display:block;width:100%;height:auto;max-height:130px}.mb-detail h3{margin:0 0 8px;color:#fff}.mb-detail p{font-size:.92rem}.visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.visual-card{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px}.visual-svg{color:var(--accent);background:#07111b;border-radius:10px;border:1px solid #ffffff12}.visual-svg svg{display:block;width:100%;height:auto}.visual-card span{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:800}.visual-card h3{margin:2px 0 5px;color:#fff}.visual-card p{margin:0;color:var(--muted);font-size:.9rem}.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.concept-card{text-align:left;border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:10px;padding:14px;cursor:pointer}.concept-card span{color:var(--accent);font-family:Consolas,monospace;font-weight:800}.concept-card strong{display:block;margin:8px 0}.concept-card small{color:var(--muted)}.concept-card.done{border-color:var(--ok);background:#22c55e18}.quiz{border:1px solid var(--border);border-radius:10px;padding:16px;margin:14px 0;background:#ffffff05}.quiz h3{margin:0 0 12px;font-size:1rem}.answers{display:flex;flex-wrap:wrap;gap:8px}.answers button{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:8px;padding:9px 11px;cursor:pointer}.answers button.good{border-color:var(--ok);background:#22c55e22}.answers button.bad{border-color:var(--bad);background:#ef444422}.feedback{margin:10px 0 0;color:var(--muted)}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.pager a{flex:1;text-decoration:none;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--surface);color:var(--text)}.pager a:last-child{text-align:right}.pager span{display:block;color:var(--muted);font-size:.8rem}@media(max-width:1000px){.mb-layout{grid-template-columns:1fr}.mb-detail-wrap{position:static}.motherboard-svg .floating-component{display:none}}@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-icon{width:78px;height:78px}.hero-icon svg{width:52px}.nav-inner{justify-content:flex-start}main{grid-template-columns:1fr}.sidebar{position:static;order:-1}.content{padding:20px}.panel-head{display:block}}@media(max-width:560px){header{padding:30px 18px}.answers{display:grid}.visual-card{grid-template-columns:1fr}.pager{display:block}.pager a{display:block;margin-top:10px;text-align:left!important}}
+</style>
+<link rel="stylesheet" href="https://kayasam.github.io/configuration-maintenance-pc/assets/themes/theme.css"><link rel="stylesheet" href="https://kayasam.github.io/configuration-maintenance-pc/assets/pc-support.css"><script src="https://kayasam.github.io/configuration-maintenance-pc/assets/themes/theme.js"></script><script>if(window.parent!==window)document.documentElement.classList.add("support-embedded");</script></head>
+<body>
+<div class="progress" id="progress"></div>
+<header>
+  <div class="hero">
+    <div class="hero-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><rect x="16" y="18" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="48" cy="48" r="18" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="48" cy="48" r="4" fill="currentColor"/><path d="M24 72h48" stroke="currentColor" stroke-width="5"/></svg></div>
+    <div>
+      <p class="eyebrow">Configuration et maintenance PC · Chapitre 05</p>
+      <h1>Stockage et systèmes</h1>
+      <p>Technologie, format, bus, NAS, SAN et RAID</p>
+      <div class="tags"><span class="tag">SSD</span><span class="tag">NVMe</span><span class="tag">RAID</span></div>
+    </div>
+  </div>
+</header>
+<nav><div class="nav-inner"><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/01-role-du-technicien/html/" target="_top"><span>01</span>Le rôle du technicien support</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/02-composants-pc/html/" target="_top"><span>02</span>Les composants d'un PC</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/03-pc-portables/html/" target="_top"><span>03</span>Choisir un PC portable</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/04-bios-demarrage/html/" target="_top"><span>04</span>BIOS / UEFI et démarrage</a><a class="active" href="https://kayasam.github.io/configuration-maintenance-pc/pc/05-stockage/html/" target="_top"><span>05</span>Stockage et systèmes</a><a class="" href="https://kayasam.github.io/configuration-maintenance-pc/pc/06-peripheriques/html/" target="_top"><span>06</span>Périphériques, réseau et impression</a></div></nav>
+<main>
+  <article class="content">
+    <section class="interactive-panel">
+    <div class="panel-head">
+      <div>
+        <p class="eyebrow">Schéma interactif</p>
+        <h2>Chaîne logique du chapitre</h2>
+      </div>
+      <button class="icon-btn" type="button" data-reset-schema>Réinitialiser</button>
+    </div>
+    <svg class="schema" viewBox="0 0 920 260" role="img" aria-label="Schéma interactif Stockage et systèmes">
+      <defs>
+        <marker id="arrow-05" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#22d3ee"/>
+        </marker>
+      </defs>
+      <g class="schema-node" tabindex="0" data-step="1">
+            <rect x="24" y="52" width="124" height="72" rx="12"/>
+            <text x="86" y="84" text-anchor="middle">Technologie</text>
+            <text x="86" y="104" text-anchor="middle" class="schema-small">étape 1</text>
+          </g><path class="schema-link" d="M152 88 C 184 88, 144 148, 172 148" marker-end="url(#arrow-05)"/><g class="schema-node" tabindex="0" data-step="2">
+            <rect x="172" y="112" width="124" height="72" rx="12"/>
+            <text x="234" y="144" text-anchor="middle">Format</text>
+            <text x="234" y="164" text-anchor="middle" class="schema-small">étape 2</text>
+          </g><path class="schema-link" d="M300 148 C 332 148, 292 88, 320 88" marker-end="url(#arrow-05)"/><g class="schema-node" tabindex="0" data-step="3">
+            <rect x="320" y="52" width="124" height="72" rx="12"/>
+            <text x="382" y="84" text-anchor="middle">Bus</text>
+            <text x="382" y="104" text-anchor="middle" class="schema-small">étape 3</text>
+          </g><path class="schema-link" d="M448 88 C 480 88, 440 148, 468 148" marker-end="url(#arrow-05)"/><g class="schema-node" tabindex="0" data-step="4">
+            <rect x="468" y="112" width="124" height="72" rx="12"/>
+            <text x="530" y="144" text-anchor="middle">Partition</text>
+            <text x="530" y="164" text-anchor="middle" class="schema-small">étape 4</text>
+          </g><path class="schema-link" d="M596 148 C 628 148, 588 88, 616 88" marker-end="url(#arrow-05)"/><g class="schema-node" tabindex="0" data-step="5">
+            <rect x="616" y="52" width="124" height="72" rx="12"/>
+            <text x="678" y="84" text-anchor="middle">Formatage</text>
+            <text x="678" y="104" text-anchor="middle" class="schema-small">étape 5</text>
+          </g><path class="schema-link" d="M744 88 C 776 88, 736 148, 764 148" marker-end="url(#arrow-05)"/><g class="schema-node" tabindex="0" data-step="6">
+            <rect x="764" y="112" width="124" height="72" rx="12"/>
+            <text x="826" y="144" text-anchor="middle">Usage</text>
+            <text x="826" y="164" text-anchor="middle" class="schema-small">étape 6</text>
+          </g>
+    </svg>
+    <p class="schema-caption">Clique sur une étape pour la mettre en évidence pendant l'explication ou la correction du TP.</p>
+  </section>
+    
+    <h1>Stockage et systèmes</h1>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/oisyw58kQ4Q?si=DrGepShuOcE9dBg4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<h2 id="differencier-technologie-format-et-bus">Différencier technologie, format et bus</h2>
+<p>Un disque de stockage se décrit <strong>toujours</strong> avec trois éléments distincts et indépendants :</p>
+<div class="table-wrap"><table><thead><tr><th>Critère</th><th>Définition</th></tr></thead><tbody><tr><td><strong>Technologie</strong></td><td>Comment les données sont stockées</td></tr><tr><td><strong>Format</strong></td><td>Taille et forme physique du disque</td></tr><tr><td><strong>Bus / interface</strong></td><td>Comment le disque communique avec le système</td></tr></tbody></table></div>
+<h2 id="technologie">Technologie</h2>
+<h3 id="hdd-disque-dur-mecanique">HDD (disque dur mécanique)</h3>
+<ul><li>Plateaux magnétiques en rotation + tête de lecture mécanique</li><li>Grande capacité, faible coût au Go</li><li>Lent, sensible aux chocs, bruyant</li></ul>
+<figure class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Hard_drive-fr.svg" alt="upload.wikimedia.org/wikipedia/commons/0/01/Hard_drive-fr.svg" loading="lazy"></figure>
+<blockquote><a href="https://fr.wikipedia.org/wiki/Disque_dur" target="_blank" rel="noopener">Disque dur — Wikipédia</a></blockquote>
+<h3 id="ssd-memoire-flash">SSD (mémoire flash)</h3>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/mixHavLpwMw?si=NeUVd_tWcf3f92Wq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<ul><li>Aucune pièce mécanique</li><li>Rapide, silencieux, résistant aux chocs</li><li>Durée de vie limitée en écriture</li></ul>
+<figure class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg/960px-Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="" loading="lazy"></figure>
+<blockquote><a href="https://fr.wikipedia.org/wiki/SSD" target="_blank" rel="noopener">SSD — Wikipédia</a></blockquote>
+<h2 id="format-physique">Format physique</h2>
+<div class="table-wrap"><table><thead><tr><th>Format</th><th>Appareils</th><th>Technologie compatible</th></tr></thead><tbody><tr><td><strong>3,5 pouces</strong></td><td>PC fixes, serveurs</td><td>HDD</td></tr><tr><td><strong>2,5 pouces</strong></td><td>PC portables, fixes</td><td>HDD ou SSD SATA</td></tr><tr><td><strong>M.2</strong></td><td>Directement sur carte mère</td><td>SSD SATA ou NVMe</td></tr></tbody></table></div>
+<aside class="callout warning"><div class="callout-title">Attention</div><p><strong>M.2 ne signifie pas forcément NVMe.</strong> Un SSD M.2 peut être SATA ou NVMe — toujours vérifier le bus.</p></aside>
+<h2 id="bus-interface">Bus / interface</h2>
+<div class="table-wrap"><table><thead><tr><th>Bus</th><th>Débit typique</th><th>Usage</th></tr></thead><tbody><tr><td><strong>SATA</strong></td><td>~550 Mo/s max</td><td>HDD, SSD SATA</td></tr><tr><td><strong>PCIe / NVMe</strong></td><td>3,5 à 14 Go/s selon gen</td><td>SSD NVMe M.2</td></tr></tbody></table></div>
+<p>Le bus a un <strong>impact direct sur les performances</strong>.</p>
+<h2 id="cellules-memoire-tlc-qlc">Cellules mémoire (TLC / QLC)</h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Bits/cellule</th><th>Endurance</th><th>Usage</th></tr></thead><tbody><tr><td><strong>TLC</strong></td><td>3</td><td>Bonne</td><td>Standard, SSD grand public</td></tr><tr><td><strong>QLC</strong></td><td>4</td><td>Plus faible</td><td>Grande capacité, moins cher</td></tr></tbody></table></div>
+<h2 id="symptomes-lies-au-stockage">Symptômes liés au stockage</h2>
+<ul><li>PC très lent au démarrage → HDD système</li><li>Applications longues à s'ouvrir → stockage saturé ou lent</li><li>Bruits anormaux → HDD défaillant</li><li>Erreurs système / fichiers corrompus → stockage dégradé</li></ul>
+<h2 id="le-stockage-en-milieu-professionnel">Le stockage en milieu professionnel</h2>
+<p>En milieu professionnel, le stockage doit assurer : centralisation, partage, fiabilité, performances.</p>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/37Qhsz6qojs?si=wUoyYqDa7gkpNjhR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<h3 id="nas-network-attached-storage">NAS (Network Attached Storage)</h3>
+<p>Serveur de stockage connecté au réseau local.</p>
+<ul><li>Partage de fichiers entre utilisateurs</li><li>Administration simplifiée</li><li>Très utilisé en PME</li></ul>
+<h3 id="san-storage-area-network">SAN (Storage Area Network)</h3>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/m-_RPOcU19c?si=kC0KZ9kaRZRCeP_Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Réseau dédié au stockage, en mode bloc.</p>
+<ul><li>Performances élevées</li><li>Utilisé avec des serveurs et hyperviseurs</li><li>Infrastructure plus complexe et coûteuse</li></ul>
+<blockquote><a href="https://www.it-connect.fr/les-das-san-nas-et-le-stockage-cloud-pour-les-debutants/" target="_blank" rel="noopener">DAS, SAN et NAS — IT-Connect</a></blockquote>
+<h3 id="raid">RAID</h3>
+<div class="video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/WqGeTOt6A0Q?si=ik18LnoDE_PIGrfS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Combine plusieurs disques en un ensemble logique pour améliorer performances et/ou tolérance aux pannes.</p>
+<blockquote><a href="https://fr.wikipedia.org/wiki/RAID_\(informatique\" target="_blank" rel="noopener">RAID — Wikipédia</a>)</blockquote>
+<aside class="callout info"><div class="callout-title">Info</div><p><strong>À retenir</strong> : technologie / format / bus sont trois critères indépendants. M.2 ≠ NVMe. NAS = partage de fichiers. SAN = stockage haute performance. Le RAID améliore performances et/ou tolérance aux pannes.</p></aside>
+<h1>Stockage et systèmes</h1>
+<h2 id="objectif">Objectif</h2>
+<p>Comprendre concrètement comment un disque devient utilisable par un système.</p>
+<p>À la fin du TP, vous devez savoir : identifier un disque, le partitionner, le formater, le rendre accessible, et expliquer ce que vous avez fait.</p>
+<h2 id="contexte">Contexte</h2>
+<p>Vous travaillez sur une <strong>machine virtuelle Windows 11</strong>. Un <strong>disque virtuel supplémentaire</strong> a été ajouté dans VirtualBox. Ce disque est neuf, vide, et non utilisable au départ.</p>
+<h2 id="etapes">Étapes</h2>
+<p><strong>Étape 1 – Identifier le disque</strong></p>
+<ul><li>Ouvrir la gestion des disques Windows</li><li>Repérer le nouveau disque</li><li>Vérifier qu'il n'est pas initialisé</li></ul>
+<p><strong>Étape 2 – Initialiser et partitionner</strong></p>
+<ul><li>Initialiser le disque</li><li>Choisir le type de table de partition</li><li>Créer une partition unique</li></ul>
+<p><strong>Étape 3 – Formater</strong></p>
+<ul><li>Choisir un système de fichiers adapté</li><li>Donner un nom au volume</li></ul>
+<p><strong>Étape 4 – Rendre accessible</strong></p>
+<ul><li>Vérifier qu'une lettre de lecteur est attribuée</li><li>Accéder au volume depuis l'explorateur</li></ul>
+<p><strong>Étape 5 – Analyse</strong></p>
+<ul><li>Pourquoi le disque n'était pas utilisable au départ ?</li><li>À quoi servent le partitionnement et le formatage ?</li><li>Que se passerait-il si le disque n'était pas formaté ?</li></ul>
+<h2 id="rendu-attendu">Rendu attendu</h2>
+<p>Une note Markdown dans votre HedgeDoc avec : titre, étapes réalisées, captures si nécessaire, paragraphe d'analyse.</p>
+<aside class="callout success"><div class="callout-title">Bon réflexe</div><p><strong>Pour aller plus loin</strong> : installer Debian 13 dans une nouvelle VM, ajouter un second disque virtuel, et reproduire la même démarche sous Linux.</p></aside>
+    <section class="concepts">
+    <p class="eyebrow">Cartes de révision</p>
+    <h2>Notions à manipuler</h2>
+    <div class="concept-grid">
+      <button class="concept-card" type="button"><span>01</span><strong>Différencier technologie, format et bus</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>02</span><strong>Technologie</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>03</span><strong>Format physique</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>04</span><strong>Bus / interface</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>05</span><strong>Cellules mémoire (TLC / QLC)</strong><small>Cliquer pour marquer comme revu</small></button><button class="concept-card" type="button"><span>06</span><strong>Symptômes liés au stockage</strong><small>Cliquer pour marquer comme revu</small></button>
+    </div>
+  </section>
+    <section class="quiz-block">
+    <p class="eyebrow">Auto-évaluation</p>
+    <h2>Quiz rapide</h2>
+    <div class="quiz" data-good="0">
+        <h3>1. M.2 désigne d'abord...</h3>
+        <div class="answers"><button type="button" data-answer="0">un format physique</button><button type="button" data-answer="1">toujours du NVMe</button><button type="button" data-answer="2">un type de RAID</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div><div class="quiz" data-good="0">
+        <h3>2. Le bus le plus rapide pour un SSD moderne est généralement...</h3>
+        <div class="answers"><button type="button" data-answer="0">PCIe/NVMe</button><button type="button" data-answer="1">VGA</button><button type="button" data-answer="2">USB 1.1</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div><div class="quiz" data-good="0">
+        <h3>3. Le NAS fournit surtout...</h3>
+        <div class="answers"><button type="button" data-answer="0">du partage de fichiers réseau</button><button type="button" data-answer="1">un écran externe</button><button type="button" data-answer="2">un BIOS de secours</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+  </section>
+    <div class="pager">
+      <a href="https://kayasam.github.io/configuration-maintenance-pc/pc/04-bios-demarrage/html/" target="_top"><span>Chapitre précédent</span>BIOS / UEFI et démarrage</a>
+      <a href="https://kayasam.github.io/configuration-maintenance-pc/pc/06-peripheriques/html/" target="_top"><span>Chapitre suivant</span>Périphériques, réseau et impression</a>
+    </div>
+  </article>
+  <aside class="sidebar">
+    <div class="side-card">
+      <h2>Dans ce chapitre</h2>
+      <div class="toc"><a href="#differencier-technologie-format-et-bus">Différencier technologie, format et bus</a><a href="#technologie">Technologie</a><a href="#format-physique">Format physique</a><a href="#bus-interface">Bus / interface</a><a href="#cellules-memoire-tlc-qlc">Cellules mémoire (TLC / QLC)</a><a href="#symptomes-lies-au-stockage">Symptômes liés au stockage</a><a href="#le-stockage-en-milieu-professionnel">Le stockage en milieu professionnel</a><a href="#objectif">Objectif</a><a href="#contexte">Contexte</a><a href="#etapes">Étapes</a><a href="#rendu-attendu">Rendu attendu</a></div>
+    </div>
+    <div class="side-card">
+      <h2>Objectif support</h2>
+      <p>Relier chaque notion à un symptôme observable, puis justifier les tests effectués.</p>
+    </div>
+  </aside>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.nextElementSibling.innerText;try{await navigator.clipboard.writeText(code);btn.textContent='Copié'}catch(e){btn.textContent='Sélectionnez le code'}setTimeout(()=>btn.textContent='Copier',1400)}));
+document.querySelectorAll('.schema-node').forEach(node=>node.addEventListener('click',()=>node.classList.toggle('active')));
+document.querySelector('[data-reset-schema]')?.addEventListener('click',()=>document.querySelectorAll('.schema-node').forEach(n=>n.classList.remove('active')));
+document.querySelectorAll('.mb-part').forEach(part=>part.addEventListener('click',()=>{const id=part.dataset.part;document.querySelectorAll('.mb-part').forEach(p=>p.classList.toggle('active',p===part));document.querySelectorAll('.mb-detail').forEach(d=>d.classList.toggle('active',d.dataset.detail===id));}));
+document.querySelectorAll('.concept-card').forEach(card=>card.addEventListener('click',()=>card.classList.toggle('done')));
+document.querySelectorAll('.quiz').forEach(quiz=>{quiz.querySelectorAll('[data-answer]').forEach(btn=>btn.addEventListener('click',()=>{const good=quiz.dataset.good;quiz.querySelectorAll('[data-answer]').forEach(b=>{b.disabled=true;if(b.dataset.answer===good)b.classList.add('good')});if(btn.dataset.answer===good){quiz.querySelector('.feedback').textContent='Correct. Garde cette logique pour le TP.'}else{btn.classList.add('bad');quiz.querySelector('.feedback').textContent='Pas tout à fait. Regarde la réponse mise en vert.'}}))});
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%'},{passive:true});
+</script>
+</body>
+</html>

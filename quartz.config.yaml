@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Configuration & Maintenance PC
+  pageTitle: "Configuration et maintenance PC"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -8,38 +8,40 @@ configuration:
   locale: fr-FR
   baseUrl: kayasam.github.io/configuration-maintenance-pc
   ignorePatterns:
+    - telechargements/**
     - private
     - templates
     - .obsidian
     - cours/**/*.excalidraw
     - cours/**/*.excalidraw.md
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
+    # Même police système que le coffre Obsidian sous Windows.
+    fontOrigin: local
+    cdnCaching: false
     typography:
-      header: Space Grotesk
-      body: Inter
-      code: IBM Plex Mono
+      header: Segoe UI
+      body: Segoe UI
+      code: Cascadia Code
     colors:
       lightMode:
-        light: "#f7faf8"
-        lightgray: "#dce8e0"
-        gray: "#8aa092"
-        darkgray: "#40594a"
-        dark: "#10251a"
-        secondary: "#147a43"
-        tertiary: "#5865a8"
-        highlight: rgba(20, 122, 67, 0.12)
+        light: "#f8fafc"
+        lightgray: "#dbe7f0"
+        gray: "#7c94a8"
+        darkgray: "#40566a"
+        dark: "#10283a"
+        secondary: "#007a87"
+        tertiary: "#d06b22"
+        highlight: rgba(0, 122, 135, 0.12)
         textHighlight: "#f7cf5a66"
       darkMode:
-        light: "#08140d"
-        lightgray: "#1c3425"
-        gray: "#688273"
-        darkgray: "#bad0c1"
-        dark: "#effaf2"
-        secondary: "#5fdb8d"
-        tertiary: "#9ba7ff"
-        highlight: rgba(95, 219, 141, 0.14)
+        light: "#07151d"
+        lightgray: "#18313d"
+        gray: "#658292"
+        darkgray: "#bad0dc"
+        dark: "#effaff"
+        secondary: "#52d2dd"
+        tertiary: "#ff9b55"
+        highlight: rgba(82, 210, 221, 0.14)
         textHighlight: "#e7bd3d55"
 plugins:
   - source: "@quartz-community/created-modified-date"
@@ -110,7 +112,8 @@ plugins:
     enabled: false
     order: 92
   - source: "@quartz-community/quartz-fonts"
-    enabled: true
+    # Désactivé : ce plugin remplaçait Segoe UI par des polices Google.
+    enabled: false
   - source: "@quartz-themes/core"
     enabled: true
     options:
@@ -147,7 +150,7 @@ plugins:
   - source: "@quartz-community/favicon"
     enabled: true
   - source: "@quartz-community/og-image"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/cname"
     enabled: true
   - source: "@quartz-community/canvas-page"
@@ -160,11 +163,16 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      mapFn: >-
+        function(node) {}
+      sortFn: >-
+        function(a,b) { const rank = {"pc/index": 0, "pc/01-role-du-technicien/index": 0, "pc/02-composants-pc/index": 1, "pc/03-pc-portables/index": 2, "pc/04-bios-demarrage/index": 3, "pc/05-stockage/index": 4, "pc/06-peripheriques/index": 5}; return (rank[a.slug] ?? 999) - (rank[b.slug] ?? 999) || a.displayName.localeCompare(b.displayName, "fr", {numeric:true}); }
     layout:
       position: left
       priority: 50
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
@@ -177,7 +185,7 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 50
@@ -230,8 +238,7 @@ plugins:
   - source: "@quartz-community/footer"
     enabled: true
     options:
-      links:
-        Dépôt GitHub: https://github.com/kayasam/configuration-maintenance-pc
+      links: {}
     layout:
       position: footer
       priority: 50
@@ -289,9 +296,7 @@ layout:
     folder:
       positions:
         right:
-          - graph
           - table-of-contents
-          - backlinks
     tag:
       exclude:
         - reader-mode

@@ -1,0 +1,54 @@
+{
+  "pdf": "telechargements/cours-complets.pdf",
+  "pdfSha256": "4b48e878578814e5e96c8d1411e96b214b431ddeb0bc2ce10e34c460e12214c6",
+  "chapters": [
+    {
+      "key": "pc/01-role-du-technicien",
+      "title": "Chapitre 1 – Le rôle du technicien support et l'environnement PC",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/01-role-du-technicien/",
+      "download": "telechargements/pc/cours/01-role-du-technicien.md",
+      "sourceSha256": "d4200b5170b1fb01ee422ebae92e3895657e238929974e30d101c9e77a6482a2",
+      "startPage": 2
+    },
+    {
+      "key": "pc/02-composants-pc",
+      "title": "Chapitre 2 – Les composants d'un PC et leur rôle",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/02-composants-pc/",
+      "download": "telechargements/pc/cours/02-composants-pc.md",
+      "sourceSha256": "12c4bc8fb4b4d691e55b8bc3fc1391f66b12a3dabfe5c623c6b6fd57b36ccca2",
+      "startPage": 4
+    },
+    {
+      "key": "pc/03-pc-portables",
+      "title": "Chapitre 3 – Choisir un PC portable",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/03-pc-portables/",
+      "download": "telechargements/pc/cours/03-pc-portables.md",
+      "sourceSha256": "c13b6019fca1b4b16bddaa5fd85a9387ea0481183f86c27590b9ef0b83cce9d3",
+      "startPage": 13
+    },
+    {
+      "key": "pc/04-bios-demarrage",
+      "title": "Chapitre 4 – BIOS / UEFI et démarrage du PC",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/04-bios-demarrage/",
+      "download": "telechargements/pc/cours/04-bios-demarrage.md",
+      "sourceSha256": "59f707e3835b806d6c4d0a84237e7b6f21b4880e3f6382f84d3e607502e287d4",
+      "startPage": 19
+    },
+    {
+      "key": "pc/05-stockage",
+      "title": "Chapitre 5 – Stockage et systèmes",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/05-stockage/",
+      "download": "telechargements/pc/cours/05-stockage.md",
+      "sourceSha256": "9a8a04ae6275e2feb5bf9b81bd3f537799bb7416d3a03a7dd8f02fbbdfbb0d83",
+      "startPage": 34
+    },
+    {
+      "key": "pc/06-peripheriques",
+      "title": "Chapitre 6 – Périphériques, réseau et impression",
+      "href": "https://kayasam.github.io/configuration-maintenance-pc/pc/06-peripheriques/",
+      "download": "telechargements/pc/cours/06-peripheriques.md",
+      "sourceSha256": "8afc18bc3d064761e63dbe03d9350a16de5088d2e84088c886a464c8913ecd2c",
+      "startPage": 49
+    }
+  ]
+}

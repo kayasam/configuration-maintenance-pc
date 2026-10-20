@@ -1,100 +1,42 @@
-name: Deploy Configuration Maintenance PC to GitHub Pages
-
+name: Publier la formation
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-
+    branches: [main]
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
+      - uses: actions/configure-pages@v5
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-
-      - name: Cache dependencies
-        uses: actions/cache@v5
+          cache: npm
+      - uses: actions/setup-python@v6
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Fix folder-page links in the local graph
-        run: node scripts/fix-quartz-graph.mjs
-
-      - name: Build Quartz
-        run: node quartz/bootstrap-cli.mjs build
-
-      - name: Publish interactive HTML courses
-        run: |
-          find content/cours -type f -name "*.html" -print0 | while IFS= read -r -d '' file; do
-            relative_path="${file#content/}"
-            mkdir -p "public/$(dirname "$relative_path")"
-            cp "$file" "public/$relative_path"
-          done
-          mkdir -p public/assets
-          cp -R content/assets/. public/assets/
-
-      - name: Publish individual Markdown downloads
-        run: |
-          mkdir -p public/telechargements/cours public/telechargements/tp
-          find content -mindepth 2 -maxdepth 2 -type f -name "index.md" -path "content/[0-9][0-9]-*/*" -print0 | while IFS= read -r -d '' file; do
-            chapter="$(basename "$(dirname "$file")")"
-            cp "$file" "public/telechargements/cours/$chapter.md"
-          done
-          find content -mindepth 3 -maxdepth 3 -type f -name "*.md" -path "content/[0-9][0-9]-*/tp/*" ! -name "index.md" -exec cp {} public/telechargements/tp/ \;
-
-      - name: Create Obsidian archive
-        run: |
-          cp -R student-vault download
-          cd download
-          archive="../public/configuration-maintenance-pc-obsidian.zip"
-          zip -qr "$archive" Configuration-Maintenance-PC
-
-          course_count="$(unzip -Z1 "$archive" | grep -cE 'cours/[0-9]{2}-[^/]+/[0-9]{2}-[^/]+\.md$' || true)"
-          tp_count="$(unzip -Z1 "$archive" | grep -cE '/tp/[^/]+\.md$' || true)"
-          html_count="$(unzip -Z1 "$archive" | grep -cE '\.html$' || true)"
-          media_count="$(unzip -Z1 "$archive" | grep -ciE '/Ressources/images/[^/]+\.(svg|png|jpe?g|webp|gif)$' || true)"
-          forbidden_count="$(unzip -Z1 "$archive" | grep -ciE '(^|/)(assets?|programme)(/|$)' || true)"
-          if [ "$course_count" -ne 7 ] || [ "$tp_count" -ne 6 ] || [ "$html_count" -ne 8 ] || [ "$media_count" -lt 6 ] || [ "$forbidden_count" -ne 0 ]; then
-            echo "Archive invalide : cours=$course_count, TP=$tp_count, HTML=$html_count, médias=$media_count, éléments interdits=$forbidden_count"
-            exit 1
-          fi
-
-      - name: Upload website
-        uses: actions/upload-pages-artifact@v4
+          python-version: '3.13'
+      - run: npm ci
+      - run: python -m pip install --target .pdf-tools -r scripts/requirements-pdf.txt
+      # Build the reviewed content committed locally, without requiring the author's vault.
+      - run: node quartz/bootstrap-cli.mjs build
+      - run: python scripts/check-site.py
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: public
-
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Deploy website
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4

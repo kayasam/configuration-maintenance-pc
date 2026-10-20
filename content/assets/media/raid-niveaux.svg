@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="700" fill="#f8fafc"/>
+
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1e293b">Les principaux niveaux de RAID</text>
+  <text x="40" y="57" font-size="13" fill="#64748b">A1, A2… = fragments de données · P = bloc de parité (permet de reconstruire un disque perdu)</text>
+
+  <!-- ================= RAID 0 ================= -->
+  <rect x="40" y="76" width="400" height="270" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 40 92 a 16 16 0 0 1 16 -16 h 368 a 16 16 0 0 1 16 16 v 28 h -400 z" fill="#dc2626"/>
+  <text x="62" y="106" font-size="15" font-weight="700" fill="#ffffff">RAID 0 — Agrégation (striping)</text>
+  <text x="62" y="140" font-size="12" fill="#64748b">Les données sont réparties sur tous les disques.</text>
+
+  <g>
+    <rect x="150" y="152" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="156" y="156" width="50" height="24" rx="4" fill="#dbeafe"/><text x="181" y="172" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="156" y="185" width="50" height="24" rx="4" fill="#dbeafe"/><text x="181" y="201" font-size="11" fill="#1e40af" text-anchor="middle">A3</text>
+    <rect x="156" y="214" width="50" height="24" rx="4" fill="#dbeafe"/><text x="181" y="230" font-size="11" fill="#1e40af" text-anchor="middle">A5</text>
+    <text x="181" y="256" font-size="10" fill="#64748b" text-anchor="middle">Disque 1</text>
+
+    <rect x="228" y="152" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="234" y="156" width="50" height="24" rx="4" fill="#dbeafe"/><text x="259" y="172" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="234" y="185" width="50" height="24" rx="4" fill="#dbeafe"/><text x="259" y="201" font-size="11" fill="#1e40af" text-anchor="middle">A4</text>
+    <rect x="234" y="214" width="50" height="24" rx="4" fill="#dbeafe"/><text x="259" y="230" font-size="11" fill="#1e40af" text-anchor="middle">A6</text>
+    <text x="259" y="256" font-size="10" fill="#64748b" text-anchor="middle">Disque 2</text>
+  </g>
+
+  <text x="62" y="286" font-size="12" fill="#64748b">Capacité utile</text>
+  <text x="230" y="286" font-size="12" font-weight="700" fill="#16a34a">100 %</text>
+  <text x="62" y="308" font-size="12" fill="#64748b">Pannes tolérées</text>
+  <text x="230" y="308" font-size="12" font-weight="700" fill="#dc2626">aucune</text>
+  <text x="62" y="330" font-size="11.5" fill="#dc2626">Un disque perdu = toutes les données perdues.</text>
+
+  <!-- ================= RAID 1 ================= -->
+  <rect x="460" y="76" width="400" height="270" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 460 92 a 16 16 0 0 1 16 -16 h 368 a 16 16 0 0 1 16 16 v 28 h -400 z" fill="#16a34a"/>
+  <text x="482" y="106" font-size="15" font-weight="700" fill="#ffffff">RAID 1 — Miroir</text>
+  <text x="482" y="140" font-size="12" fill="#64748b">Chaque disque contient exactement les mêmes données.</text>
+
+  <g>
+    <rect x="570" y="152" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="576" y="156" width="50" height="24" rx="4" fill="#dbeafe"/><text x="601" y="172" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="576" y="185" width="50" height="24" rx="4" fill="#dbeafe"/><text x="601" y="201" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="576" y="214" width="50" height="24" rx="4" fill="#dbeafe"/><text x="601" y="230" font-size="11" fill="#1e40af" text-anchor="middle">A3</text>
+    <text x="601" y="256" font-size="10" fill="#64748b" text-anchor="middle">Disque 1</text>
+
+    <rect x="648" y="152" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="654" y="156" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="172" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="654" y="185" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="201" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="654" y="214" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="230" font-size="11" fill="#1e40af" text-anchor="middle">A3</text>
+    <text x="679" y="256" font-size="10" fill="#64748b" text-anchor="middle">Disque 2</text>
+    <text x="640" y="200" font-size="16" fill="#16a34a" text-anchor="middle">=</text>
+  </g>
+
+  <text x="482" y="286" font-size="12" fill="#64748b">Capacité utile</text>
+  <text x="650" y="286" font-size="12" font-weight="700" fill="#d97706">50 %</text>
+  <text x="482" y="308" font-size="12" fill="#64748b">Pannes tolérées</text>
+  <text x="650" y="308" font-size="12" font-weight="700" fill="#16a34a">1 disque</text>
+  <text x="482" y="330" font-size="11.5" fill="#64748b">Disque système, petits serveurs.</text>
+
+  <!-- ================= RAID 5 ================= -->
+  <rect x="40" y="366" width="400" height="270" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 40 382 a 16 16 0 0 1 16 -16 h 368 a 16 16 0 0 1 16 16 v 28 h -400 z" fill="#2563eb"/>
+  <text x="62" y="396" font-size="15" font-weight="700" fill="#ffffff">RAID 5 — Agrégation avec parité</text>
+  <text x="62" y="430" font-size="12" fill="#64748b">La parité est répartie sur tous les disques. Minimum 3 disques.</text>
+
+  <g>
+    <rect x="111" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="117" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="142" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="117" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="142" y="491" font-size="11" fill="#1e40af" text-anchor="middle">B1</text>
+    <rect x="117" y="504" width="50" height="24" rx="4" fill="#fef3c7"/><text x="142" y="520" font-size="11" fill="#b45309" text-anchor="middle">Pc</text>
+    <text x="142" y="546" font-size="10" fill="#64748b" text-anchor="middle">Disque 1</text>
+
+    <rect x="189" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="195" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="220" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="195" y="475" width="50" height="24" rx="4" fill="#fef3c7"/><text x="220" y="491" font-size="11" fill="#b45309" text-anchor="middle">Pb</text>
+    <rect x="195" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="220" y="520" font-size="11" fill="#1e40af" text-anchor="middle">C1</text>
+    <text x="220" y="546" font-size="10" fill="#64748b" text-anchor="middle">Disque 2</text>
+
+    <rect x="267" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="273" y="446" width="50" height="24" rx="4" fill="#fef3c7"/><text x="298" y="462" font-size="11" fill="#b45309" text-anchor="middle">Pa</text>
+    <rect x="273" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="298" y="491" font-size="11" fill="#1e40af" text-anchor="middle">B2</text>
+    <rect x="273" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="298" y="520" font-size="11" fill="#1e40af" text-anchor="middle">C2</text>
+    <text x="298" y="546" font-size="10" fill="#64748b" text-anchor="middle">Disque 3</text>
+  </g>
+
+  <text x="62" y="576" font-size="12" fill="#64748b">Capacité utile</text>
+  <text x="230" y="576" font-size="12" font-weight="700" fill="#16a34a">n − 1 disque (67 % à 3)</text>
+  <text x="62" y="598" font-size="12" fill="#64748b">Pannes tolérées</text>
+  <text x="230" y="598" font-size="12" font-weight="700" fill="#16a34a">1 disque</text>
+  <text x="62" y="620" font-size="11.5" fill="#64748b">NAS, serveurs de fichiers. Le plus répandu en PME.</text>
+
+  <!-- ================= RAID 10 ================= -->
+  <rect x="460" y="366" width="400" height="270" rx="16" fill="#ffffff" stroke="#e2e8f0" filter="url(#card-shadow)"/>
+  <path d="M 460 382 a 16 16 0 0 1 16 -16 h 368 a 16 16 0 0 1 16 16 v 28 h -400 z" fill="#1e40af"/>
+  <text x="482" y="396" font-size="15" font-weight="700" fill="#ffffff">RAID 10 — Miroirs agrégés</text>
+  <text x="482" y="430" font-size="12" fill="#64748b">Deux miroirs, agrégés entre eux. Minimum 4 disques.</text>
+
+  <g>
+    <rect x="492" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="498" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="523" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="498" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="523" y="491" font-size="11" fill="#1e40af" text-anchor="middle">A3</text>
+    <rect x="498" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="523" y="520" font-size="11" fill="#1e40af" text-anchor="middle">A5</text>
+    <text x="523" y="546" font-size="10" fill="#64748b" text-anchor="middle">D1</text>
+
+    <rect x="562" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="568" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="593" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A1</text>
+    <rect x="568" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="593" y="491" font-size="11" fill="#1e40af" text-anchor="middle">A3</text>
+    <rect x="568" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="593" y="520" font-size="11" fill="#1e40af" text-anchor="middle">A5</text>
+    <text x="593" y="546" font-size="10" fill="#64748b" text-anchor="middle">D2</text>
+
+    <rect x="648" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="654" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="654" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="491" font-size="11" fill="#1e40af" text-anchor="middle">A4</text>
+    <rect x="654" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="679" y="520" font-size="11" fill="#1e40af" text-anchor="middle">A6</text>
+    <text x="679" y="546" font-size="10" fill="#64748b" text-anchor="middle">D3</text>
+
+    <rect x="718" y="442" width="62" height="90" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="724" y="446" width="50" height="24" rx="4" fill="#dbeafe"/><text x="749" y="462" font-size="11" fill="#1e40af" text-anchor="middle">A2</text>
+    <rect x="724" y="475" width="50" height="24" rx="4" fill="#dbeafe"/><text x="749" y="491" font-size="11" fill="#1e40af" text-anchor="middle">A4</text>
+    <rect x="724" y="504" width="50" height="24" rx="4" fill="#dbeafe"/><text x="749" y="520" font-size="11" fill="#1e40af" text-anchor="middle">A6</text>
+    <text x="749" y="546" font-size="10" fill="#64748b" text-anchor="middle">D4</text>
+
+    <text x="558" y="493" font-size="16" fill="#16a34a" text-anchor="middle">=</text>
+    <text x="714" y="493" font-size="16" fill="#16a34a" text-anchor="middle">=</text>
+  </g>
+
+  <text x="482" y="576" font-size="12" fill="#64748b">Capacité utile</text>
+  <text x="650" y="576" font-size="12" font-weight="700" fill="#d97706">50 %</text>
+  <text x="482" y="598" font-size="12" fill="#64748b">Pannes tolérées</text>
+  <text x="650" y="598" font-size="12" font-weight="700" fill="#16a34a">1 par miroir</text>
+  <text x="482" y="620" font-size="11.5" fill="#64748b">Bases de données, virtualisation. Rapide et sûr, mais cher.</text>
+
+  <!-- AVERTISSEMENT -->
+  <rect x="40" y="654" width="820" height="34" rx="10" fill="#fef2f2" stroke="#fecaca"/>
+  <circle cx="66" cy="671" r="11" fill="#dc2626"/>
+  <path d="M 66 665 l 0 7 M 66 676 l 0 1" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="88" y="676" font-size="12.5" fill="#1e293b"><tspan font-weight="700">Le RAID n'est pas une sauvegarde.</tspan> Il protège d'une panne de disque, pas d'une suppression, d'un ransomware, d'un vol ou d'un incendie.</text>
+</svg>
